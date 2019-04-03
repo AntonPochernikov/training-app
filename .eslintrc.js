@@ -41,6 +41,7 @@ module.exports = {
     "no-console": 0,
     "max-len": ["warn", { code: 120 }],
     "import/extensions": 0,
-    "operator-linebreak": ["error", "after"]
+    "operator-linebreak": ["error", "after"],
+    "import/no-unresolved": "off",
   }
 };
