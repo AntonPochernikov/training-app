@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import exercise from './exercise.js';
+import training from './training.js';
+import user from './user.js';
 
 export default combineReducers({
-  exercise,
+  user,
+  training,
 });

@@ -6,7 +6,7 @@ import './App.css';
 
 render(
   <Provider store={store}>
-    <div />
+    <div>TODO: router component</div>
   </Provider>,
   document.getElementById('root'),
 );
