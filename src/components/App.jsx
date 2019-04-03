@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import MainRouter from '../components/MainRouter';
+import MainRouter from './MainRouter.jsx';
 
 import store from '../store/store.js';
 
