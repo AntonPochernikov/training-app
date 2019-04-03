@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.config.js --mode production",
-    "start": "webpack-dev-server --config webpack.config.js --mode development",
+    "dev": "webpack-dev-server --config webpack.config.js --mode development",
     "test": "jest --config jest.config.js"
   },
   "keywords": [],
@@ -22,6 +22,7 @@
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.4",
+    "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0"
   },
   "devDependencies": {
