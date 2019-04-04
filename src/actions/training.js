@@ -1,3 +1,5 @@
 import { createAction } from 'redux-actions';
 
-export const newAction = createAction('NEW_ACTION');
+export const newAction = createAction('ACTION/NEW');
+
+export const changeCode = createAction('CODE/CHANGE');

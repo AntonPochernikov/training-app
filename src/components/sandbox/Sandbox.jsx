@@ -2,13 +2,22 @@ import React from 'react';
 import MonacoEditor from 'react-monaco-editor';
 import './Sandbox.css';
 
-const Sandbox = () => (
-  <div className='sandbox'>
-    <MonacoEditor
-      language="javascript"
-      theme="vs-dark"
-    />
-  </div>
-);
+export default class Sandbox extends React.Component {
+  handleCodeChange = (newValue) => {
+    this.props.changeCode({ code: newValue });
+  }
 
-export default Sandbox;
+  render() {
+    const { code } = this.props;
+    return (
+      <div className='sandbox'>
+        <MonacoEditor
+          language="javascript"
+          theme="vs-dark"
+          onChange={this.handleCodeChange}
+          value={code}
+        />
+      </div>
+    );
+  }
+}
