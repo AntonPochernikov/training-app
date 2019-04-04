@@ -21,9 +21,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: [
-          path.resolve(__dirname, 'src'),
-        ],
+        include: APP_DIR,
         use: [
           'babel-loader',
           'eslint-loader',
