@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 
 const HomePage = () => (
-    <Fragment>
+  <Fragment>
         Hello!
-    </Fragment>
+  </Fragment>
 );
 
 export default HomePage;
