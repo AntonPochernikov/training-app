@@ -11,7 +11,7 @@ export default handleActions({
     ...state,
     code,
   }),
-  [action.loadDataSuccess]: (state, { payload: { data } }) => ({
+  [action.fetchDataSuccess]: (state, { payload: { data } }) => ({
     ...state,
     exercises: data,
   }),

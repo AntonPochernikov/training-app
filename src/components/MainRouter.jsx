@@ -6,7 +6,7 @@ import MainHeader from './MainHeader.jsx';
 
 export default class MainRouter extends React.Component {
   componentDidMount() {
-    this.props.loadData();
+    this.props.fetchData();
   }
 
   renderRoot = () => <Redirect to='/home'/>
