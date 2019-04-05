@@ -42,5 +42,6 @@ module.exports = {
     "max-len": ["warn", { code: 120 }],
     "import/extensions": 0,
     "operator-linebreak": ["error", "after"],
+    "indent": [2, 2],
   }
 };
