@@ -4,16 +4,24 @@ import HomePage from './homepage/HomePage.jsx';
 import Sandbox from './sandbox/Sandbox.js';
 import MainHeader from './MainHeader.jsx';
 
-const renderRoot = () => <Redirect to='/home'/>;
-const MainRouter = () => (
-  <Router>
-    <div>
-      <MainHeader />
-      <Route exact path='/' render={renderRoot}/>
-      <Route path='/home' component={HomePage} />
-      <Route path='/sandbox' component={Sandbox} />
-    </div>
-  </Router>
-);
+export default class MainRouter extends React.Component {
+  componentDidMount() {
+    this.props.loadData();
+  }
 
-export default MainRouter;
+  renderRoot = () => <Redirect to='/home'/>
+
+  render() {
+    console.log(this.props);
+    return (
+      <Router>
+        <div>
+          <MainHeader />
+          <Route exact path='/' render={this.renderRoot}/>
+          <Route path='/home' component={HomePage} />
+          <Route path='/sandbox' component={Sandbox} />
+        </div>
+      </Router>
+    );
+  }
+}
