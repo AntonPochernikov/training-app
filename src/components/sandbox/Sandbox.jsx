@@ -4,7 +4,7 @@ import './Sandbox.css';
 
 export default class Sandbox extends React.Component {
   handleCodeChange = (newValue) => {
-    this.props.changeCode({ code: newValue });
+    this.props.changeCode({ value: newValue });
   }
 
   render() {

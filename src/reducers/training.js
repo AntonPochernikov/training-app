@@ -1,18 +1,40 @@
+import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
 import * as action from '../actions/index.js';
 
-const init = {
-  code: '',
-  exercises: [],
-};
+const code = handleActions({
+  [action.changeCode]: (state, { payload: { value } }) => value,
+}, '');
 
-export default handleActions({
-  [action.changeCode]: (state, { payload: { code } }) => ({
-    ...state,
-    code,
+const exercises = handleActions({
+  [action.fetchDataSuccess]: (state, { payload: { data } }) => data,
+}, []);
+
+const fetchInit = {
+  state: 'initial',
+  source: null,
+  errMessage: '',
+};
+const dataFetch = handleActions({
+  [action.fetchDataRequest]: (state, { payload: { source } }) => ({
+    state: 'requested',
+    source,
+    errMessage: '',
   }),
-  [action.fetchDataSuccess]: (state, { payload: { data } }) => ({
-    ...state,
-    exercises: data,
+  [action.fetchDataSuccess]: () => ({
+    state: 'succeed',
+    source: null,
+    errMessage: '',
   }),
-}, init);
+  [action.fetchDataFailure]: (state, { payload: { e } }) => ({
+    state: 'failed',
+    source: null,
+    errMessage: e.message,
+  }),
+}, fetchInit);
+
+export default combineReducers({
+  code,
+  exercises,
+  dataFetch,
+});

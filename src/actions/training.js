@@ -2,9 +2,9 @@ import { createAction } from 'redux-actions';
 
 export const changeCode = createAction('CODE/CHANGE');
 
-export const fetchDataRequest = createAction('CODE/CHANGE');
-export const fetchDataSuccess = createAction('CODE/CHANGE');
-export const fetchDataFailure = createAction('CODE/CHANGE');
+export const fetchDataRequest = createAction('FETCH/DATA/REQUEST');
+export const fetchDataSuccess = createAction('FETCH/DATA/SUCCESS');
+export const fetchDataFailure = createAction('FETCH/DATA/FAILURE');
 export const fetchData = () => async (dispatch) => {
   const source = null;
   dispatch(fetchDataRequest({ source }));

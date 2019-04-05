@@ -12,7 +12,6 @@ export default class MainRouter extends React.Component {
   renderRoot = () => <Redirect to='/home'/>
 
   render() {
-    console.log(this.props);
     return (
       <Router>
         <div>
