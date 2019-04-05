@@ -1,0 +1,8 @@
+.row {
+    justify-content: center;
+}
+
+.card {
+    margin: 10px;
+    box-sizing: border-box;
+}
