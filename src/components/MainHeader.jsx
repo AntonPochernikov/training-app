@@ -2,14 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Image } from 'react-bootstrap';
 import logo from '../images/logo.png';
-
 import './MainHeader.css';
 
 const Header = () => (
   <Navbar bg="dark" variant="dark">
     <Navbar.Brand>
       <Link to="/home">
-        <Image className="image" src={logo} />
+        <Image className="logo" src={logo} />
       </Link>
     </Navbar.Brand>
     <Nav className="mr-auto" as="ul">
