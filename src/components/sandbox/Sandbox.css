@@ -1,5 +1,34 @@
-.sandbox {
+.sandbox {	
 	height: 450px;
-	width: 50%;
-	padding: 10px 30px;
+	width: 450px;
+	margin: auto;
+	margin-top: 15px;
+}
+
+.container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 1px solid rgb(184, 184, 184);
+	background-color: rgb(255, 255, 255);
+}
+
+.sandbox-col1 {
+	height: 180px;
+	/* border: 1px solid rgb(184, 184, 184); */
+	border-left: 1px solid rgb(184, 184, 184);
+	border-bottom: 1px solid rgb(184, 184, 184);
+}
+
+.sandbox-col2{
+	height: 300px;
+	border-left: 1px solid rgb(184, 184, 184);
+}
+
+.btn-sandbox {
+	width: 150px;
+	margin: 10px;
+}
+
+.card {
+   padding: 10px;
 }
