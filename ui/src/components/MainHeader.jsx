@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import {
   Navbar,
   Nav,
-  Image,
   Container,
 } from 'react-bootstrap';
 import logo from '../images/logo.png';
@@ -15,7 +14,7 @@ const Header = () => (
       <Navbar>
         <Navbar.Brand>
           <Link to="/home">
-            <Image className="logo" src={logo} />
+            <img className="logo" src={logo} width='48' height='48' />
           </Link>
         </Navbar.Brand>
         <Nav className="mr-auto" as="ul">
