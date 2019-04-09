@@ -1,34 +1,45 @@
-.sandbox {	
-	height: 450px;
-	width: 450px;
-	margin: auto;
-	margin-top: 15px;
+.workspace {
+	display: flex;
+	align-items: stretch;
+	flex-wrap: wrap;
+	position: absolute;
+	top: 80px;
+	left: 0;
+
+	height: calc(100% - 80px);
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+
+	background-color: var(--white);
+	overflow: scroll;
 }
 
-.container {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border: 1px solid rgb(184, 184, 184);
-	background-color: rgb(255, 255, 255);
+.sandbox {
+	position: relative;
+	width: 60%;
+	padding: 10px;
+	box-sizing: border-box;
+
+	box-shadow: 0 0 2px -1px var(--gray);
+	overflow: hidden;
 }
 
-.sandbox-col1 {
-	height: 180px;
-	/* border: 1px solid rgb(184, 184, 184); */
-	border-left: 1px solid rgb(184, 184, 184);
-	border-bottom: 1px solid rgb(184, 184, 184);
+.interface-box {
+	width: 40%;
+	padding: 10px;
+	box-sizing: border-box;
+
+	box-shadow: 0 0 2px -1px var(--gray);
 }
 
-.sandbox-col2{
-	height: 300px;
-	border-left: 1px solid rgb(184, 184, 184);
+.exercise-description {
+}
+
+.test-output {
 }
 
 .btn-sandbox {
 	width: 150px;
 	margin: 10px;
-}
-
-.card {
-   padding: 10px;
 }

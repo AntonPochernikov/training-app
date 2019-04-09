@@ -14,11 +14,13 @@ export default class MainRouter extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className='main-router'>
           <MainHeader />
-          <Route exact path='/' render={this.renderRoot}/>
-          <Route path='/home' component={HomePage} />
-          <Route path='/sandbox' component={Sandbox} />
+          <main className='main'>
+            <Route exact path='/' render={this.renderRoot}/>
+            <Route path='/home' component={HomePage} />
+            <Route path='/sandbox' component={Sandbox} />
+          </main>
         </div>
       </Router>
     );
