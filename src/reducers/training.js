@@ -15,6 +15,7 @@ const fetchInit = {
   source: null,
   errMessage: '',
 };
+
 const dataFetch = handleActions({
   [action.fetchDataRequest]: (state, { payload: { source } }) => ({
     state: 'requested',
