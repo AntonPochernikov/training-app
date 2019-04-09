@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import HomePage from './homepage/HomePage.jsx';
+import HomePage from './homepage/HomePage.js';
 import Sandbox from './sandbox/Sandbox.js';
 import MainHeader from './MainHeader.jsx';
 
