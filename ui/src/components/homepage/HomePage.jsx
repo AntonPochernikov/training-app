@@ -24,7 +24,7 @@ export default class HomePage extends React.Component {
         <div className='homepage-content'>
           <div className='heading'>
             <h2 className ='heading-main'>Добро пожаловать в интерактивный задачник JavaScript</h2>
-            <h5>Выберите подходящий режим:</h5>
+            <b>Выберите подходящий режим:</b>
           </div>
           <div className='cards'>
             {this.renderCards()}
