@@ -7,6 +7,7 @@ import MonacoEditor from 'react-monaco-editor';
 //   Col,
 // } from 'react-bootstrap';
 import './Sandbox.css';
+import './mocha.min.css';
 
 export default class Sandbox extends React.Component {
   handleCodeChange = (newValue) => {
