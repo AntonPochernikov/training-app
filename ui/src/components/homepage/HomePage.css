@@ -6,3 +6,15 @@
 	display: flex;
 	justify-content: space-around;
 }
+
+.heading{
+	text-align: center;
+	padding: 40px;
+	font-family: "Open Sans";
+	color: rgb(54, 54, 54);
+	padding-bottom: 35px;	 
+}
+
+.heading-main{
+	padding-bottom: 20px;
+}
