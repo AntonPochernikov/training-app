@@ -16,3 +16,11 @@ export const fetchData = () => async (dispatch) => {
     dispatch(fetchDataFailure({ error: e }));
   }
 };
+
+// TODO: actions for solution testing
+export const testSolution = () => async (dispatch, getState) => {
+  const { code } = getState().training;
+  const evalCode = `${code};\nreturn solution(a, b)`;
+  const solution = new Function('a', 'b', evalCode).bind({});
+  console.log(solution(1, 2));
+};
