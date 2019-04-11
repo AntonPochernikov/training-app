@@ -17,7 +17,9 @@ export default class Sandbox extends React.Component {
   }
 
   render() {
-    const { code } = this.props;
+    const { code, currentTask } = this.props;
+    console.log(currentTask);
+    const { description } = currentTask;
     return (
       <div className='workspace'>
         <div className='sandbox'>
@@ -36,7 +38,7 @@ export default class Sandbox extends React.Component {
         {/* <Button variant="primary" className="btn-sandbox" size="sm">Отправить решение</Button> */}
         <div className='interface-box'>
           <div className='exercise-description'>
-            Описание задачи
+            {description}
           </div>
           <div className='test-output'>
             Вывод тестов

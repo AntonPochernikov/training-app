@@ -1,18 +1,22 @@
 import React from 'react';
-import { Card, Container } from 'react-bootstrap';
+import { Card, Container, ListGroup } from 'react-bootstrap';
+
+import ListTasks from './listtasks/ListTasks.jsx';
 import './HomePage.css';
 
 export default class HomePage extends React.Component {
   renderCards() {
-    const { exercises } = this.props;
-    return exercises.map(({ complexity }) => (
+    const { exercises, getCurrentTask } = this.props;
+    return exercises.map(({ complexity, tasks }) => (
       <Card key={complexity} style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title>{complexity} </Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-          <Card.Text>описание</Card.Text>
-          <Card.Link href="#">Card Link</Card.Link>
-          <Card.Link href="#">Another Link</Card.Link>
+          <Card.Title>Уровень: {complexity} </Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">Описание уровня</Card.Subtitle>
+          <ListGroup variant="flush">
+            <ListTasks
+              getCurrentTask={getCurrentTask}
+              tasks={tasks} />
+          </ListGroup>
         </Card.Body>
       </Card>
     ));
