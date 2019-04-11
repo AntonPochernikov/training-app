@@ -1,13 +1,12 @@
-.link {
-    text-decoration: none !important;;
-}
+.task__link {
+	display: block;
 
-.task .link {
     color: var(--black);
 }
 
-.task:hover .link{
+.task__link:hover {
     color: var(--primary);
     cursor: pointer;
-}
 
+    text-decoration: none;
+}

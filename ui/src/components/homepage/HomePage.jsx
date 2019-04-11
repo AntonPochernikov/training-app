@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Container, ListGroup } from 'react-bootstrap';
-
 import ListTasks from './listtasks/ListTasks.jsx';
 import './HomePage.css';
 
@@ -10,7 +9,7 @@ export default class HomePage extends React.Component {
     return exercises.map(({ complexity, tasks }) => (
       <Card key={complexity} style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title>Уровень: {complexity} </Card.Title>
+          <Card.Title>Уровень: {complexity}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Описание уровня</Card.Subtitle>
           <ListGroup variant="flush">
             <ListTasks
