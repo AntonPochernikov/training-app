@@ -6,6 +6,7 @@ const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, './src');
 const MONACO_DIR = path.resolve(__dirname, './node_modules/monaco-editor');
+const MOCHA_DIR = path.resolve(__dirname, './node_modules/mocha');
 
 module.exports = {
   entry: [
@@ -29,16 +30,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: APP_DIR,
+        include: [APP_DIR, MONACO_DIR, MOCHA_DIR],
         use: [
           'style-loader',
           'css-loader',
         ],
-      },
-      {
-        test: /\.css$/,
-        include: MONACO_DIR,
-        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(gif|svg|jpg|png)$/,

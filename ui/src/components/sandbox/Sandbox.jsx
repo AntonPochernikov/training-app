@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Spinner } from 'react-bootstrap';
 import './Sandbox.css';
-import './mocha.min.css';
+import 'mocha/mocha.css';
 
 const MonacoEditor = lazy(() => import('react-monaco-editor'));
 
