@@ -1,5 +1,5 @@
-import React from 'react';
-import MonacoEditor from 'react-monaco-editor';
+import React, { Suspense, lazy } from 'react';
+import { Spinner } from 'react-bootstrap';
 // import {
 // Button,
 // Container,
@@ -8,6 +8,8 @@ import MonacoEditor from 'react-monaco-editor';
 // } from 'react-bootstrap';
 import './Sandbox.css';
 import './mocha.min.css';
+
+const MonacoEditor = lazy(() => import('react-monaco-editor'));
 
 export default class Sandbox extends React.Component {
   handleCodeChange = (newValue) => {
@@ -19,12 +21,17 @@ export default class Sandbox extends React.Component {
     return (
       <div className='workspace'>
         <div className='sandbox'>
-          <MonacoEditor
-            language='javascript'
-            theme='vs-light'
-            onChange={this.handleCodeChange}
-            value={code}
-          />
+          <Suspense fallback={
+            <div className='sandbox-spinner'>
+              <Spinner animation='border' variant="secondary" />
+            </div>
+          }>
+            <MonacoEditor
+              language='javascript'
+              theme='vs-light'
+              onChange={this.handleCodeChange}
+              value={code}
+            /></Suspense>
         </div>
         {/* <Button variant="primary" className="btn-sandbox" size="sm">Отправить решение</Button> */}
         <div className='interface-box'>

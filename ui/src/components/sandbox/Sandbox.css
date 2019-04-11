@@ -42,3 +42,9 @@
 	width: 150px;
 	margin: 10px;
 }
+ .sandbox-spinner{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+}
