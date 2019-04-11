@@ -10,6 +10,10 @@ const exercises = handleActions({
   [action.fetchDataSuccess]: (state, { payload: { data } }) => data,
 }, []);
 
+const currentTask = handleActions({
+  [action.getCurrentTask]: (state, { payload }) => payload,
+}, null);
+
 const fetchInit = {
   state: 'initial',
   source: null,
@@ -37,5 +41,6 @@ const dataFetch = handleActions({
 export default combineReducers({
   code,
   exercises,
+  currentTask,
   dataFetch,
 });

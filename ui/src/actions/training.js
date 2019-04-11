@@ -1,6 +1,7 @@
 import { createAction } from 'redux-actions';
 
 export const changeCode = createAction('CODE/CHANGE');
+export const getCurrentTask = createAction('TASK/ID/GET');
 
 export const fetchDataRequest = createAction('DATA/FETCH/REQUEST');
 export const fetchDataSuccess = createAction('DATA/FETCH/SUCCESS');
