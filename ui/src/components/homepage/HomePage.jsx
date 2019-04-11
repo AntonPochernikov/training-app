@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Container, ListGroup } from 'react-bootstrap';
-import ListTasks from './listtasks/ListTasks.jsx';
+import ListTasks from './ListTasks.jsx';
 import './HomePage.css';
 
 export default class HomePage extends React.Component {
