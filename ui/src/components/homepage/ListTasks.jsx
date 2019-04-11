@@ -15,7 +15,7 @@ export default class ListTasks extends Component {
       <div className='task' key={item.id}>
         <Link className='link' to="/sandbox">
           <ListGroup.Item
-            onClick={ () => this.handleClick(item.id)}
+            onClick={ () => this.handleClick(item.id)} 
           >
             {item.name}
           </ListGroup.Item>
