@@ -22,18 +22,27 @@ const Header = () => (
             <NavLink
               className='navigation__link'
               activeClassName='navigation__link--active'
-              to="/home"
+              to="/exercises"
             >
-              Домой
+              Упражнения
             </NavLink>
           </Nav.Item>
           <Nav.Item as="li">
             <NavLink
               className='navigation__link'
               activeClassName='navigation__link--active'
-              to="/sandbox"
+              to="/tests"
             >
-              Песочница
+              Тесты
+            </NavLink>
+          </Nav.Item>
+          <Nav.Item as="li">
+            <NavLink
+              className='navigation__link'
+              activeClassName='navigation__link--active'
+              to="/lessons"
+            >
+              Учебник
             </NavLink>
           </Nav.Item>
         </Nav>
