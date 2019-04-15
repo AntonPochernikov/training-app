@@ -4,8 +4,8 @@ import Exercises from './exercises/Exercises.js';
 import Sandbox from './sandbox/Sandbox.js';
 import Tests from './tests/Tests.jsx';
 import Lessons from './lessons/Lessons.jsx';
-import MainHeader from './MainHeader.jsx';
-import HomePage from './homepage/Homepage.jsx';
+import MainHeader from './MainHeader.js';
+import HomePage from './homepage/HomePage.jsx';
 import Login from './login/Login.jsx';
 
 export default class MainRouter extends React.Component {

@@ -9,6 +9,7 @@ import logo from '../images/logo.png';
 import './MainHeader.css';
 
 const Header = (props) => {
+  console.log(props);
   const handleLoginLink = (e) => {
     e.preventDefault();
     props.showModal({ name: 'login' });
@@ -25,35 +26,35 @@ const Header = (props) => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto" as="ul">
-          <Nav.Item as="li">
-            <NavLink
-              className='navigation__link'
-              activeClassName='navigation__link--active'
-              to="/exercises"
-            >
+            <Nav className="mr-auto" as="ul">
+              <Nav.Item as="li">
+                <NavLink
+                  className='navigation__link'
+                  activeClassName='navigation__link--active'
+                  to="/exercises"
+                >
               Упражнения
-            </NavLink>
-          </Nav.Item>
-          <Nav.Item as="li">
-            <NavLink
-              className='navigation__link'
-              activeClassName='navigation__link--active'
-              to="/tests"
-            >
+                </NavLink>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <NavLink
+                  className='navigation__link'
+                  activeClassName='navigation__link--active'
+                  to="/tests"
+                >
               Тесты
-            </NavLink>
-          </Nav.Item>
-          <Nav.Item as="li">
-            <NavLink
-              className='navigation__link'
-              activeClassName='navigation__link--active'
-              to="/lessons"
-            >
+                </NavLink>
+              </Nav.Item>
+              <Nav.Item as="li">
+                <NavLink
+                  className='navigation__link'
+                  activeClassName='navigation__link--active'
+                  to="/lessons"
+                >
               Учебник
-            </NavLink>
-          </Nav.Item>
-        </Nav>
+                </NavLink>
+              </Nav.Item>
+            </Nav>
             <Nav>
               <a href='/' onClick={handleLoginLink}>Войти</a>
             </Nav>
