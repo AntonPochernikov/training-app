@@ -5,7 +5,7 @@ import Sandbox from './sandbox/Sandbox.js';
 import Tests from './tests/Tests.jsx';
 import Lessons from './lessons/Lessons.jsx';
 import MainHeader from './MainHeader.jsx';
-import HomePage from './homepage/Homepage.jsx';
+import HomePage from './homepage/HomePage.jsx';
 
 export default class MainRouter extends React.Component {
   componentDidMount() {
