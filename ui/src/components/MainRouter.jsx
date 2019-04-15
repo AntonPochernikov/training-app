@@ -6,6 +6,7 @@ import Tests from './tests/Tests.jsx';
 import Lessons from './lessons/Lessons.jsx';
 import MainHeader from './MainHeader.jsx';
 import HomePage from './homepage/HomePage.jsx';
+import Login from './login/Login.jsx';
 
 export default class MainRouter extends React.Component {
   componentDidMount() {
@@ -23,9 +24,11 @@ export default class MainRouter extends React.Component {
   }
 
   render() {
+    const { modal } = this.props;
     return (
       <Router>
         <div className='main-router'>
+          {modal === 'login' && <Login />}
           <MainHeader />
           <main className='main'>
             <Route exact path='/' render={this.renderRoot}/>
