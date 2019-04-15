@@ -11,7 +11,7 @@ const exercises = handleActions({
 }, []);
 
 const currentTask = handleActions({
-  [action.getCurrentTask]: (state, { payload }) => payload,
+  [action.getCurrentTask]: (state, { payload: { taskId } }) => taskId,
 }, null);
 
 const modal = handleActions({
