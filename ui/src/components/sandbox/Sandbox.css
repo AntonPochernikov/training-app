@@ -32,6 +32,12 @@
 	box-shadow: 0 0 2px -1px var(--gray);
 }
 
+.exercise-name {
+	font-size: 21px;
+}
+.exercise-complexity {
+	font-style: italic;
+}
 .exercise-description {
 }
 
