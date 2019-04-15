@@ -14,6 +14,10 @@ const currentTask = handleActions({
   [action.getCurrentTask]: (state, { payload }) => payload,
 }, null);
 
+const modal = handleActions({
+  [action.showModal]: (state, { payload: { name } }) => name,
+}, null);
+
 const fetchInit = {
   state: 'initial',
   source: null,
@@ -43,4 +47,5 @@ export default combineReducers({
   exercises,
   currentTask,
   dataFetch,
+  modal,
 });

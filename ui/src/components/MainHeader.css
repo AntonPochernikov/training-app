@@ -3,7 +3,6 @@
 	align-items: center;
 	height: 60px;
 	box-sizing: border-box;
-
 	background-color: var(--gray-dark);
 }
 
@@ -27,4 +26,10 @@
 	color: var(--light);
 	text-decoration: none;
 	cursor: default;
+
+}
+
+.right-link{
+	color: rgb(255, 0, 0);
+     text-align: right
 }

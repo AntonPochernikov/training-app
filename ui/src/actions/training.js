@@ -6,6 +6,9 @@ export const getCurrentTask = createAction('TASK/ID/GET');
 export const fetchDataRequest = createAction('DATA/FETCH/REQUEST');
 export const fetchDataSuccess = createAction('DATA/FETCH/SUCCESS');
 export const fetchDataFailure = createAction('DATA/FETCH/FAILURE');
+export const showModal = createAction('MODAL/SHOW');
+export const hideModal = createAction('MODAL/HIDE');
+
 export const fetchData = () => async (dispatch) => {
   const source = null;
   dispatch(fetchDataRequest({ source }));
