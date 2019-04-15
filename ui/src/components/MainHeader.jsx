@@ -33,7 +33,7 @@ const Header = (props) => {
                   activeClassName='navigation__link--active'
                   to="/exercises"
                 >
-              Упражнения
+                  Упражнения
                 </NavLink>
               </Nav.Item>
               <Nav.Item as="li">
@@ -42,7 +42,7 @@ const Header = (props) => {
                   activeClassName='navigation__link--active'
                   to="/tests"
                 >
-              Тесты
+                  Тесты
                 </NavLink>
               </Nav.Item>
               <Nav.Item as="li">
@@ -51,7 +51,7 @@ const Header = (props) => {
                   activeClassName='navigation__link--active'
                   to="/lessons"
                 >
-              Учебник
+                  Учебник
                 </NavLink>
               </Nav.Item>
             </Nav>
