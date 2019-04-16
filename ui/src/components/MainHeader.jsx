@@ -5,6 +5,8 @@ import {
   Nav,
   Container,
 } from 'react-bootstrap';
+
+import routes from '../constants/routes.js';
 import logo from '../images/logo.png';
 import './MainHeader.css';
 
@@ -26,33 +28,16 @@ const Header = (props) => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto" as="ul">
-              <Nav.Item as="li">
-                <NavLink
-                  className='navigation__link'
-                  activeClassName='navigation__link--active'
-                  to="/exercises"
-                >
-                  Упражнения
-                </NavLink>
-              </Nav.Item>
-              <Nav.Item as="li">
-                <NavLink
-                  className='navigation__link'
-                  activeClassName='navigation__link--active'
-                  to="/tests"
-                >
-                  Тесты
-                </NavLink>
-              </Nav.Item>
-              <Nav.Item as="li">
-                <NavLink
-                  className='navigation__link'
-                  activeClassName='navigation__link--active'
-                  to="/lessons"
-                >
-                  Учебник
-                </NavLink>
-              </Nav.Item>
+              {routes.map(({ name, route }) => (
+                <Nav.Item key={name} as="li">
+                  <NavLink
+                    className='navigation__link'
+                    to={route}
+                  >
+                    {name}
+                  </NavLink>
+                </Nav.Item>
+              ))}
             </Nav>
             <Nav>
               <a className='navigation__link'

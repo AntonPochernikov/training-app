@@ -9,6 +9,8 @@ const MONACO_DIR = path.resolve(__dirname, './node_modules/monaco-editor');
 const MOCHA_DIR = path.resolve(__dirname, './node_modules/mocha');
 const BOOTSTRAP_DIR = path.resolve(__dirname, './node_modules/bootstrap');
 
+const isDevMode = process.env.NODE_ENV !== 'production';
+
 module.exports = {
   entry: [
     './src/index.js',
@@ -31,28 +33,35 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: [APP_DIR, MONACO_DIR, MOCHA_DIR, BOOTSTRAP_DIR],
+        include: [MONACO_DIR, MOCHA_DIR, BOOTSTRAP_DIR],
         use: [
           'style-loader',
           'css-loader',
         ],
       },
       {
+        test: /\.css$/,
+        include: [APP_DIR],
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+        ],
+      },
+      {
         test: /\.(gif|svg|jpg|png)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               outputPath: '../images',
               name: '[name].[ext]',
+              limit: isDevMode ? 0 : 10000,
             }
           },
         ],
       },
     ],
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.css'],
   },
   plugins: [
     new WebpackBar(),
