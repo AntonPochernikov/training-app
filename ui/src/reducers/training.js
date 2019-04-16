@@ -16,6 +16,7 @@ const currentTask = handleActions({
 
 const modal = handleActions({
   [action.showModal]: (state, { payload: { name } }) => name,
+  [action.hideModal]: () => null,
 }, null);
 
 const fetchInit = {
