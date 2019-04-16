@@ -9,7 +9,6 @@ import logo from '../images/logo.png';
 import './MainHeader.css';
 
 const Header = (props) => {
-  console.log(props);
   const handleLoginLink = (e) => {
     e.preventDefault();
     props.showModal({ name: 'login' });
@@ -56,7 +55,11 @@ const Header = (props) => {
               </Nav.Item>
             </Nav>
             <Nav>
-              <a href='/' onClick={handleLoginLink}>Войти</a>
+              <a className='navigation__link'
+                href='/' onClick={handleLoginLink}
+              >
+                Войти
+              </a>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
