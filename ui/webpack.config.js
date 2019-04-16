@@ -31,10 +31,19 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: [APP_DIR, MONACO_DIR, MOCHA_DIR, BOOTSTRAP_DIR],
+        include: [MONACO_DIR, MOCHA_DIR, BOOTSTRAP_DIR],
         use: [
           'style-loader',
           'css-loader',
+        ],
+      },
+      {
+        test: /\.css$/,
+        include: [APP_DIR],
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
         ],
       },
       {
@@ -50,9 +59,6 @@ module.exports = {
         ],
       },
     ],
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.css'],
   },
   plugins: [
     new WebpackBar(),
