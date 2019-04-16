@@ -19,14 +19,14 @@
 	text-decoration: none;
 }
 
-.navigation__link--active {
+.navigation__link:focus {
 	color: var(--light);
 }
-.navigation__link--active:hover {
+
+.navigation__link:hover:focus {
 	color: var(--light);
 	text-decoration: none;
 	cursor: default;
-
 }
 
 .right-link{
