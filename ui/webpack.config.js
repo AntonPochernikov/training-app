@@ -9,6 +9,8 @@ const MONACO_DIR = path.resolve(__dirname, './node_modules/monaco-editor');
 const MOCHA_DIR = path.resolve(__dirname, './node_modules/mocha');
 const BOOTSTRAP_DIR = path.resolve(__dirname, './node_modules/bootstrap');
 
+const isDevMode = process.env.NODE_ENV !== 'production';
+
 module.exports = {
   entry: [
     './src/index.js',
@@ -50,10 +52,11 @@ module.exports = {
         test: /\.(gif|svg|jpg|png)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
               outputPath: '../images',
               name: '[name].[ext]',
+              limit: isDevMode ? 0 : 10000,
             }
           },
         ],
