@@ -19,6 +19,26 @@ const modal = handleActions({
   [action.hideModal]: () => null,
 }, null);
 
+const user = {
+  email: '',
+  password: '',
+};
+
+const formFields = handleActions({
+  [action.changeEmail]: (state, { payload: { email } }) => ({
+    ...state,
+    email,
+  }),
+  [action.changePassword]: (state, { payload: { password } }) => ({
+    ...state,
+    password,
+  }),
+}, user);
+
+const loginSuccess = handleActions({
+  [action.loginSuccess]: (state, { payload: { name } }) => name,
+}, null);
+
 const fetchInit = {
   state: 'initial',
   source: null,
@@ -49,4 +69,6 @@ export default combineReducers({
   currentTask,
   dataFetch,
   modal,
+  formFields,
+  loginSuccess,
 });

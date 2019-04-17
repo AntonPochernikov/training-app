@@ -8,6 +8,9 @@ export const fetchDataSuccess = createAction('DATA/FETCH/SUCCESS');
 export const fetchDataFailure = createAction('DATA/FETCH/FAILURE');
 export const showModal = createAction('MODAL/SHOW');
 export const hideModal = createAction('MODAL/HIDE');
+export const changeEmail = createAction('EMAIL/CHANGE');
+export const changePassword = createAction('PASSWORD/CHANGE');
+export const loginSuccess = createAction('USER/LOGIN/SUCCESS');
 
 export const fetchData = () => async (dispatch) => {
   const source = null;
