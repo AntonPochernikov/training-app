@@ -1,13 +1,13 @@
-import { Module } from '@nestjs/common'
-import { GraphQLModule } from '@nestjs/graphql'
-import { TypeOrmModule } from '@nestjs/typeorm'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
-import { UserModule } from './user/user.module'
-import { applyMiddleware } from 'graphql-middleware';
-import { permissions } from './shild/permissions';
-import { GraphQLSchema } from 'graphql';
+import { Module } from '@nestjs/common';
+import { GraphQLModule } from '@nestjs/graphql';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { Request } from 'express';
+import { GraphQLSchema } from 'graphql';
+import { applyMiddleware } from 'graphql-middleware';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { permissions } from './shild/permissions';
+import { UserModule } from './user/user.module';
 
 export interface IRequest {
     req: Request
