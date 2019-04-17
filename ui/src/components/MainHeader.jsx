@@ -40,7 +40,11 @@ const Header = (props) => {
               ))}
             </Nav>
             <Nav>
-              <a href='/' onClick={handleLoginLink}>Войти</a>
+              <a className='navigation__link'
+                href='/' onClick={handleLoginLink}
+              >
+                Войти
+              </a>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
