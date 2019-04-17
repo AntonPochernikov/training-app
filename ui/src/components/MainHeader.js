@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import * as actionCreators from '../actions/index.js';
+import * as actionCreators from '../actions';
 import MainHeader from './MainHeader.jsx';
 
 const mapStateToProps = state => ({
