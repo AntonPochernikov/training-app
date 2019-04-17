@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
-import * as action from '../actions/index.js';
+import * as action from '../actions';
 
 const code = handleActions({
   [action.changeCode]: (state, { payload: { value } }) => value,
