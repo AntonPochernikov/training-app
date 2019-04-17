@@ -7,9 +7,22 @@ const Login = (props) => {
     e.preventDefault();
     props.hideModal();
   };
+
   const handleCloseButtonClick = (e) => {
     e.preventDefault();
     props.hideModal();
+  };
+
+  const handleEmailChange = (e) => {
+    props.changeEmail({ email: e.target.value });
+  };
+
+  const handlePasswordChange = (e) => {
+    props.changePassword({ password: e.target.value });
+  };
+
+  const handleAddUser = () => {
+    props.loginSuccess({ name: true });
   };
 
   return (
@@ -25,14 +38,14 @@ const Login = (props) => {
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Эл. почта</Form.Label>
-              <Form.Control type="email" placeholder="Введите email" />
+              <Form.Control type="email" placeholder="Введите email" onChange={handleEmailChange}/>
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Пароль</Form.Label>
-              <Form.Control type="password" placeholder="Введите пароль" />
+              <Form.Control type="password" placeholder="Введите пароль" onChange={handlePasswordChange}/>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="button" onClick={handleAddUser}>
               Войти
             </Button>
           </Form>
