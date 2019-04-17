@@ -1,0 +1,12 @@
+.task__link {
+	display: block;
+
+    color: var(--black);
+}
+
+.task__link:hover {
+    color: var(--primary);
+    cursor: pointer;
+
+    text-decoration: none;
+}

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
-import * as action from '../actions/index.js';
+import * as action from '../actions';
 
 const code = handleActions({
   [action.changeCode]: (state, { payload: { value } }) => value,
@@ -9,6 +9,15 @@ const code = handleActions({
 const exercises = handleActions({
   [action.fetchDataSuccess]: (state, { payload: { data } }) => data,
 }, []);
+
+const currentTask = handleActions({
+  [action.getCurrentTask]: (state, { payload: { taskId } }) => taskId,
+}, null);
+
+const modal = handleActions({
+  [action.showModal]: (state, { payload: { name } }) => name,
+  [action.hideModal]: () => null,
+}, null);
 
 const fetchInit = {
   state: 'initial',
@@ -37,5 +46,7 @@ const dataFetch = handleActions({
 export default combineReducers({
   code,
   exercises,
+  currentTask,
   dataFetch,
+  modal,
 });

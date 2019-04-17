@@ -3,7 +3,6 @@
 	align-items: stretch;
 	flex-wrap: wrap;
 	position: absolute;
-	top: 80px;
 	left: 0;
 
 	height: calc(100% - 80px);
@@ -33,6 +32,12 @@
 	box-shadow: 0 0 2px -1px var(--gray);
 }
 
+.exercise-name {
+	font-size: 21px;
+}
+.exercise-complexity {
+	font-style: italic;
+}
 .exercise-description {
 }
 
@@ -42,4 +47,12 @@
 .btn-sandbox {
 	width: 150px;
 	margin: 10px;
+}
+
+ .sandbox-spinner{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
 }
