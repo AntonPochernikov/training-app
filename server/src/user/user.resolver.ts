@@ -3,6 +3,7 @@ import { UserRegistrationInput, UserLoginInput } from './types/inputs'
 import { User } from './user.schema'
 import { UserService } from './user.service'
 import { UserRegistrationOutput, UserLoginOutput } from './types/outputs'
+import { loginvalidation } from 'src/validation/loginvalidation'
 
 @Resolver(() => User)
 export class UserResolver {
@@ -27,6 +28,7 @@ export class UserResolver {
 
     @Mutation(() => UserLoginOutput)
     async userLogin(@Args('data') data: UserLoginInput): Promise<UserLoginOutput> {
+        await loginvalidation(data)
         return this.userService.userLogin(data)
     }
 }
