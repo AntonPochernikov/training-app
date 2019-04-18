@@ -6,5 +6,11 @@ export const emailText = () =>
 
 export const passwordText = () =>
     string()
-        .min(6, 'The minimum password length must be 6')
         .required('Password field is required')
+        .min(6, 'The minimum password length must be 6')
+
+export const firstNameText = () => string().required('Firstname field is required')
+
+export const lastNameText = () => string().required('Lastname field is required')
+
+export const nickNameText = () => string().required('Nickname field is required')
