@@ -1,4 +1,13 @@
 import { createAction } from 'redux-actions';
+import 'mocha/mocha';
+
+// eslint-disable-next-line
+import { assert } from 'chai';
+import * as selector from '../selectors';
+
+const { mocha } = window;
+window.assert = assert;
+mocha.setup('bdd');
 
 export const changeCode = createAction('CODE/CHANGE');
 export const getCurrentTask = createAction('TASK/ID/GET');
@@ -24,10 +33,10 @@ export const fetchData = () => async (dispatch) => {
   }
 };
 
-// TODO: actions for solution testing
 export const testSolution = () => async (dispatch, getState) => {
+  // eslint-disable-next-line
   const { code } = getState().training;
-  const evalCode = `${code};\nreturn solution(a, b)`;
-  const solution = new Function('a', 'b', evalCode).bind({});
-  console.log(solution(1, 2));
+  const { test } = selector.getTask(getState());
+  eval(test);
+  mocha.run();
 };

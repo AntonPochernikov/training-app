@@ -42,6 +42,7 @@
 }
 
 .test-output {
+	position: relative;
 }
 
 .btn-sandbox {
