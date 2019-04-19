@@ -1,3 +1,50 @@
 body {
     background-color: rgba(233, 233, 233, 0.925);
 }
+
+/* ========================================================= */
+/* mocha output styles
+/* ========================================================= */
+div#mocha {
+	padding: 20px;
+	margin: 0;
+}
+
+#mocha #mocha-stats {
+	position: static;
+ 	padding-top: 15px;
+}
+
+#mocha #mocha-stats .progress,
+#mocha #mocha-stats .duration {
+	display: none;
+}
+
+#mocha #mocha-stats .passes {
+	color: green;
+}
+#mocha #mocha-stats .failures {
+	color: red;
+}
+
+#mocha-report .suite h1,
+#mocha-report .suite h2 {
+	font-size: 13px;
+	margin: 2px;
+}
+
+#mocha-report .suite h1 a {
+	pointer-events: none;
+	color: inherit;
+	font-weight: bold;
+}
+
+#mocha-report .suite ul .test.fail {
+	color: black;
+}
+
+#mocha-report .suite ul .test.fail pre {
+	padding: 5px;
+	font-size: 12px;
+	color: black;
+}
