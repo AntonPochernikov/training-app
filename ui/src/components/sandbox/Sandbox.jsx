@@ -12,6 +12,10 @@ const SandboxPreloader = () => (
 );
 
 export default class Sandbox extends React.Component {
+  handleTestButton = () => {
+    this.props.testSolution();
+  }
+
   handleCodeChange = (newValue) => {
     this.props.changeCode({ value: newValue });
   }
@@ -36,9 +40,9 @@ export default class Sandbox extends React.Component {
           <p className='exercise-complexity'>Уровень: {complexity}</p>
           <div className='exercise-description'>{description}</div>
           <div className='test-output'>
-            <p>Вывод тестов</p>
             <div id='mocha' />
           </div>
+          <button onClick={this.handleTestButton}>Проверить</button>
         </div>
       </div>
     );

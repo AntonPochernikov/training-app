@@ -1,1 +1,4 @@
 node_modules
+schema.gql
+dist
+app.module.ts

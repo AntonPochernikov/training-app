@@ -35,6 +35,7 @@ module.exports = {
     ]
   },
   rules: {
+    "no-eval": 0,
     "no-new-func": 0,
     "linebreak-style": 0,
     "line-break-style": 0,
