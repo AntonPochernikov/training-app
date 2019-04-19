@@ -38,12 +38,18 @@ const Login = (props) => {
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Эл. почта</Form.Label>
-              <Form.Control type="email" placeholder="Введите email" onChange={handleEmailChange}/>
+              <Form.Control type="email"
+                placeholder="Введите email"
+                onChange={handleEmailChange}
+                value={props.email}/>
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Пароль</Form.Label>
-              <Form.Control type="password" placeholder="Введите пароль" onChange={handlePasswordChange}/>
+              <Form.Control type="password"
+                placeholder="Введите пароль"
+                onChange={handlePasswordChange}
+                value={props.password}/>
             </Form.Group>
             <Button variant="primary" type="button" onClick={handleAddUser}>
               Войти

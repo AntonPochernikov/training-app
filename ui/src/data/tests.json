@@ -1,0 +1,229 @@
+[
+  {
+    "id": 1,
+    "name": "Тест на знания основ js",
+    "type": "basic",
+    "description": "Тестирование для проверки знаний основ js",
+    "questions": [
+      {
+        "id": 1,
+        "type": "chooseOne",
+        "name": "Что будет содержаться в s после выполнения следующего кода?",
+        "description": "var s='Hello World'; s[0]='W';",
+        "options": [
+          {
+            "id": 1,
+            "description": "'Wello world'"
+          },
+          {
+            "id": 2,
+            "description": "Интерпретатор вернет ошибку"
+          },
+          {
+            "id": 3,
+            "description": "'W'"
+          },
+          {
+            "id": 4,
+            "description": "'Hello world'"
+          }
+        ],
+        "correctAnswer": [
+          {
+            "id": 4,
+            "description": "'Hello world'"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "writeAnswer",
+        "name": "Что будет выведено в консоль?",
+        "description": "var aString={job:I'm a String!'}; console.log(typeof aString);",
+        "correctAnswer": "object"
+      },
+      {
+        "id": 3,
+        "type": "chooseOne",
+        "name": "Какой будет результат выполнения кода?",
+        "description": "console.log(null == underfined)",
+        "options": [
+          {
+            "id": 1,
+            "description": "'false'"
+          },
+          {
+            "id": 2,
+            "description": "true"
+          },
+          {
+            "id": 3,
+            "description": "NaN"
+          },
+          {
+            "id": 4,
+            "description": "underfined"
+          },
+          {
+            "id": 5,
+            "description": "TypeError"
+          }
+        ],
+        "correctAnswer": [
+          {
+            "id": 2,
+            "description": "true"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Структуры данных",
+    "type": "dataStructures",
+    "description": "Тестирование для проверки знаний структур данных в js",
+    "questions": [
+      {
+        "id": 1,
+        "type": "chooseMultiply",
+        "name": "Задание массива",
+        "description": "Какие из этих вариантов задают массив из элементов 'a','b' ?",
+        "options": [
+          {
+            "id": 1,
+            "description": "var a = new Array('a','b')"
+          },
+          {
+            "id": 2,
+            "description": "var a = { 'a', 'b' }"
+          },
+          {
+            "id": 4,
+            "description": "var a = [ 'a', 'b' ]"
+          },
+          {
+            "id": 5,
+            "description": "var a = 'a,b'.split(',') "
+          }
+        ],
+        "correctAnswer": [
+          {
+            "id": 1,
+            "description": "var a = new Array('a','b')"
+          },
+          {
+            "id": 4,
+            "description": "var a = [ 'a', 'b' ]"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "chooseOne",
+        "name": "Каким будет результат?",
+        "description": "var a = new Array(5).join('5');a;",
+        "options": [
+          {
+            "id": 1,
+            "description": "'5555'"
+          },
+          {
+            "id": 2,
+            "description": "'55555'"
+          },
+          {
+            "id": 3,
+            "description": "55555"
+          },
+          {
+            "id": 4,
+            "description": "5555"
+          },
+          {
+            "id": 5,
+            "description": "underfined"
+          }
+        ],
+        "correctAnswer": [
+          {
+            "id": 1,
+            "description": "'5555'"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "type": "chooseOne",
+        "name": "Что выведет консоль?",
+        "description": "var myObj ={name:'alex',}; console.log(myObj.hasOwnProperty('name'));",
+        "options": [
+          {
+            "id": 1,
+            "description": "name"
+          },
+          {
+            "id": 2,
+            "description": "alex"
+          },
+          {
+            "id": 3,
+            "description": "true"
+          },
+          {
+            "id": 4,
+            "description": "false"
+          },
+          {
+            "id": 5,
+            "description": "underfined"
+          }
+        ],
+        "correctAnswer": [
+          {
+            "id": 3,
+            "description": "true"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "type": "chooseMultiply",
+        "name": "Укажите все верные варианты добавления свойств к обьекту dog",
+        "description": "var dog ={species:'greyhound'};",
+        "options": [
+          {
+            "id": 1,
+            "description": "dog.weight=50"
+          },
+          {
+            "id": 2,
+            "description": "weight.dog=50"
+          },
+          {
+            "id": 3,
+            "description": "age ['dog']=5"
+          },
+          {
+            "id": 4,
+            "description": "dog['age']=5"
+          },
+          {
+            "id": 5,
+            "description": "Все варианты ответов не верны"
+          }
+        ],
+        "correctAnswer": [
+          {
+            "id": 1,
+            "description": "dog.weight=50"
+          },
+          {
+            "id": 3,
+            "description": "age ['dog']=5"
+          }
+        ]
+      }
+    ]
+  }
+]
