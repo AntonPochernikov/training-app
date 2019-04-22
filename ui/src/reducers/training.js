@@ -10,8 +10,8 @@ const exercises = handleActions({
   [action.fetchDataSuccess]: (state, { payload: { data } }) => data,
 }, []);
 
-const currentTask = handleActions({
-  [action.getCurrentTask]: (state, { payload: { taskId } }) => taskId,
+const currentTaskId = handleActions({
+  [action.getCurrentTaskId]: (state, { payload: { taskId } }) => taskId,
 }, null);
 
 const modal = handleActions({
@@ -82,7 +82,7 @@ const testSolution = handleActions({
 export default combineReducers({
   code,
   exercises,
-  currentTask,
+  currentTaskId,
   dataFetch,
   modal,
   formFields,

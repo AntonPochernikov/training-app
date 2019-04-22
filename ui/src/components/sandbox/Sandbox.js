@@ -5,7 +5,7 @@ import * as select from '../../selectors';
 
 const mapStateToProps = state => ({
   code: state.training.code,
-  currentTask: select.getTask(state),
+  currentTask: select.getCurrentTask(state),
 });
 
 export default connect(mapStateToProps, actionCreators)(Sandbox);

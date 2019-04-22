@@ -9,7 +9,7 @@ window.assert = assert;
 mocha.setup('bdd');
 
 export const changeCode = createAction('CODE/CHANGE');
-export const getCurrentTask = createAction('TASK/CURRENT/GET');
+export const getCurrentTaskId = createAction('TASK/CURRENT/ID/GET');
 
 export const fetchDataRequest = createAction('DATA/FETCH/REQUEST');
 export const fetchDataSuccess = createAction('DATA/FETCH/SUCCESS');
@@ -43,7 +43,7 @@ export const testSolution = () => async (dispatch, getState) => {
   dispatch(fetchTestRequest());
   // eslint-disable-next-line
   const { code } = getState().training;
-  const { test } = selector.getTask(getState());
+  const { test } = selector.getCurrentTask(getState());
 
   try {
     eval(test);

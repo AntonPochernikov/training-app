@@ -5,7 +5,7 @@ import './Exercises.css';
 
 export default class HomePage extends React.Component {
   renderCards() {
-    const { exercises, getCurrentTask } = this.props;
+    const { exercises, getCurrentTaskId } = this.props;
     return exercises.map(({ complexity, tasks }) => (
       <Card key={complexity} style={{ width: '18rem' }}>
         <Card.Body>
@@ -13,7 +13,7 @@ export default class HomePage extends React.Component {
           <Card.Subtitle className="mb-2 text-muted">Описание уровня</Card.Subtitle>
           <ListGroup variant="flush">
             <ListTasks
-              getCurrentTask={getCurrentTask}
+              getCurrentTaskId={getCurrentTaskId}
               tasks={tasks} />
           </ListGroup>
         </Card.Body>

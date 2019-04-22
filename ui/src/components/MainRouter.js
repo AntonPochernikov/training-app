@@ -4,7 +4,7 @@ import * as actionCreators from '../actions';
 import MainRouter from './MainRouter.jsx';
 
 const mapStateToProps = state => ({
-  currentTask: state.training.currentTask,
+  currentTaskId: state.training.currentTaskId,
   modal: state.training.modal,
 });
 
