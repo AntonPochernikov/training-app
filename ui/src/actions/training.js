@@ -14,9 +14,6 @@ export const getCurrentTask = createAction('TASK/CURRENT/GET');
 export const fetchDataRequest = createAction('DATA/FETCH/REQUEST');
 export const fetchDataSuccess = createAction('DATA/FETCH/SUCCESS');
 export const fetchDataFailure = createAction('DATA/FETCH/FAILURE');
-export const fetchTestRequest = createAction('TEST/FETCH/REQUEST');
-export const fetchTestSuccess = createAction('TEST/FETCH/SUCCESS');
-export const fetchTestFailure = createAction('TEST/FETCH/FAILURE');
 
 export const fetchData = () => async (dispatch) => {
   const source = null;
@@ -36,6 +33,11 @@ export const hideModal = createAction('MODAL/HIDE');
 export const changeEmail = createAction('EMAIL/CHANGE');
 export const changePassword = createAction('PASSWORD/CHANGE');
 export const loginSuccess = createAction('USER/LOGIN/SUCCESS');
+
+
+export const fetchTestRequest = createAction('TEST/FETCH/REQUEST');
+export const fetchTestSuccess = createAction('TEST/FETCH/SUCCESS');
+export const fetchTestFailure = createAction('TEST/FETCH/FAILURE');
 
 export const testSolution = () => async (dispatch, getState) => {
   dispatch(fetchTestRequest());
