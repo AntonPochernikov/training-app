@@ -3,6 +3,8 @@ import { Spinner } from 'react-bootstrap';
 import './Sandbox.css';
 import 'mocha/mocha.css';
 
+const { mocha } = window;
+
 const MonacoEditor = lazy(() => import('react-monaco-editor'));
 
 const SandboxPreloader = () => (
@@ -13,6 +15,8 @@ const SandboxPreloader = () => (
 
 export default class Sandbox extends React.Component {
   handleTestButton = () => {
+    document.getElementById('mocha').innerHTML = '';
+    mocha.suite.suites = [];
     this.props.testSolution();
   }
 
