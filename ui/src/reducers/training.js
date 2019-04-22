@@ -63,6 +63,22 @@ const dataFetch = handleActions({
   }),
 }, fetchInit);
 
+const fetchTest = {
+  state: 'initial',
+};
+
+const testSolution = handleActions({
+  [action.fetchTestRequest]: () => ({
+    state: 'requested',
+  }),
+  [action.fetchTestSuccess]: () => ({
+    state: 'passed',
+  }),
+  [action.fetchTestFailure]: () => ({
+    state: 'failed',
+  }),
+}, fetchTest);
+
 export default combineReducers({
   code,
   exercises,
@@ -71,4 +87,5 @@ export default combineReducers({
   modal,
   formFields,
   loginSuccess,
+  testSolution,
 });
