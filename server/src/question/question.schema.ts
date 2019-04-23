@@ -1,45 +1,32 @@
-import { Field, ID, ObjectType } from 'type-graphql'
 import {
     BaseEntity,
     Column,
+    CreateDateColumn,
     Entity,
     PrimaryGeneratedColumn,
-    CreateDateColumn,
     UpdateDateColumn,
+    OneToMany,
 } from 'typeorm'
+import { Field, ID, ObjectType } from 'type-graphql'
+import { QuestionToAnswer } from 'src/joins/QuestionToAnswer.schema'
 
 @ObjectType()
 @Entity()
-export class User extends BaseEntity {
+export class Question extends BaseEntity {
     @Field(() => ID)
     @PrimaryGeneratedColumn()
+    @OneToMany(() => QuestionToAnswer, questionToAnswer => questionToAnswer.questionId)
     readonly id: number
 
     @Field()
-    @Column()
-    firstName: string
-
-    @Field()
-    @Column()
-    lastName: string
-
-    @Field()
     @Column({ unique: true })
-    nickName: string
+    title: string
 
     @Field()
-    @Column({ unique: true })
-    email: string
-
-    @Field({ nullable: true })
-    @Column({ nullable: true })
-    refreshToken: string
+    @Column()
+    text: string
 
     // only db
-
-    @Column()
-    password: string
-
     @CreateDateColumn()
     readonly createdAt: string
 

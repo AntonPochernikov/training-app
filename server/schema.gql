@@ -3,14 +3,32 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Answer {
+  id: ID!
+  text: String!
+}
+
+input CreateQuestion {
+  title: String!
+  text: String!
+}
+
 type Mutation {
   userRegistration(data: UserRegistrationInput!): UserRegistrationOutput!
   userLogin(data: UserLoginInput!): UserLoginOutput!
+  createQuestion(data: CreateQuestion!): Question!
 }
 
 type Query {
   hello: String!
   users(first: Float!): [User!]!
+  questions: [Question!]!
+}
+
+type Question {
+  id: ID!
+  title: String!
+  text: String!
 }
 
 type User {
