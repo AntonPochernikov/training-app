@@ -1,5 +1,5 @@
 import { Question } from './question.schema'
-import { Resolver, Query, Mutation, Args } from '@nestjs/graphql'
+import { Resolver, Query, Mutation, Args, ResolveProperty, Parent } from '@nestjs/graphql'
 import { QuestionService } from './question.service'
 import { CreateQuestion } from './types/inputs'
 import { createQuestionValidation } from './types/validation/createQuestion.validation'
@@ -17,5 +17,12 @@ export class QuestionResolver {
     async createQuestion(@Args('data') data: CreateQuestion): Promise<Question> {
         await createQuestionValidation(data)
         return this.questionService.createQuestion(data)
+    }
+
+    @ResolveProperty()
+    async answer(@Parent() question: Question) {
+        const { id } = question
+        await this.questionService.getAnswer(id)
+        return id
     }
 }

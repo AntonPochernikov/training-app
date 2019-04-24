@@ -26,4 +26,8 @@ export class QuestionService {
             throw new Error(err)
         }
     }
+
+    async getAnswer(id: number) {
+        const answer = await this.questionRepository.getAnswerByid(id)
+    }
 }

@@ -1,12 +1,4 @@
-import {
-    BaseEntity,
-    Column,
-    CreateDateColumn,
-    Entity,
-    PrimaryGeneratedColumn,
-    UpdateDateColumn,
-    OneToMany,
-} from 'typeorm'
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
 import { Field, ID, ObjectType } from 'type-graphql'
 import { QuestionToAnswer } from 'src/joins/QuestionToAnswer.schema'
 
@@ -26,10 +18,13 @@ export class Question extends BaseEntity {
     @Column()
     text: string
 
-    // only db
-    @CreateDateColumn()
-    readonly createdAt: string
+    @Field()
+    answer: string
 
-    @UpdateDateColumn({ type: 'timestamp' })
-    readonly updatedAt: number
+    // // only db
+    // @CreateDateColumn()
+    // readonly createdAt: string
+
+    // @UpdateDateColumn({ type: 'timestamp' })
+    // readonly updatedAt: number
 }
