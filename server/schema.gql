@@ -29,7 +29,7 @@ type Question {
   id: ID!
   title: String!
   text: String!
-  answer: String!
+  answers: [Answer!]!
 }
 
 type User {

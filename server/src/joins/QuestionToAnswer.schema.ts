@@ -17,12 +17,12 @@ export class QuestionToAnswer extends BaseEntity {
     readonly id: number
 
     @ManyToOne(() => Question, question => question.id)
-    @JoinColumn({ name: "question_id" })
-    readonly questionId: string
+    @JoinColumn()
+    readonly question: number
 
     @ManyToOne(() => Answer, answer => answer.id)
-    @JoinColumn({ name: "answer_id" })
-    readonly answerId: string
+    @JoinColumn()
+    readonly answer: number
 
     @Column()
     isRight: boolean

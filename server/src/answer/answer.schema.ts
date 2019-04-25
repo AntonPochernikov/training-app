@@ -15,7 +15,7 @@ import { QuestionToAnswer } from 'src/joins/QuestionToAnswer.schema'
 export class Answer extends BaseEntity {
     @Field(() => ID)
     @PrimaryGeneratedColumn()
-    @OneToMany(() => QuestionToAnswer, questionToAnswer => questionToAnswer.answerId)
+    @OneToMany(() => QuestionToAnswer, questionToAnswer => questionToAnswer.answer)
     readonly id: number
 
     @Field()

@@ -3,6 +3,7 @@ import { Resolver, Query, Mutation, Args, ResolveProperty, Parent } from '@nestj
 import { QuestionService } from './question.service'
 import { CreateQuestion } from './types/inputs'
 import { createQuestionValidation } from './types/validation/createQuestion.validation'
+import { Answer } from 'src/answer/answer.schema'
 
 @Resolver(() => Question)
 export class QuestionResolver {
@@ -20,9 +21,8 @@ export class QuestionResolver {
     }
 
     @ResolveProperty()
-    async answer(@Parent() question: Question) {
+    async answers(@Parent() question: Question): Promise<Answer[]> {
         const { id } = question
-        await this.questionService.getAnswer(id)
-        return id
+        return await this.questionService.getAnswer(id)
     }
 }

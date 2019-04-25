@@ -1,13 +1,14 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
 import { Field, ID, ObjectType } from 'type-graphql'
 import { QuestionToAnswer } from 'src/joins/QuestionToAnswer.schema'
+import { Answer } from 'src/answer/answer.schema'
 
 @ObjectType()
 @Entity()
 export class Question extends BaseEntity {
     @Field(() => ID)
     @PrimaryGeneratedColumn()
-    @OneToMany(() => QuestionToAnswer, questionToAnswer => questionToAnswer.questionId)
+    @OneToMany(() => QuestionToAnswer, questionToAnswer => questionToAnswer.question)
     readonly id: number
 
     @Field()
@@ -18,8 +19,8 @@ export class Question extends BaseEntity {
     @Column()
     text: string
 
-    @Field()
-    answer: string
+    @Field(() => [Answer])
+    answers: Answer[]
 
     // // only db
     // @CreateDateColumn()

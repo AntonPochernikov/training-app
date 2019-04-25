@@ -3,6 +3,7 @@ import { QuestionRepository } from './question.repository'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Question } from './question.schema'
 import { CreateQuestion } from './types/inputs'
+import { Answer } from 'src/answer/answer.schema'
 
 @Injectable()
 export class QuestionService {
@@ -27,7 +28,7 @@ export class QuestionService {
         }
     }
 
-    async getAnswer(id: number) {
-        const answer = await this.questionRepository.getAnswerByid(id)
+    async getAnswer(id: number): Promise<Answer[]> {
+        return await this.questionRepository.getAnswersByQuestionId(id)
     }
 }
