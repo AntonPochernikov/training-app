@@ -25,4 +25,9 @@ export class QuestionResolver {
         const { id } = question
         return await this.questionService.getAnswer(id)
     }
+
+    @ResolveProperty()
+    async rightAnswers(@Parent() { id }: Question): Promise<number[]> {
+        return await this.questionService.getRightAnswers(id)
+    }
 }

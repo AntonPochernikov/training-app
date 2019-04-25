@@ -19,6 +19,9 @@ export class Question extends BaseEntity {
     @Column()
     text: string
 
+    @Field(() => [ID])
+    rightAnswers: number[]
+
     @Field(() => [Answer])
     answers: Answer[]
 

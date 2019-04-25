@@ -31,4 +31,8 @@ export class QuestionService {
     async getAnswer(id: number): Promise<Answer[]> {
         return await this.questionRepository.getAnswersByQuestionId(id)
     }
+
+    async getRightAnswers(questionId: number): Promise<number[]> {
+        return await this.questionRepository.getRightAnswersByQuestionId(questionId)
+    }
 }

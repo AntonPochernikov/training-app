@@ -29,6 +29,7 @@ type Question {
   id: ID!
   title: String!
   text: String!
+  rightAnswers: [ID!]!
   answers: [Answer!]!
 }
 
