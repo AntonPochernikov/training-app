@@ -4,7 +4,7 @@ import { UserRegistrationInput, UserLoginInput } from './types/inputs'
 import { UserRepository } from './user.repository'
 import { User } from './user.schema'
 import { UserRegistrationOutput, UserLoginOutput } from './types/outputs'
-import {  createAccessTokenByIdAndRole } from 'src/utils'
+import { createAccessTokenByIdAndRole } from 'src/utils'
 
 @Injectable()
 export class UserService {
@@ -31,7 +31,7 @@ export class UserService {
 
     async userRegistration(data: UserRegistrationInput): Promise<UserRegistrationOutput> {
         const newUser = await this.userRepository.userRegistration(data)
-        const accessToken = createAccessTokenByIdAndRole(newUser.id, 'admin')
+        const accessToken = createAccessTokenByIdAndRole(newUser.id, newUser.role)
         return {
             accessToken,
             user: newUser,
@@ -40,7 +40,7 @@ export class UserService {
 
     async userLogin(data: UserLoginInput): Promise<UserLoginOutput> {
         const user = await this.userRepository.userLogin(data)
-        const accessToken = createAccessTokenByIdAndRole(user.id, 'admin')
+        const accessToken = createAccessTokenByIdAndRole(user.id, user.role)
         return {
             accessToken,
             user,
