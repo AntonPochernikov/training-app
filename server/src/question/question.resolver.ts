@@ -2,7 +2,7 @@ import { Args, Mutation, Parent, Query, ResolveProperty, Resolver } from '@nestj
 import { Answer } from 'src/answer/answer.schema'
 import { Question } from './question.schema'
 import { QuestionService } from './question.service'
-import { CreateQuestion } from './types/inputs'
+import { CreateQuestion, GetQuestionInput } from './types/inputs'
 import { createQuestionValidation } from './types/validation/createQuestion.validation'
 
 @Resolver(() => Question)
@@ -10,15 +10,16 @@ export class QuestionResolver {
     constructor(private readonly questionService: QuestionService) {}
 
     @Query(() => [Question])
-    async questions() {
-        return this.questionService.getQuestions()
+    async questions(@Args('data') data: GetQuestionInput) {
+        const { limit } = data
+        return this.questionService.getQuestions(limit)
     }
 
     @Query(() => Question)
     async getQuestionById(@Args('id') id: number): Promise<Question> {
-        return await this.questionService.getQuestionsById(id)
+        return await this.questionService.getQuestionById(id)
     }
-    
+
     @Mutation(() => Question)
     async createQuestion(@Args('data') data: CreateQuestion): Promise<Question> {
         await createQuestionValidation(data)

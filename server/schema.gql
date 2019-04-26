@@ -13,6 +13,10 @@ input CreateQuestion {
   text: String!
 }
 
+input GetQuestionInput {
+  limit: Float!
+}
+
 type Mutation {
   userRegistration(data: UserRegistrationInput!): UserRegistrationOutput!
   userLogin(data: UserLoginInput!): UserLoginOutput!
@@ -22,7 +26,7 @@ type Mutation {
 type Query {
   hello: String!
   users(first: Float!): [User!]!
-  questions: [Question!]!
+  questions(data: GetQuestionInput!): [Question!]!
   getQuestionById(id: Float!): Question!
 }
 

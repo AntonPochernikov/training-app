@@ -1,7 +1,7 @@
 import { Field, InputType } from 'type-graphql'
 
 @InputType()
-export class FindQuestionInput {
+export class GetQuestionInput {
     @Field()
-    id?: number
+    limit: number
 }

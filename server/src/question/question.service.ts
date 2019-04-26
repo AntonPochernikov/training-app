@@ -12,15 +12,15 @@ export class QuestionService {
         private readonly questionRepository: QuestionRepository,
     ) {}
 
-    async getQuestions(): Promise<Question[]> {
+    async getQuestions(limit: number): Promise<Question[]> {
         try {
-            return await this.questionRepository.find()
+            return await this.questionRepository.find({ take: limit })
         } catch (err) {
             throw new Error(err)
         }
     }
 
-    async getQuestionsById(questionId: number): Promise<Question> {
+    async getQuestionById(questionId: number): Promise<Question> {
         try {
             return await this.questionRepository.getQuestionById(questionId)
         } catch (err) {
