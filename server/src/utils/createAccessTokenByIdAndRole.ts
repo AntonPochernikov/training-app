@@ -6,6 +6,6 @@ export const createAccessTokenByIdAndRole = (
     role: string,
 ): string => {
     return jsonwebtoken.sign({ id, role }, jsonToken.secret, {
-        expiresIn: '6h',
+        expiresIn: jsonToken.time,
     })
 }

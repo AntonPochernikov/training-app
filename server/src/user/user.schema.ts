@@ -8,6 +8,11 @@ import {
     UpdateDateColumn,
 } from 'typeorm'
 
+export enum Role {
+    Admin = 'admin',
+    User = 'user',
+}
+
 @ObjectType()
 @Entity()
 export class User extends BaseEntity {
@@ -36,6 +41,9 @@ export class User extends BaseEntity {
     refreshToken: string
 
     // only db
+
+    @Column('enum', { enum: Role, default: Role.User })
+    role: Role
 
     @Column()
     password: string
