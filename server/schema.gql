@@ -23,13 +23,14 @@ type Query {
   hello: String!
   users(first: Float!): [User!]!
   questions: [Question!]!
+  getQuestionById(id: Float!): Question!
 }
 
 type Question {
   id: ID!
   title: String!
   text: String!
-  rightAnswers: [ID!]!
+  rightAnswersId: [ID!]!
   answers: [Answer!]!
 }
 

@@ -45,4 +45,21 @@ export class QuestionRepository extends Repository<Question> {
             throw new Error(err)
         }
     }
+
+    async getQuestionById(questionId: number): Promise<Question> {
+        try {
+            const questionRepo = getRepository(Question)
+            const question = await questionRepo.findOne({
+                where: {
+                    id: questionId,
+                },
+            })
+            if (!question) {
+                throw new Error(`Question by this id =${questionId} not found`)
+            }
+            return question
+        } catch (err) {
+            throw new Error(err)
+        }
+    }
 }

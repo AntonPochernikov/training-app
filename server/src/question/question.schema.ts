@@ -20,7 +20,7 @@ export class Question extends BaseEntity {
     text: string
 
     @Field(() => [ID])
-    rightAnswers: number[]
+    rightAnswersId: number[]
 
     @Field(() => [Answer])
     answers: Answer[]

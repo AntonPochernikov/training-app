@@ -20,6 +20,14 @@ export class QuestionService {
         }
     }
 
+    async getQuestionsById(questionId: number): Promise<Question> {
+        try {
+            return await this.questionRepository.getQuestionById(questionId)
+        } catch (err) {
+            throw new Error(err)
+        }
+    }
+
     async createQuestion(data: CreateQuestion): Promise<Question> {
         try {
             return await this.questionRepository.create(data).save()
