@@ -1,5 +1,12 @@
 import { Field, ID, ObjectType } from 'type-graphql'
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import {
+    BaseEntity,
+    Column,
+    Entity,
+    PrimaryGeneratedColumn,
+    CreateDateColumn,
+    UpdateDateColumn,
+} from 'typeorm'
 
 @ObjectType()
 @Entity()
@@ -32,4 +39,10 @@ export class User extends BaseEntity {
 
     @Column()
     password: string
+
+    @CreateDateColumn()
+    readonly createdAt: string
+
+    @UpdateDateColumn({ type: 'timestamp' })
+    readonly updatedAt: number
 }

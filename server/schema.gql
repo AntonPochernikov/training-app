@@ -3,14 +3,39 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Answer {
+  id: ID!
+  text: String!
+}
+
+input CreateQuestion {
+  title: String!
+  text: String!
+}
+
+input GetQuestionInput {
+  limit: Float!
+}
+
 type Mutation {
   userRegistration(data: UserRegistrationInput!): UserRegistrationOutput!
   userLogin(data: UserLoginInput!): UserLoginOutput!
+  createQuestion(data: CreateQuestion!): Question!
 }
 
 type Query {
   hello: String!
   users(first: Float!): [User!]!
+  questions(data: GetQuestionInput!): [Question!]!
+  getQuestionById(id: Float!): Question!
+}
+
+type Question {
+  id: ID!
+  title: String!
+  text: String!
+  rightAnswersId: [ID!]!
+  answers: [Answer!]!
 }
 
 type User {
