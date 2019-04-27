@@ -3,6 +3,9 @@ import { Field, ID, ObjectType } from 'type-graphql'
 import { QuestionToAnswer } from 'src/joins/QuestionToAnswer.schema'
 import { Answer } from 'src/answer/answer.schema'
 
+export enum QuestionLevel {
+    Basic = 1,
+}
 @ObjectType()
 @Entity()
 export class Question extends BaseEntity {
@@ -18,6 +21,10 @@ export class Question extends BaseEntity {
     @Field()
     @Column()
     text: string
+
+    @Field()
+    @Column('enum', { enum: QuestionLevel })
+    level: number
 
     @Field(() => [ID])
     rightAnswersId: number[]

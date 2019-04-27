@@ -11,6 +11,7 @@ type Answer {
 input CreateQuestion {
   title: String!
   text: String!
+  level: Float!
 }
 
 input GetQuestionInput {
@@ -25,7 +26,7 @@ type Mutation {
 
 type Query {
   hello: String!
-  users(first: Float!): [User!]!
+  users(limit: Float!): [User!]!
   questions(data: GetQuestionInput!): [Question!]!
   getQuestionById(id: Float!): Question!
 }
@@ -34,6 +35,7 @@ type Question {
   id: ID!
   title: String!
   text: String!
+  level: Float!
   rightAnswersId: [ID!]!
   answers: [Answer!]!
 }
