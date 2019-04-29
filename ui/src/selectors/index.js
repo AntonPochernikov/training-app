@@ -2,9 +2,9 @@ import { createSelector } from 'reselect';
 import _ from 'lodash';
 
 export const getExercises = state => state.training.exercises;
-export const getTaskId = state => state.training.currentTask;
+export const getCurrentTaskId = state => state.training.currentTaskId;
 
-export const getComplexity = createSelector(
+export const getTaskByComplexity = createSelector(
   getExercises,
   (items) => {
     const itemsByComplexity = _.groupBy(items, 'complexity');
@@ -15,8 +15,8 @@ export const getComplexity = createSelector(
   },
 );
 
-export const getTask = createSelector(
+export const getCurrentTask = createSelector(
   getExercises,
-  getTaskId,
-  (items, taskId) => (_.find((items), (item => item.id === taskId))),
+  getCurrentTaskId,
+  (items, currentTaskId) => (_.find((items), (item => item.id === currentTaskId))),
 );

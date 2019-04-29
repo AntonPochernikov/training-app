@@ -1,6 +1,6 @@
 import { createAction } from 'redux-actions';
 import 'mocha/mocha';
-// eslint-disable-next-line
+
 import { assert } from 'chai';
 import * as selector from '../selectors';
 
@@ -9,11 +9,12 @@ window.assert = assert;
 mocha.setup('bdd');
 
 export const changeCode = createAction('CODE/CHANGE');
-export const getCurrentTask = createAction('TASK/CURRENT/GET');
+export const getCurrentTaskId = createAction('TASK/CURRENT/ID/GET');
 
 export const fetchDataRequest = createAction('DATA/FETCH/REQUEST');
 export const fetchDataSuccess = createAction('DATA/FETCH/SUCCESS');
 export const fetchDataFailure = createAction('DATA/FETCH/FAILURE');
+
 export const fetchData = () => async (dispatch) => {
   const source = null;
   dispatch(fetchDataRequest({ source }));
@@ -33,10 +34,24 @@ export const changeEmail = createAction('EMAIL/CHANGE');
 export const changePassword = createAction('PASSWORD/CHANGE');
 export const loginSuccess = createAction('USER/LOGIN/SUCCESS');
 
+
+export const fetchTestRequest = createAction('TEST/FETCH/REQUEST');
+export const fetchTestSuccess = createAction('TEST/FETCH/SUCCESS');
+export const fetchTestFailure = createAction('TEST/FETCH/FAILURE');
+
 export const testSolution = () => async (dispatch, getState) => {
+  dispatch(fetchTestRequest());
   // eslint-disable-next-line
   const { code } = getState().training;
-  const { test } = selector.getTask(getState());
-  eval(test);
-  mocha.run();
+  const { test } = selector.getCurrentTask(getState());
+
+  try {
+    eval(test);
+    mocha
+      .run()
+      .on('pass', () => { dispatch(fetchTestSuccess()); })
+      .on('fail', () => { dispatch(fetchTestFailure()); });
+  } catch (e) {
+    console.log(e);
+  }
 };

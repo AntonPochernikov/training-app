@@ -17,8 +17,8 @@ export default class MainRouter extends React.Component {
   renderRoot = () => <Redirect to='/home'/>
 
   renderSandbox = () => {
-    const { currentTask } = this.props;
-    if (currentTask === null) {
+    const { currentTaskId } = this.props;
+    if (currentTaskId === null) {
       return <Redirect to="/exercises"/>;
     }
     return <Sandbox/>;

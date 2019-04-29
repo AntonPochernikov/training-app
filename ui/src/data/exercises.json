@@ -5,7 +5,7 @@
     "complexity": "basic",
     "description": "Напишите функцию sum, возвращающую сумму a и b",
     "code": "",
-    "test": "const evalCode = `${code}; return sum(a, b)`;\nconst sum = new Function('a', 'b', evalCode).bind({});\ndescribe(\"sum\", () => {\n\tit(\"складывает 2 и 3\", () => {\n\t\tassert.equal(sum(2, 3), 5);\n\t});\n});"
+    "test": "const evalCode = `${code}; return sum(a, b)`;\nconst sum = new Function('a', 'b', evalCode).bind({});\ndescribe(\"sum\", () => {\n\tit(\"складывает 2 и 3\", () => {\n\t\tassert.equal(sum(2, 3), 5);\n\t});\n});\ndescribe(\"sum\", () => {\n\tit(\"складывает 1 и 9\", () => {\n\t\tassert.equal(sum(1, 9), 10);\n\t});\n});"
   },
   {
     "id": 2,

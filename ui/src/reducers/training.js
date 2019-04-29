@@ -10,33 +10,8 @@ const exercises = handleActions({
   [action.fetchDataSuccess]: (state, { payload: { data } }) => data,
 }, []);
 
-const currentTask = handleActions({
-  [action.getCurrentTask]: (state, { payload: { taskId } }) => taskId,
-}, null);
-
-const modal = handleActions({
-  [action.showModal]: (state, { payload: { name } }) => name,
-  [action.hideModal]: () => null,
-}, null);
-
-const user = {
-  email: '',
-  password: '',
-};
-
-const formFields = handleActions({
-  [action.changeEmail]: (state, { payload: { email } }) => ({
-    ...state,
-    email,
-  }),
-  [action.changePassword]: (state, { payload: { password } }) => ({
-    ...state,
-    password,
-  }),
-}, user);
-
-const loginSuccess = handleActions({
-  [action.loginSuccess]: (state, { payload: { name } }) => name,
+const currentTaskId = handleActions({
+  [action.getCurrentTaskId]: (state, { payload: { taskId } }) => taskId,
 }, null);
 
 const fetchInit = {
@@ -63,12 +38,26 @@ const dataFetch = handleActions({
   }),
 }, fetchInit);
 
+const fetchTest = {
+  state: 'initial',
+};
+
+const testSolution = handleActions({
+  [action.fetchTestRequest]: () => ({
+    state: 'requested',
+  }),
+  [action.fetchTestSuccess]: () => ({
+    state: 'passed',
+  }),
+  [action.fetchTestFailure]: () => ({
+    state: 'failed',
+  }),
+}, fetchTest);
+
 export default combineReducers({
   code,
   exercises,
-  currentTask,
+  currentTaskId,
   dataFetch,
-  modal,
-  formFields,
-  loginSuccess,
+  testSolution,
 });

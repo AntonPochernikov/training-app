@@ -5,7 +5,7 @@ import './ListTasks.css';
 
 export default class ListTasks extends Component {
   handleClick = id => () => {
-    this.props.getCurrentTask({ taskId: id });
+    this.props.getCurrentTaskId({ taskId: id });
   }
 
   render() {
