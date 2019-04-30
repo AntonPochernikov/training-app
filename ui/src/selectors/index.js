@@ -3,7 +3,7 @@ import _ from 'lodash';
 
 export const getExercises = state => state.training.exercises;
 export const getCurrentTaskId = state => state.training.currentTaskId;
-
+export const getTests = state => state.tests.tests;
 export const getTaskByComplexity = createSelector(
   getExercises,
   (items) => {
@@ -19,4 +19,15 @@ export const getCurrentTask = createSelector(
   getExercises,
   getCurrentTaskId,
   (items, currentTaskId) => (_.find((items), (item => item.id === currentTaskId))),
+);
+
+export const getTestsByType = createSelector(
+  getTests,
+  (items) => {
+    const itemsByType = _.groupBy(items, 'type');
+    return Object.keys(itemsByType).map(type => ({
+      type,
+      tests: itemsByType[type],
+    }));
+  },
 );

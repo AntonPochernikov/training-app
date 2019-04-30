@@ -3,17 +3,19 @@ import { Card, Button, Container } from 'react-bootstrap';
 import './Tests.css';
 
 export default class Tests extends React.Component {
-  // eslint-disable-next-line class-methods-use-this
   renderCards() {
-    return <Card style={{ width: '18rem' }}>
-      <Card.Body>
-        <Card.Title>Тема: </Card.Title>
-        <Card.Text>
+    const { testTasks } = this.props;
+    return testTasks.map(({ type }) => (
+      <Card key={type} style={{ width: '18rem' }}>
+        <Card.Body>
+          <Card.Title>Тема: {type}</Card.Title>
+          <Card.Text>
              Описание
-        </Card.Text>
-        <Button variant="primary">Начать тест</Button>
-      </Card.Body>
-    </Card>;
+          </Card.Text>
+          <Button variant="primary">Начать тест</Button>
+        </Card.Body>
+      </Card>
+    ));
   }
 
   render() {

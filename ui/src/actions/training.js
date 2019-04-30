@@ -12,8 +12,11 @@ export const changeCode = createAction('CODE/CHANGE');
 export const getCurrentTaskId = createAction('TASK/CURRENT/ID/GET');
 
 export const fetchDataRequest = createAction('DATA/FETCH/REQUEST');
+export const fetchTestsRequest = createAction('TESTS/FETCH/REQUEST');
 export const fetchDataSuccess = createAction('DATA/FETCH/SUCCESS');
+export const fetchTestsSuccess = createAction('TESTS/FETCH/SUCCESS');
 export const fetchDataFailure = createAction('DATA/FETCH/FAILURE');
+export const fetchTestsFailure = createAction('TESTS/FETCH/FAILURE');
 
 export const fetchData = () => async (dispatch) => {
   const source = null;
@@ -24,6 +27,17 @@ export const fetchData = () => async (dispatch) => {
   } catch (e) {
     console.log(e);
     dispatch(fetchDataFailure({ error: e }));
+  }
+};
+export const fetchTestsData = () => async (dispatch) => {
+  const source = null;
+  dispatch(fetchTestsRequest({ source }));
+  try {
+    const data = await import('../data/tests.json');
+    dispatch(fetchTestsSuccess({ data: data.default }));
+  } catch (e) {
+    console.log(e);
+    dispatch(fetchTestsFailure({ error: e }));
   }
 };
 
