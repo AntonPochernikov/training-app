@@ -25,7 +25,7 @@ type Mutation {
 
 type Query {
   hello: String!
-  users(first: Float!): [User!]!
+  users(limit: Float!): [User!]!
   questions(data: GetQuestionInput!): [Question!]!
   getQuestionById(id: Float!): Question!
 }
@@ -63,9 +63,15 @@ input UserRegistrationInput {
   email: String!
   password: String!
   nickName: String!
+  role: UserRole!
 }
 
 type UserRegistrationOutput {
   user: User!
   accessToken: String!
+}
+
+enum UserRole {
+  Admin
+  User
 }

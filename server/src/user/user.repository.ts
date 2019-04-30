@@ -5,9 +5,9 @@ import { UserLoginInput, UserRegistrationInput } from './types/inputs'
 import { User } from './user.schema'
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
-    async getUsersByLimit(firts: number): Promise<User[]> {
+    async getUsersByLimit(limit: number): Promise<User[]> {
         try {
-            return await User.find({ take: firts })
+            return await User.find({ take: limit })
         } catch (err) {
             throw new Error(err)
         }

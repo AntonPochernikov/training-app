@@ -12,7 +12,7 @@ export class QuestionService {
         private readonly questionRepository: QuestionRepository,
     ) {}
 
-    async getQuestions(limit: number): Promise<Question[]> {
+    async getQuestionsByLimit(limit: number): Promise<Question[]> {
         try {
             return await this.questionRepository.find({ take: limit })
         } catch (err) {

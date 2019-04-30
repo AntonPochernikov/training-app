@@ -25,8 +25,8 @@ export class UserService {
         return users
     }
 
-    async getUsersByLimit(first: number): Promise<User[]> {
-        return await this.userRepository.getUsersByLimit(first)
+    async getUsersByLimit(limit: number): Promise<User[]> {
+        return await this.userRepository.getUsersByLimit(limit)
     }
 
     async userRegistration(data: UserRegistrationInput): Promise<UserRegistrationOutput> {

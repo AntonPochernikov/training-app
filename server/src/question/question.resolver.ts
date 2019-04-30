@@ -12,7 +12,7 @@ export class QuestionResolver {
     @Query(() => [Question])
     async questions(@Args('data') data: GetQuestionInput) {
         const { limit } = data
-        return this.questionService.getQuestions(limit)
+        return this.questionService.getQuestionsByLimit(limit)
     }
 
     @Query(() => Question)
