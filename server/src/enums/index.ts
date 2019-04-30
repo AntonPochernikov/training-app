@@ -1,3 +1,3 @@
-import { UserRole } from './userRole'
+import { UserRoleToNumber } from './userRole'
 
-export { UserRole }
+export { UserRoleToNumber as UserRole }
