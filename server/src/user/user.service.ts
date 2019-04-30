@@ -40,6 +40,7 @@ export class UserService {
 
     async userLogin(data: UserLoginInput): Promise<UserLoginOutput> {
         const user = await this.userRepository.userLogin(data)
+        console.log(user)
         const accessToken = createAccessTokenByIdAndRole(user.id, user.role)
         return {
             accessToken,

@@ -6,8 +6,12 @@ import {
     PrimaryGeneratedColumn,
     CreateDateColumn,
     UpdateDateColumn,
+    OneToOne,
+    ManyToOne,
+    OneToMany,
 } from 'typeorm'
 import { UserRole } from 'src/enums'
+import { Role } from 'src/role/role.schema'
 
 @ObjectType()
 @Entity()
@@ -37,8 +41,9 @@ export class User extends BaseEntity {
     refreshToken: string
 
     // only db
+    @ManyToOne(() => Role, role => role.id)
     @Column()
-    role: UserRole
+    role: number
 
     @Column()
     password: string

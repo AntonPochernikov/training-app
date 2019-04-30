@@ -30,18 +30,13 @@ export interface IRequest {
                 name: 'default',
                 type: 'postgres',
                 // paste
-                host: 'localhost',
-                port: 5432,
-                username: 'postgres_admin',
-                password: '1907',
-                database: 'testing-app',
                 // paste
                 synchronize: true,
                 logging: false,
                 entities: [`${__dirname}/**/*.schema.ts`],
-                // extra: {
-                //     ssl: true,
-                // },
+                extra: {
+                    ssl: true,
+                },
             }),
         }),
     ],
