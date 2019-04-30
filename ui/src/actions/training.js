@@ -24,6 +24,7 @@ export const fetchData = () => async (dispatch) => {
   try {
     const data = await import(/* webpackChunkName: "exercises" */ '../data/exercises.json');
     dispatch(fetchDataSuccess({ data: data.default }));
+    console.log(dispatch(fetchDataSuccess({ data: data.default })));
   } catch (e) {
     console.log(e);
     dispatch(fetchDataFailure({ error: e }));
@@ -50,7 +51,7 @@ export const loginSuccess = createAction('USER/LOGIN/SUCCESS');
 
 
 export const fetchTestRequest = createAction('TEST/FETCH/REQUEST');
-export const fetchTestSuccess = createAction('TEST/FETCH/SUCCESS');
+// export const fetchTestSuccess = createAction('TEST/FETCH/SUCCESS');
 export const fetchTestFailure = createAction('TEST/FETCH/FAILURE');
 
 export const testSolution = () => async (dispatch, getState) => {
@@ -58,13 +59,13 @@ export const testSolution = () => async (dispatch, getState) => {
   // eslint-disable-next-line
   const { code } = getState().training;
   const { test } = selector.getCurrentTask(getState());
+  let failedTest = 0;
 
   try {
     eval(test);
     mocha
       .run()
-      .on('pass', () => { dispatch(fetchTestSuccess()); })
-      .on('fail', () => { dispatch(fetchTestFailure()); });
+      .on('fail', () => { dispatch(fetchTestFailure(failedTest += 1)); });
   } catch (e) {
     console.log(e);
   }

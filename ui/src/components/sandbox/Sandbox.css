@@ -5,30 +5,30 @@
 	position: absolute;
 	left: 0;
 
-	height: calc(100% - 80px);
+	height: calc(100% - 60px);
 	width: 100%;
 	padding: 20px;
 	box-sizing: border-box;
 
 	background-color: var(--white);
-	overflow: scroll;
 }
 
 .sandbox {
 	position: relative;
 	width: 60%;
+	height: 90%;
 	padding: 10px;
 	box-sizing: border-box;
 
 	box-shadow: 0 0 2px -1px var(--gray);
-	overflow: hidden;
 }
 
 .interface-box {
 	width: 40%;
+	height: 90%;
 	padding: 10px;
 	box-sizing: border-box;
-
+	overflow-y: scroll;
 	box-shadow: 0 0 2px -1px var(--gray);
 }
 
@@ -50,10 +50,44 @@
 	margin: 10px;
 }
 
- .sandbox-spinner{
+.sandbox-spinner {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 
 	transform: translate(-50%, -50%);
 }
+
+.container-navigation {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+    border: 1px solid transparent;
+	border-radius: 4px;
+	box-shadow: 0 0 2px -1px var(--gray);
+}
+
+.btn-back {
+	width: 100px;
+	margin: 10px;
+	margin-left: 100px;
+}
+
+.btn-back::before {
+	content: '←';
+	padding-right: 7px;
+}
+
+.btn-next {
+	width: 100px;
+	margin: 10px;
+	margin-right: 100px;
+}
+
+.btn-next::after {
+	content: '→';
+	padding-left: 7px;
+}
+
+
+

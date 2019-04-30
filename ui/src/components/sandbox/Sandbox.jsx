@@ -24,8 +24,26 @@ export default class Sandbox extends React.Component {
     this.props.changeCode({ value: newValue });
   }
 
+  handleNextTask = id => () => {
+    console.log(id + 1);
+    if (id + 1) this.props.getCurrentTaskId({ taskId: id + 1 });
+  }
+
   render() {
-    const { code, currentTask: { name, complexity, description } } = this.props;
+    const {
+      code,
+      currentTask: {
+        id,
+        name,
+        complexity,
+        description,
+      },
+      testStatus: {
+        failedQuantity,
+        state: status,
+      },
+    } = this.props;
+    console.log(failedQuantity);
     return (
       <div className='workspace'>
         <div className='sandbox'>
@@ -46,7 +64,15 @@ export default class Sandbox extends React.Component {
           <div className='test-output'>
             <div id='mocha' />
           </div>
-          <button onClick={this.handleTestButton}>Проверить</button>
+          <button className="btn-sandbox" onClick={this.handleTestButton}>Проверить</button>
+        </div>
+        <div className="container-navigation">
+          <button className="btn-back" >Назад</button>
+          {
+            failedQuantity === null &&
+            status !== 'initial' &&
+            <button className="btn-next" onClick={this.handleNextTask(id)}>Далее</button>
+          }
         </div>
       </div>
     );

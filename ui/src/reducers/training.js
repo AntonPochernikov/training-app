@@ -40,17 +40,19 @@ const dataFetch = handleActions({
 
 const fetchTest = {
   state: 'initial',
+  failedQuantity: null,
 };
 
 const testSolution = handleActions({
-  [action.fetchTestRequest]: () => ({
+  [action.fetchTestRequest]: state => ({
+    ...state,
     state: 'requested',
+    failedQuantity: null,
   }),
-  [action.fetchTestSuccess]: () => ({
-    state: 'passed',
-  }),
-  [action.fetchTestFailure]: () => ({
+  [action.fetchTestFailure]: (state, { payload: failedQuantity }) => ({
+    ...state,
     state: 'failed',
+    failedQuantity,
   }),
 }, fetchTest);
 
