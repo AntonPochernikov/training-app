@@ -11,7 +11,6 @@ type Answer {
 input CreateQuestion {
   title: String!
   text: String!
-  level: Float!
 }
 
 input GetQuestionInput {
@@ -35,7 +34,6 @@ type Question {
   id: ID!
   title: String!
   text: String!
-  level: Float!
   rightAnswersId: [ID!]!
   answers: [Answer!]!
 }
@@ -65,9 +63,15 @@ input UserRegistrationInput {
   email: String!
   password: String!
   nickName: String!
+  role: UserRole!
 }
 
 type UserRegistrationOutput {
   user: User!
   accessToken: String!
+}
+
+enum UserRole {
+  Admin
+  User
 }

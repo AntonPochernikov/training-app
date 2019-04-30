@@ -10,6 +10,4 @@ export const textMessageError = () =>
         .min(8, 'The minimum title length must be 8')
 
 export const questionLevelMessageError = () =>
-    string()
-        .required('Question level field is required')
-        .max(2, 'The maximum question level length must be 2')
+    string().required('Question level field is required')

@@ -7,7 +7,4 @@ export class CreateQuestion {
 
     @Field()
     text: string
-
-    @Field()
-    level: number
 }
