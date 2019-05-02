@@ -9,6 +9,7 @@ import { AppService } from './app.service'
 import { permissions } from './shild/permissions'
 import { UserModule } from './user/user.module'
 import { QuestionModule } from './question/question.module'
+import { TestModule } from './test/test.module';
 
 export interface IRequest {
     req: Request
@@ -18,6 +19,7 @@ export interface IRequest {
     imports: [
         UserModule,
         QuestionModule,
+        TestModule,
         GraphQLModule.forRoot({
             autoSchemaFile: 'schema.gql',
             context: ({ req }: IRequest) => ({ req }),

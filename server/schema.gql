@@ -38,6 +38,12 @@ type Question {
   answers: [Answer!]!
 }
 
+type Test {
+  id: ID!
+  name: String!
+  level: String!
+}
+
 type User {
   id: ID!
   firstName: String!
