@@ -21,12 +21,12 @@ export default class Tests extends React.Component {
   render() {
     return (
       <Container>
-        <div className='tests-content'>
-          <div className='heading'>
-            <h2 className ='heading-main'>Тестирование знаний</h2>
+        <div className="tests-content">
+          <div className="heading">
+            <h2 className ="heading-main">Тестирование знаний</h2>
             <b>На этой странице вы можете протестировать свои знания Javascript, выбрав один из тестов.</b>
           </div>
-          <div className='cards'>
+          <div className="cards">
             {this.renderCards()}
           </div>
         </div>

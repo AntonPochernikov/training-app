@@ -24,12 +24,12 @@ export default class HomePage extends React.Component {
   render() {
     return (
       <Container>
-        <div className='homepage-content'>
-          <div className='heading'>
-            <h2 className ='heading-main'>Добро пожаловать в интерактивный задачник JavaScript</h2>
+        <div className="homepage-content">
+          <div className="heading">
+            <h2 className ="heading-main">Добро пожаловать в интерактивный задачник JavaScript</h2>
             <b>Выберите подходящий режим:</b>
           </div>
-          <div className='cards'>
+          <div className="cards">
             {this.renderCards()}
           </div>
         </div>

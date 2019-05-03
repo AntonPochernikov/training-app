@@ -18,12 +18,12 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <header className='header'>
+      <header className="header">
         <Container>
-          <Navbar >
+          <Navbar>
             <Navbar.Brand>
               <Link to="/home">
-                <img className="logo" src={logo} width='48' height='48' />
+                <img className="logo" src={logo} width="48" height="48" />
               </Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -31,19 +31,14 @@ export default class Header extends React.Component {
               <Nav className="mr-auto" as="ul">
                 {routes.map(({ name, route }) => (
                   <Nav.Item key={name} as="li">
-                    <NavLink
-                      className='navigation__link'
-                      to={route}
-                    >
+                    <NavLink className="navigation__link" to={route}>
                       {name}
                     </NavLink>
                   </Nav.Item>
                 ))}
               </Nav>
               <Nav>
-                <a className='navigation__link'
-                  href='/' onClick={this.handleLoginLink}
-                >
+                <a className="navigation__link" href="/" onClick={this.handleLoginLink}>
                   {this.props.login ? this.props.formFields.email : 'Войти'}
                 </a>
               </Nav>

@@ -24,7 +24,6 @@ export const fetchData = () => async (dispatch) => {
   try {
     const data = await import(/* webpackChunkName: "exercises" */ '../data/exercises.json');
     dispatch(fetchDataSuccess({ data: data.default }));
-    console.log(dispatch(fetchDataSuccess({ data: data.default })));
   } catch (e) {
     console.log(e);
     dispatch(fetchDataFailure({ error: e }));
@@ -65,7 +64,9 @@ export const testSolution = () => async (dispatch, getState) => {
     eval(test);
     mocha
       .run()
-      .on('fail', () => { dispatch(fetchTestFailure(failedTest += 1)); });
+      .on('fail', () => {
+        dispatch(fetchTestFailure(failedTest += 1));
+      });
   } catch (e) {
     console.log(e);
   }
