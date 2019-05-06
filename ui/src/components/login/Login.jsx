@@ -27,10 +27,10 @@ const Login = (props) => {
 
   return (
     <Fragment>
-      <Modal.Dialog className='login-modal-wrapper'>
+      <Modal.Dialog className="login-modal-wrapper">
         <Modal.Header>
           <Modal.Title>Вход</Modal.Title>
-          <button type= 'reset' className='modal-button__close' onClick={handleCloseButtonClick}>
+          <button type= "reset" className="modal-button__close" onClick={handleCloseButtonClick}>
             ×
           </button>
         </Modal.Header>
@@ -57,7 +57,7 @@ const Login = (props) => {
           </Form>
         </Modal.Body>
       </Modal.Dialog>
-      <div className='login-modal-overlay' onClick={handleOverlayClick}>
+      <div className="login-modal-overlay" onClick={handleOverlayClick}>
       </div>
     </Fragment>
   );

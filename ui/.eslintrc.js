@@ -35,6 +35,7 @@ module.exports = {
     ]
   },
   rules: {
+    "jsx-quotes": ["error", "prefer-double"],
     "no-eval": 0,
     "no-new-func": 0,
     "linebreak-style": 0,

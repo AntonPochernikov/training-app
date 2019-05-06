@@ -8,8 +8,8 @@ const { mocha } = window;
 const MonacoEditor = lazy(() => import('react-monaco-editor'));
 
 const SandboxPreloader = () => (
-  <div className='sandbox-spinner'>
-    <Spinner animation='border' variant="secondary" />
+  <div className="sandbox-spinner">
+    <Spinner animation="border" variant="secondary" />
   </div>
 );
 
@@ -46,24 +46,24 @@ export default class Sandbox extends React.Component {
     } = this.props;
     console.log(lastElement.id);
     return (
-      <div className='workspace'>
-        <div className='sandbox'>
+      <div className="workspace">
+        <div className="sandbox">
           <Suspense fallback={<SandboxPreloader />}>
             <MonacoEditor
-              language='javascript'
-              theme='vs-light'
+              language="javascript"
+              theme="vs-light"
               onChange={this.handleCodeChange}
               value={code}
             />
           </Suspense>
         </div>
         {/* <Button variant="primary" className="btn-sandbox" size="sm">Отправить решение</Button> */}
-        <div className='interface-box'>
-          <p className='exercise-name'>{name}</p>
-          <p className='exercise-complexity'>Уровень: {complexity}</p>
-          <div className='exercise-description'>{description}</div>
-          <div className='test-output'>
-            <div id='mocha' />
+        <div className="interface-box">
+          <p className="exercise-name">{name}</p>
+          <p className="exercise-complexity">Уровень: {complexity}</p>
+          <div className="exercise-description">{description}</div>
+          <div className="test-output">
+            <div id="mocha" />
           </div>
           <button className="btn-sandbox" onClick={this.handleTestButton}>Проверить</button>
         </div>
