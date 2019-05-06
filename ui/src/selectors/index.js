@@ -15,14 +15,14 @@ export const getTaskByComplexity = createSelector(
   },
 );
 
-export const getFirstElement = createSelector(
+export const getFirstExercise = createSelector(
   getExercises,
   items => (
     _.first(items)
   ),
 );
 
-export const getLastElement = createSelector(
+export const getLastExercise = createSelector(
   getExercises,
   items => (
     _.last(items)

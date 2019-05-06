@@ -41,10 +41,10 @@ export default class Sandbox extends React.Component {
         complexity,
         description,
       },
-      firstElement,
-      lastElement,
+      firstExercise,
+      lastExercise,
     } = this.props;
-    console.log(lastElement.id);
+
     return (
       <div className="workspace">
         <div className="sandbox">
@@ -70,14 +70,14 @@ export default class Sandbox extends React.Component {
         <div className="container-navigation">
           <button
             className="btn-back"
-            disabled = {id === firstElement.id}
+            disabled = {id === firstExercise.id}
             onClick={this.handlePrevButton(id)}
           >
               Назад
           </button>
           <button
             className="btn-next"
-            disabled = {id === lastElement.id}
+            disabled = {id === lastExercise.id}
             onClick={this.handleNextButton(id)}
           >
               Далее

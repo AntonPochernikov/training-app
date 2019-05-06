@@ -7,8 +7,8 @@ const mapStateToProps = state => ({
   code: state.training.code,
   currentTask: select.getCurrentTask(state),
   testStatus: state.training.testSolution,
-  firstElement: select.getFirstElement(state),
-  lastElement: select.getLastElement(state),
+  firstExercise: select.getFirstExercise(state),
+  lastExercise: select.getLastExercise(state),
 });
 
 export default connect(mapStateToProps, actionCreators)(Sandbox);
