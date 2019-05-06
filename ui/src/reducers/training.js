@@ -12,7 +12,11 @@ const exercises = handleActions({
 
 const currentTaskId = handleActions({
   [action.getCurrentTaskId]: (state, { payload: { taskId } }) => taskId,
-}, null);
+  [action.getNextTaskId]: (state, { payload: { taskId } }) => taskId,
+  [action.getPrevTaskId]: (state, { payload: { taskId } }) => taskId,
+},
+null);
+
 
 const fetchInit = {
   state: 'initial',
@@ -38,23 +42,18 @@ const dataFetch = handleActions({
   }),
 }, fetchInit);
 
-const fetchTest = {
+const testInit = {
   state: 'initial',
-  failedQuantity: null,
 };
 
 const testSolution = handleActions({
-  [action.fetchTestRequest]: state => ({
-    ...state,
+  [action.fetchTestRequest]: () => ({
     state: 'requested',
-    failedQuantity: null,
   }),
-  [action.fetchTestFailure]: (state, { payload: failedQuantity }) => ({
-    ...state,
+  [action.fetchTestFailure]: () => ({
     state: 'failed',
-    failedQuantity,
   }),
-}, fetchTest);
+}, testInit);
 
 export default combineReducers({
   code,

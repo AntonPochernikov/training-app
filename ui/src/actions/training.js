@@ -35,23 +35,37 @@ export const changeEmail = createAction('EMAIL/CHANGE');
 export const changePassword = createAction('PASSWORD/CHANGE');
 export const loginSuccess = createAction('USER/LOGIN/SUCCESS');
 
+export const getNextTaskId = createAction('TASK/NEXT/ID/GET');
+export const getPrevTaskId = createAction('TASK/PREV/ID/GET');
 
 export const fetchTestRequest = createAction('TEST/FETCH/REQUEST');
-// export const fetchTestSuccess = createAction('TEST/FETCH/SUCCESS');
 export const fetchTestFailure = createAction('TEST/FETCH/FAILURE');
+
+const once = (f) => {
+  let isDone = false;
+  return (...args) => {
+    if (isDone) {
+      return;
+    }
+    isDone = true;
+    f(...args);
+  };
+};
 
 export const testSolution = () => async (dispatch, getState) => {
   dispatch(fetchTestRequest());
   // eslint-disable-next-line
   const { code } = getState().training;
   const { test } = selector.getCurrentTask(getState());
-  let failedTest = 0;
 
   try {
+    const failTest = once(() => {
+      dispatch(fetchTestFailure());
+    });
     eval(test);
     mocha
       .run()
-      .on('fail', () => { dispatch(fetchTestFailure(failedTest += 1)); });
+      .on('fail', failTest);
   } catch (e) {
     console.log(e);
   }

@@ -24,9 +24,12 @@ export default class Sandbox extends React.Component {
     this.props.changeCode({ value: newValue });
   }
 
-  handleNextTask = id => () => {
-    console.log(id + 1);
-    if (id + 1) this.props.getCurrentTaskId({ taskId: id + 1 });
+  handleNextButton = id => () => {
+    this.props.getNextTaskId({ taskId: id + 1 });
+  }
+
+  handlePrevButton = id => () => {
+    this.props.getPrevTaskId({ taskId: id - 1 });
   }
 
   render() {
@@ -38,12 +41,10 @@ export default class Sandbox extends React.Component {
         complexity,
         description,
       },
-      testStatus: {
-        failedQuantity,
-        state: status,
-      },
+      firstElement,
+      lastElement,
     } = this.props;
-    console.log(failedQuantity);
+    console.log(lastElement.id);
     return (
       <div className='workspace'>
         <div className='sandbox'>
@@ -67,12 +68,20 @@ export default class Sandbox extends React.Component {
           <button className="btn-sandbox" onClick={this.handleTestButton}>Проверить</button>
         </div>
         <div className="container-navigation">
-          <button className="btn-back" >Назад</button>
-          {
-            failedQuantity === null &&
-            status !== 'initial' &&
-            <button className="btn-next" onClick={this.handleNextTask(id)}>Далее</button>
-          }
+          <button
+            className="btn-back"
+            disabled = {id === firstElement.id}
+            onClick={this.handlePrevButton(id)}
+          >
+              Назад
+          </button>
+          <button
+            className="btn-next"
+            disabled = {id === lastElement.id}
+            onClick={this.handleNextButton(id)}
+          >
+              Далее
+          </button>
         </div>
       </div>
     );
