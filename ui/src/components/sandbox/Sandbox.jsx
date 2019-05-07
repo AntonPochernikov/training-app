@@ -14,9 +14,13 @@ const SandboxPreloader = () => (
 );
 
 export default class Sandbox extends React.Component {
-  handleTestButton = () => {
+  clearTestOutput = () => {
     document.getElementById('mocha').innerHTML = '';
     mocha.suite.suites = [];
+  };
+
+  handleTestButton = () => {
+    this.clearTestOutput();
     this.props.testSolution();
   }
 
@@ -25,10 +29,12 @@ export default class Sandbox extends React.Component {
   }
 
   handleNextButton = id => () => {
+    this.clearTestOutput();
     this.props.getNextTaskId({ taskId: id + 1 });
   }
 
   handlePrevButton = id => () => {
+    this.clearTestOutput();
     this.props.getPrevTaskId({ taskId: id - 1 });
   }
 
