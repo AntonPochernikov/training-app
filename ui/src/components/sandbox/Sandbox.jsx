@@ -19,6 +19,10 @@ export default class Sandbox extends React.Component {
     mocha.suite.suites = [];
   };
 
+  clearMonakoEditer = () => {
+    this.props.changeCode({ value: '' });
+  }
+
   handleTestButton = () => {
     this.clearTestOutput();
     this.props.testSolution();
@@ -30,11 +34,13 @@ export default class Sandbox extends React.Component {
 
   handleNextButton = id => () => {
     this.clearTestOutput();
+    this.clearMonakoEditer();
     this.props.getNextTaskId({ taskId: id + 1 });
   }
 
   handlePrevButton = id => () => {
     this.clearTestOutput();
+    this.clearMonakoEditer();
     this.props.getPrevTaskId({ taskId: id - 1 });
   }
 
