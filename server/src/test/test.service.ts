@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { TestRepository } from './test.repository'
-import { Test } from './test.schema'
 
 @Injectable()
 export class TestService {
@@ -10,11 +9,15 @@ export class TestService {
         private readonly testRepository: TestRepository,
     ) {}
 
-    async getQuestion(): Promise<Test[]> {
+    async getQuestions(id: number): Promise<any> {
         try {
-            return await this.testRepository.find()
+            return await this.testRepository.getQuestionsById(id)
         } catch (err) {
             throw new Error(err)
         }
+    }
+
+    async getTestsByLimit(limit: number) {
+        return await this.testRepository.find({ take: limit })
     }
 }

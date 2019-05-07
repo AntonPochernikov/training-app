@@ -24,11 +24,10 @@ export class Question extends BaseEntity {
 
     @Field(() => [Answer])
     answers: Answer[]
+}
 
-    // // only db
-    // @CreateDateColumn()
-    // readonly createdAt: string
-
-    // @UpdateDateColumn({ type: 'timestamp' })
-    // readonly updatedAt: number
+export interface IQuestionPayload {
+    id: number
+    title: string
+    text: string
 }

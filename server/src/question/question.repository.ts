@@ -19,9 +19,7 @@ export class QuestionRepository extends Repository<Question> {
                 .addSelect('answer.text')
                 .getMany()
 
-            return answers.map(element => {
-                return element.answer
-            })
+            return answers.map(element => element.answer)
         } catch (err) {
             throw new Error(err)
         }
@@ -30,14 +28,12 @@ export class QuestionRepository extends Repository<Question> {
     async getRightAnswersByQuestionId(idQ: number): Promise<number[]> {
         try {
             const questionToAnswerRepo = getRepository(QuestionToAnswer)
-
             const rightAnswers = await questionToAnswerRepo.find({
                 where: {
                     isRight: true,
                     question: idQ,
                 },
             })
-
             return rightAnswers.map(answer => {
                 return answer.id
             })

@@ -17,6 +17,10 @@ input GetQuestionInput {
   limit: Float!
 }
 
+input GetTestsInput {
+  limit: Float!
+}
+
 type Mutation {
   userRegistration(data: UserRegistrationInput!): UserRegistrationOutput!
   userLogin(data: UserLoginInput!): UserLoginOutput!
@@ -28,6 +32,7 @@ type Query {
   users(limit: Float!): [User!]!
   questions(data: GetQuestionInput!): [Question!]!
   getQuestionById(id: Float!): Question!
+  tests(data: GetTestsInput!): [Test!]!
 }
 
 type Question {
@@ -41,7 +46,7 @@ type Question {
 type Test {
   id: ID!
   name: String!
-  level: String!
+  questions: [Question!]!
 }
 
 type User {
