@@ -2,27 +2,30 @@ import React, { Fragment } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import './Login.css';
 
-const Login = (props) => {
+// ждём email, password
+// лучше сделать класс
+const Login = ({ email, password, ...actions }) => {
   const handleOverlayClick = (e) => {
     e.preventDefault();
-    props.hideModal();
+    actions.hideModal();
   };
 
   const handleCloseButtonClick = (e) => {
     e.preventDefault();
-    props.hideModal();
+    actions.hideModal();
   };
 
   const handleEmailChange = (e) => {
-    props.changeEmail({ email: e.target.value });
+    actions.changeEmail({ email: e.target.value });
   };
 
   const handlePasswordChange = (e) => {
-    props.changePassword({ password: e.target.value });
+    actions.changePassword({ password: e.target.value });
   };
 
   const handleAddUser = () => {
-    props.loginSuccess({ name: true });
+    // сделать request, реализовать success в thunk`e логина
+    actions.loginSuccess({ name: true });
   };
 
   return (
@@ -38,18 +41,22 @@ const Login = (props) => {
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Эл. почта</Form.Label>
-              <Form.Control type="email"
+              <Form.Control
+                type="email"
                 placeholder="Введите email"
                 onChange={handleEmailChange}
-                value={props.email}/>
+                value={email}
+              />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Пароль</Form.Label>
-              <Form.Control type="password"
+              <Form.Control
+                type="password"
                 placeholder="Введите пароль"
                 onChange={handlePasswordChange}
-                value={props.password}/>
+                value={password}
+              />
             </Form.Group>
             <Button variant="primary" type="button" onClick={handleAddUser}>
               Войти
@@ -57,8 +64,7 @@ const Login = (props) => {
           </Form>
         </Modal.Body>
       </Modal.Dialog>
-      <div className="login-modal-overlay" onClick={handleOverlayClick}>
-      </div>
+      <div className="login-modal-overlay" onClick={handleOverlayClick} />
     </Fragment>
   );
 };

@@ -3,7 +3,7 @@ import training from './training.js';
 import tests from './tests.js';
 import lessons from './lessons.js';
 import common from './common.js';
-import user from './user/index.js';
+import user from './user';
 
 export default combineReducers({
   training,
