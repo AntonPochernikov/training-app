@@ -75,7 +75,7 @@ export default class Sandbox extends React.Component {
           <p className="exercise-complexity">Уровень: {complexity}</p>
           <div className="exercise-description">{description}</div>
           <div className="test-output">
-            <div id="mocha" />
+            <div id="mocha"/>
           </div>
           <button className="btn-sandbox" onClick={this.handleTestButton}>Проверить</button>
         </div>

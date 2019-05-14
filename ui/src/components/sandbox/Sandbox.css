@@ -28,7 +28,6 @@
 	height: 90%;
 	padding: 10px;
 	box-sizing: border-box;
-	overflow-y: auto;
 	box-shadow: 0 0 2px -1px var(--gray);
 }
 
@@ -39,15 +38,19 @@
 	font-style: italic;
 }
 .exercise-description {
+    padding-bottom: 10px;
 }
 
 .test-output {
-	position: relative;
+    position: relative;
+    height: 60%;
+    overflow-y: auto;
 }
 
 .btn-sandbox {
+	position: absolute;
 	width: 150px;
-	margin: 10px;
+	bottom: calc(15%);
 }
 
 .sandbox-spinner {
@@ -64,7 +67,7 @@
 	width: 100%;
     border: 1px solid transparent;
 	border-radius: 4px;
-	box-shadow: 0 0 2px -1px var(--gray);
+	box-shadow: 0 0 2px 0 var(--gray);
 }
 
 .btn-back {
