@@ -5,13 +5,12 @@ import './Tests.css';
 export default class Tests extends React.Component {
   renderCards() {
     const { testTasks } = this.props;
+    // убрать style из Card
     return testTasks.map(({ type }) => (
       <Card key={type} style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>Тема: {type}</Card.Title>
-          <Card.Text>
-             Описание
-          </Card.Text>
+          <Card.Text>Описание</Card.Text>
           <Button variant="primary">Начать тест</Button>
         </Card.Body>
       </Card>

@@ -14,6 +14,23 @@ const SandboxPreloader = () => (
 );
 
 export default class Sandbox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.monaco = React.createRef();
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.adjustEditor);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('resize', this.adjustEditor);
+  }
+
+  adjustEditor = () => {
+    this.monaco.current.editor.layout();
+  }
+
   clearTestOutput = () => {
     document.getElementById('mocha').innerHTML = '';
     mocha.suite.suites = [];
@@ -34,13 +51,17 @@ export default class Sandbox extends React.Component {
 
   handleNextButton = id => () => {
     this.clearTestOutput();
+    // clear code in reducer
     this.clearMonakoEditer();
+    // убрать параметры, логика в редьюсере
     this.props.getNextTaskId({ taskId: id + 1 });
   }
 
   handlePrevButton = id => () => {
     this.clearTestOutput();
+    // clear code in reducer
     this.clearMonakoEditer();
+    // убрать параметры, логика в редьюсере
     this.props.getPrevTaskId({ taskId: id - 1 });
   }
 
@@ -62,6 +83,7 @@ export default class Sandbox extends React.Component {
         <div className="sandbox">
           <Suspense fallback={<SandboxPreloader />}>
             <MonacoEditor
+              ref={this.monaco}
               language="javascript"
               theme="vs-light"
               onChange={this.handleCodeChange}
@@ -82,17 +104,19 @@ export default class Sandbox extends React.Component {
         <div className="container-navigation">
           <button
             className="btn-back"
-            disabled = {id === firstExercise.id}
+            // isFirst flag
+            disabled={id === firstExercise.id}
             onClick={this.handlePrevButton(id)}
           >
-              Назад
+            Назад
           </button>
           <button
             className="btn-next"
-            disabled = {id === lastExercise.id}
+            // isLast flag
+            disabled={id === lastExercise.id}
             onClick={this.handleNextButton(id)}
           >
-              Далее
+            Далее
           </button>
         </div>
       </div>
