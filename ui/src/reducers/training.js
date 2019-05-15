@@ -4,6 +4,7 @@ import * as action from '../actions';
 
 const code = handleActions({
   [action.changeCode]: (state, { payload: { value } }) => value,
+  [action.clearCode]: () => '',
 }, '');
 
 const exercises = handleActions({
@@ -12,8 +13,8 @@ const exercises = handleActions({
 
 const currentTaskId = handleActions({
   [action.getCurrentTaskId]: (state, { payload: { taskId } }) => taskId,
-  [action.getNextTaskId]: (state, { payload: { taskId } }) => taskId,
-  [action.getPrevTaskId]: (state, { payload: { taskId } }) => taskId,
+  [action.getNextTask]: taskId => taskId + 1,
+  [action.getPrevTask]: taskId => taskId - 1,
 },
 null);
 
@@ -47,10 +48,10 @@ const testInit = {
 };
 
 const testSolution = handleActions({
-  [action.fetchTestRequest]: () => ({
+  [action.performTestRequest]: () => ({
     state: 'requested',
   }),
-  [action.fetchTestFailure]: () => ({
+  [action.performTestFailure]: () => ({
     state: 'failed',
   }),
 }, testInit);

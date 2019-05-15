@@ -36,10 +36,6 @@ export default class Sandbox extends React.Component {
     mocha.suite.suites = [];
   };
 
-  clearMonakoEditer = () => {
-    this.props.changeCode({ value: '' });
-  }
-
   handleTestButton = () => {
     this.clearTestOutput();
     this.props.testSolution();
@@ -49,35 +45,29 @@ export default class Sandbox extends React.Component {
     this.props.changeCode({ value: newValue });
   }
 
-  handleNextButton = id => () => {
+  handleNextButton = () => {
     this.clearTestOutput();
-    // clear code in reducer
-    this.clearMonakoEditer();
-    // убрать параметры, логика в редьюсере
-    this.props.getNextTaskId({ taskId: id + 1 });
+    this.props.clearCode();
+    this.props.getNextTask();
   }
 
-  handlePrevButton = id => () => {
+  handlePrevButton = () => {
     this.clearTestOutput();
-    // clear code in reducer
-    this.clearMonakoEditer();
-    // убрать параметры, логика в редьюсере
-    this.props.getPrevTaskId({ taskId: id - 1 });
+    this.props.clearCode();
+    this.props.getPrevTask();
   }
 
   render() {
     const {
       code,
       currentTask: {
-        id,
         name,
         complexity,
         description,
       },
-      firstExercise,
-      lastExercise,
+      isFirst,
+      isLast,
     } = this.props;
-
     return (
       <div className="workspace">
         <div className="sandbox">
@@ -104,17 +94,15 @@ export default class Sandbox extends React.Component {
         <div className="container-navigation">
           <button
             className="btn-back"
-            // isFirst flag
-            disabled={id === firstExercise.id}
-            onClick={this.handlePrevButton(id)}
+            disabled={isFirst}
+            onClick={this.handlePrevButton}
           >
             Назад
           </button>
           <button
             className="btn-next"
-            // isLast flag
-            disabled={id === lastExercise.id}
-            onClick={this.handleNextButton(id)}
+            disabled={isLast}
+            onClick={this.handleNextButton}
           >
             Далее
           </button>
