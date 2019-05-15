@@ -15,18 +15,22 @@ export const getTaskByComplexity = createSelector(
   },
 );
 
-export const getFirstExercise = createSelector(
+export const isFirst = createSelector(
+  getCurrentTaskId,
   getExercises,
-  items => (
-    _.first(items)
-  ),
+  (currentTaskId, items) => {
+    if (currentTaskId === _.first(items).id) return true;
+    return false;
+  },
 );
 
-export const getLastExercise = createSelector(
+export const isLast = createSelector(
+  getCurrentTaskId,
   getExercises,
-  items => (
-    _.last(items)
-  ),
+  (currentTaskId, items) => {
+    if (currentTaskId === _.last(items).id) return true;
+    return false;
+  },
 );
 
 export const getCurrentTask = createSelector(

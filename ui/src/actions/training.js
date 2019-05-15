@@ -9,6 +9,8 @@ window.assert = assert;
 mocha.setup('bdd');
 
 export const changeCode = createAction('CODE/CHANGE');
+export const clearCode = createAction('CODE/CLEAR');
+
 export const getCurrentTaskId = createAction('TASK/CURRENT/ID/GET');
 
 export const fetchDataRequest = createAction('DATA/FETCH/REQUEST');
@@ -49,13 +51,12 @@ export const changePassword = createAction('PASSWORD/CHANGE');
 export const loginSuccess = createAction('USER/LOGIN/SUCCESS');
 // экшены не из тренировки
 
-export const getNextTaskId = createAction('TASK/NEXT/ID/GET');
-export const getPrevTaskId = createAction('TASK/PREV/ID/GET');
+export const getNextTask = createAction('NEXT/TASK/GET');
+export const getPrevTask = createAction('PREV/TASK/GET');
 
-// это не fetch, perform
-export const fetchTestRequest = createAction('TEST/FETCH/REQUEST');
-export const fetchTestSuccess = createAction('TEST/FETCH/SUCCESS');
-export const fetchTestFailure = createAction('TEST/FETCH/FAILURE');
+export const performTestRequest = createAction('TEST/PERFORM/REQUEST');
+export const performTestSuccess = createAction('TEST/PERFORM/SUCCESS');
+export const performTestFailure = createAction('TEST/PERFORM/FAILURE');
 
 // взять с lodash
 const once = (f) => {
@@ -70,7 +71,7 @@ const once = (f) => {
 };
 
 export const testSolution = () => async (dispatch, getState) => {
-  dispatch(fetchTestRequest());
+  dispatch(performTestRequest());
   // eslint-disable-next-line
   const { code } = getState().training;
   const { test } = selector.getCurrentTask(getState());
@@ -78,10 +79,10 @@ export const testSolution = () => async (dispatch, getState) => {
   try {
     const callback = once((err) => {
       if (err) {
-        dispatch(fetchTestFailure({ err }));
+        dispatch(performTestFailure({ err }));
         return;
       }
-      dispatch(fetchTestSuccess());
+      dispatch(performTestSuccess());
     });
     eval(test);
     mocha
