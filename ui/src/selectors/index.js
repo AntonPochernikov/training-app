@@ -4,6 +4,8 @@ import _ from 'lodash';
 export const getExercises = state => state.training.exercises;
 export const getCurrentTaskId = state => state.training.currentTaskId;
 export const getTests = state => state.tests.tests;
+export const getCurrentTestId = state => state.tests.currentTestId;
+
 export const getTaskByComplexity = createSelector(
   getExercises,
   (items) => {
@@ -48,4 +50,9 @@ export const getTestsByType = createSelector(
       tests: itemsByType[type],
     }));
   },
+);
+export const getCurrentTest = createSelector(
+  getTests,
+  getCurrentTestId,
+  (items, currentTestId) => (_.find((items), (item => item.id === currentTestId))),
 );

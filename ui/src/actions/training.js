@@ -58,6 +58,8 @@ export const performTestRequest = createAction('TEST/PERFORM/REQUEST');
 export const performTestSuccess = createAction('TEST/PERFORM/SUCCESS');
 export const performTestFailure = createAction('TEST/PERFORM/FAILURE');
 
+export const getCurrentTestId = createAction('TEST/CURRENT/ID/GET');
+
 // взять с lodash
 const once = (f) => {
   let isDone = false;

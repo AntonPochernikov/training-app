@@ -1,11 +1,16 @@
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
+import { reducer as reduxFormReducer } from 'redux-form';
 import * as action from '../actions';
 
 const tests = handleActions({
   [action.fetchTestsSuccess]: (state, { payload: { data } }) => data,
 }, []);
 
+const currentTestId = handleActions({
+  [action.getCurrentTestId]: (state, { payload: { testId } }) => testId,
+},
+null);
 
 const fetchInit = {
   state: 'initial',
@@ -34,4 +39,6 @@ const fetchDataTests = handleActions({
 export default combineReducers({
   fetchDataTests,
   tests,
+  form: reduxFormReducer,
+  currentTestId,
 });

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Тест на знания основ js",
+    "name": "Тест на знания основ Javascript",
     "type": "basic",
     "description": "Тестирование для проверки знаний основ js",
     "questions": [

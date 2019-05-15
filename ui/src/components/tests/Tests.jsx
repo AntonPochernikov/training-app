@@ -1,17 +1,28 @@
 import React from 'react';
-import { Card, Button, Container } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
+import StartTestLink from './StartTestLink.jsx';
 import './Tests.css';
 
 export default class Tests extends React.Component {
+  handleClick = id => () => {
+    this.props.getCurrentTestId({ testId: id });
+  };
+
   renderCards() {
-    const { testTasks } = this.props;
+    const { testTasks, getCurrentTestId } = this.props;
     // убрать style из Card
-    return testTasks.map(({ type }) => (
+    return testTasks.map(({ type, tests }) => (
       <Card key={type} style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>Тема: {type}</Card.Title>
-          <Card.Text>Описание</Card.Text>
-          <Button variant="primary">Начать тест</Button>
+          <Card.Text>
+            Описание
+          </Card.Text>
+          <StartTestLink
+            getCurrentTestId={getCurrentTestId}
+            tests={tests}
+            type={type}
+          />
         </Card.Body>
       </Card>
     ));
@@ -22,7 +33,7 @@ export default class Tests extends React.Component {
       <Container>
         <div className="tests-content">
           <div className="heading">
-            <h2 className ="heading-main">Тестирование знаний</h2>
+            <h2 className="heading-main">Тестирование знаний</h2>
             <b>На этой странице вы можете протестировать свои знания Javascript, выбрав один из тестов.</b>
           </div>
           <div className="cards">
