@@ -54,6 +54,8 @@ export const getPrevTaskId = createAction('TASK/PREV/ID/GET');
 export const fetchTestRequest = createAction('TEST/FETCH/REQUEST');
 export const fetchTestFailure = createAction('TEST/FETCH/FAILURE');
 
+export const getCurrentTestId = createAction('TEST/CURRENT/ID/GET');
+
 const once = (f) => {
   let isDone = false;
   return (...args) => {

@@ -8,6 +8,7 @@ import MainHeader from './MainHeader.js';
 import HomePage from './homepage/HomePage.jsx';
 import Login from './login/Login.js';
 import User from './user/User.jsx';
+import Questions from './tests/Questions.js';
 
 export default class MainRouter extends React.Component {
   componentDidMount() {
@@ -25,6 +26,14 @@ export default class MainRouter extends React.Component {
     return <Sandbox/>;
   }
 
+  renderQuestions = () => {
+    const { currentTestId } = this.props;
+    if (currentTestId === null) {
+      return <Redirect to="/tests"/>;
+    }
+    return <Questions/>;
+  }
+
   render() {
     const { modal } = this.props;
     return (
@@ -40,6 +49,7 @@ export default class MainRouter extends React.Component {
             <Route path="/tests" component={Tests} />
             <Route path="/lessons" component={Lessons} />
             <Route path="/user" component={User} />
+            <Route path="/tests-:type" render={this.renderQuestions} />
           </main>
         </div>
       </Router>

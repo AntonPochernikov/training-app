@@ -5,6 +5,7 @@ import MainRouter from './MainRouter.jsx';
 
 const mapStateToProps = state => ({
   currentTaskId: state.training.currentTaskId,
+  currentTestId: state.tests.currentTestId,
   modal: state.common.modal,
 });
 
