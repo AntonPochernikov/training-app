@@ -43,7 +43,7 @@
 
 .test-output {
     position: relative;
-    height: 60%;
+    height: calc(50% - 20px);
     overflow-y: auto;
 }
 
