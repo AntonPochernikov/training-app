@@ -5,15 +5,15 @@
     "complexity": "basic",
     "description": "Напишите функцию sum, возвращающую сумму a и b",
     "code": "",
-    "test": "const evalCode = `${code}; return sum(a, b)`;\nconst sum = new Function('a', 'b', evalCode).bind({});\ndescribe(\"sum\", () => {\n\tit(\"складывает 2 и 3\", () => {\n\t\tassert.equal(sum(2, 3), 5);\n\t});\n});\ndescribe(\"sum\", () => {\n\tit(\"складывает 1 и 9\", () => {\n\t\tassert.equal(sum(1, 9), 10);\n\t});\n});"
+    "test": "const evalCode = `${code}; return sum(a, b)`;\nconst sum = new Function('a', 'b', evalCode).bind({});\ndescribe(\"sum\", () => {\n\tit(\"складывает 1 и 1\", () => {\n\t\tassert.equal(sum(1, 1), 2);\n\t});\n});\ndescribe(\"sum\", () => {\n\tit(\"складывает 2 и 3\", () => {\n\t\tassert.equal(sum(2, 3), 5);\n\t});\n});\ndescribe(\"sum\", () => {\n\tit(\"складывает 1 и 9\", () => {\n\t\tassert.equal(sum(1, 9), 10);\n\t});\n});describe(\"sum\", () => {\n\tit(\"складывает 5 и 9\", () => {\n\t\tassert.equal(sum(5, 9), 14);\n\t});\n});"
   },
   {
     "id": 2,
     "name": "Чётное/Нечётное",
     "complexity": "basic",
-    "description": "Напишите функцию isEven, возвращающую true, если число чётное, и false, если нечётное",
+    "description": "Напишите функцию isEven, возвращающую true, если число num - чётное, и false, если num - нечётное",
     "code": "",
-    "test": ""
+    "test":  "const evalCode = `${code}; return isEven(num)`;\nconst isEven = new Function('num', evalCode).bind({});\ndescribe(\"isEven\", () => {\n\tit(\"при num = 1 вернуть false\", () => {\n\t\tassert.equal(isEven(1), false);\n\t});\n});describe(\"isEven\", () => {\n\tit(\"при num = 2 вернуть true\", () => {\n\t\tassert.equal(isEven(2), true);\n\t});\n});describe(\"isEven\", () => {\n\tit(\"при num = 3 вернуть false\", () => {\n\t\tassert.equal(isEven(3), false);\n\t});\n});describe(\"isEven\", () => {\n\tit(\"при num = 4 вернуть true\", () => {\n\t\tassert.equal(isEven(4), true);\n\t});\n});"
   },
   {
     "id": 3,

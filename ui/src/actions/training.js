@@ -41,21 +41,25 @@ export const fetchTestsData = () => async (dispatch) => {
   }
 };
 
+// экшены не из тренировки
 export const showModal = createAction('MODAL/SHOW');
 export const hideModal = createAction('MODAL/HIDE');
-
 export const changeEmail = createAction('EMAIL/CHANGE');
 export const changePassword = createAction('PASSWORD/CHANGE');
 export const loginSuccess = createAction('USER/LOGIN/SUCCESS');
+// экшены не из тренировки
 
 export const getNextTaskId = createAction('TASK/NEXT/ID/GET');
 export const getPrevTaskId = createAction('TASK/PREV/ID/GET');
 
+// это не fetch, perform
 export const fetchTestRequest = createAction('TEST/FETCH/REQUEST');
+export const fetchTestSuccess = createAction('TEST/FETCH/SUCCESS');
 export const fetchTestFailure = createAction('TEST/FETCH/FAILURE');
 
 export const getCurrentTestId = createAction('TEST/CURRENT/ID/GET');
 
+// взять с lodash
 const once = (f) => {
   let isDone = false;
   return (...args) => {
@@ -74,13 +78,19 @@ export const testSolution = () => async (dispatch, getState) => {
   const { test } = selector.getCurrentTask(getState());
 
   try {
-    const failTest = once(() => {
-      dispatch(fetchTestFailure());
+    const callback = once((err) => {
+      if (err) {
+        dispatch(fetchTestFailure({ err }));
+        return;
+      }
+      dispatch(fetchTestSuccess());
     });
     eval(test);
     mocha
       .run()
-      .on('fail', failTest);
+      // передать ошибку в колбэк для обработки
+      .on('fail', callback);
+    // после завершения тестов, вызовем коллбек без ошибки
   } catch (e) {
     console.log(e);
   }

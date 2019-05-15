@@ -10,6 +10,7 @@ export default class Tests extends React.Component {
 
   renderCards() {
     const { testTasks, getCurrentTestId } = this.props;
+    // убрать style из Card
     return testTasks.map(({ type, tests }) => (
       <Card key={type} style={{ width: '18rem' }}>
         <Card.Body>

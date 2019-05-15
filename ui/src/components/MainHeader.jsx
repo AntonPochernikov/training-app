@@ -39,6 +39,7 @@ export default class Header extends React.Component {
               </Nav>
               <Nav>
                 <a className="navigation__link" href="/" onClick={this.handleLoginLink}>
+                  {/* перенести логику в селектор и отображать только текст логина */}
                   {this.props.login ? this.props.formFields.email : 'Войти'}
                 </a>
               </Nav>

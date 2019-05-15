@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(233, 233, 233, 0.925);
+	background-color: rgba(233, 233, 233, 0.925);
 }
 
 /* ========================================================= */
@@ -12,7 +12,6 @@ div#mocha {
 
 #mocha #mocha-stats {
 	position: static;
- 	padding-top: 15px;
 }
 
 #mocha #mocha-stats .progress,
