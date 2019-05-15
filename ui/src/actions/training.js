@@ -10,13 +10,9 @@ mocha.setup('bdd');
 
 export const changeCode = createAction('CODE/CHANGE');
 export const getCurrentTaskId = createAction('TASK/CURRENT/ID/GET');
-
 export const fetchDataRequest = createAction('DATA/FETCH/REQUEST');
-export const fetchTestsRequest = createAction('TESTS/FETCH/REQUEST');
 export const fetchDataSuccess = createAction('DATA/FETCH/SUCCESS');
-export const fetchTestsSuccess = createAction('TESTS/FETCH/SUCCESS');
 export const fetchDataFailure = createAction('DATA/FETCH/FAILURE');
-export const fetchTestsFailure = createAction('TESTS/FETCH/FAILURE');
 
 export const fetchData = () => async (dispatch) => {
   const source = null;
@@ -29,25 +25,6 @@ export const fetchData = () => async (dispatch) => {
     dispatch(fetchDataFailure({ error: e }));
   }
 };
-export const fetchTestsData = () => async (dispatch) => {
-  const source = null;
-  dispatch(fetchTestsRequest({ source }));
-  try {
-    const data = await import('../data/tests.json');
-    dispatch(fetchTestsSuccess({ data: data.default }));
-  } catch (e) {
-    console.log(e);
-    dispatch(fetchTestsFailure({ error: e }));
-  }
-};
-
-// экшены не из тренировки
-export const showModal = createAction('MODAL/SHOW');
-export const hideModal = createAction('MODAL/HIDE');
-export const changeEmail = createAction('EMAIL/CHANGE');
-export const changePassword = createAction('PASSWORD/CHANGE');
-export const loginSuccess = createAction('USER/LOGIN/SUCCESS');
-// экшены не из тренировки
 
 export const getNextTaskId = createAction('TASK/NEXT/ID/GET');
 export const getPrevTaskId = createAction('TASK/PREV/ID/GET');
@@ -56,8 +33,6 @@ export const getPrevTaskId = createAction('TASK/PREV/ID/GET');
 export const fetchTestRequest = createAction('TEST/FETCH/REQUEST');
 export const fetchTestSuccess = createAction('TEST/FETCH/SUCCESS');
 export const fetchTestFailure = createAction('TEST/FETCH/FAILURE');
-
-export const getCurrentTestId = createAction('TEST/CURRENT/ID/GET');
 
 // взять с lodash
 const once = (f) => {
