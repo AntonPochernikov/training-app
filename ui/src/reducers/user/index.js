@@ -1,17 +1,32 @@
 import { combineReducers } from 'redux';
-import login from './login.js';
-import registration from './registration.js';
-import user from './user.js';
-import stats from './stats.js';
-import info from './info.js';
+import { handleActions } from 'redux-actions';
+import * as action from '../../actions';
 
-// сделать все редьюсеры юзера в этом файле
-// reducer`ы: для формы логина, для состояния логина, для текущего пользователя
+const init = {};
+
+const user = {
+  email: '',
+  password: '',
+};
+
+const formFields = handleActions({
+  [action.changeEmail]: (state, { payload: { email } }) => ({
+    ...state,
+    email,
+  }),
+  [action.changePassword]: (state, { payload: { password } }) => ({
+    ...state,
+    password,
+  }),
+}, user);
+
+const loginSuccess = handleActions({
+  [action.loginSuccess]: (state, { payload: { name } }) => name,
+}, null);
 
 export default combineReducers({
-  login,
-  registration,
+  init,
   user,
-  stats,
-  info,
+  formFields,
+  loginSuccess,
 });

@@ -3,8 +3,8 @@ import * as actionCreators from '../actions';
 import MainHeader from './MainHeader.jsx';
 
 const mapStateToProps = state => ({
-  login: state.user.login.loginSuccess,
-  formFields: state.user.login.formFields,
+  login: state.user.loginSuccess,
+  formFields: state.user.formFields,
 });
 
 export default connect(mapStateToProps, actionCreators)(MainHeader);
