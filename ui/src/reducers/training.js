@@ -5,6 +5,8 @@ import * as action from '../actions';
 const code = handleActions({
   [action.changeCode]: (state, { payload: { value } }) => value,
   [action.clearCode]: () => '',
+  [action.getNextTask]: () => '',
+  [action.getPrevTask]: () => '',
 }, '');
 
 const exercises = handleActions({

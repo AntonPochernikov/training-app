@@ -47,13 +47,11 @@ export default class Sandbox extends React.Component {
 
   handleNextButton = () => {
     this.clearTestOutput();
-    this.props.clearCode();
     this.props.getNextTask();
   }
 
   handlePrevButton = () => {
     this.clearTestOutput();
-    this.props.clearCode();
     this.props.getPrevTask();
   }
 
