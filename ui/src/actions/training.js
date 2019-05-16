@@ -1,5 +1,6 @@
 import { createAction } from 'redux-actions';
 import 'mocha/mocha';
+import _ from 'lodash';
 
 import { assert } from 'chai';
 import * as selector from '../selectors';
@@ -35,18 +36,6 @@ export const performTestRequest = createAction('TEST/PERFORM/REQUEST');
 export const performTestSuccess = createAction('TEST/PERFORM/SUCCESS');
 export const performTestFailure = createAction('TEST/PERFORM/FAILURE');
 
-// взять с lodash
-const once = (f) => {
-  let isDone = false;
-  return (...args) => {
-    if (isDone) {
-      return;
-    }
-    isDone = true;
-    f(...args);
-  };
-};
-
 export const testSolution = () => async (dispatch, getState) => {
   dispatch(performTestRequest());
   // eslint-disable-next-line
@@ -54,7 +43,7 @@ export const testSolution = () => async (dispatch, getState) => {
   const { test } = selector.getCurrentTask(getState());
 
   try {
-    const callback = once((err) => {
+    const callback = _.once((err) => {
       if (err) {
         dispatch(performTestFailure({ err }));
         return;
