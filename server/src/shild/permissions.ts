@@ -1,12 +1,13 @@
 import { shield } from 'graphql-shield'
 import { hasRole } from './hasRole'
-import { UserRole } from 'src/enums'
 
+const admin = [`Admin`]
+const adminUser = [`Admin`, 'User']
 export const permissions = shield({
     Query: {
-        tests: hasRole([UserRole.Admin, UserRole.User]),
+        tests: hasRole(adminUser),
     },
     Mutation: {
-        createQuestion: hasRole([UserRole.Admin]),
+        createQuestion: hasRole(admin),
     },
 })
