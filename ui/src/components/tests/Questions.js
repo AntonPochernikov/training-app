@@ -6,6 +6,7 @@ import * as actionCreators from '../../actions';
 
 const mapStateToProps = state => ({
   currentTest: select.getCurrentTest(state),
+  firstQuestion: select.getFirstQuestion(state),
 });
 
 export default connect(mapStateToProps, actionCreators)(Questions);

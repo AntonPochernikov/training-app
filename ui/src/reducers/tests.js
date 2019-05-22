@@ -36,9 +36,15 @@ const fetchDataTests = handleActions({
   }),
 }, fetchInit);
 
+const currentQuestionId = handleActions({
+  [action.getCurrentQuestionId]: (state, { payload: { questionId } }) => questionId,
+},
+null);
+
 export default combineReducers({
   fetchDataTests,
   tests,
   form: reduxFormReducer,
   currentTestId,
+  currentQuestionId,
 });

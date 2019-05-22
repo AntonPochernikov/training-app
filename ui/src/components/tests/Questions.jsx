@@ -9,8 +9,13 @@ const Questions = (props) => {
       name,
       description,
     },
+    firstQuestion: {
+      id: questionId,
+      name: questionName,
+      description: questionDescription,
+      options,
+    },
   } = props;
-
   return (
     <div className="questions">
       <div className="heading">
@@ -20,12 +25,18 @@ const Questions = (props) => {
       <div className="questions-content">
         <form>
           <div className="questions-heading">
-            <p className="question-id"> id</p>
-            <p className="question-name">name</p>
-            <p className="question-description">description</p>
+            <p className="question-id"> Вопрос {questionId}</p>
+            <p className="question-name">{questionName}</p>
+            <pre>
+              <code >
+                {questionDescription}
+              </code>
+            </pre>
           </div>
           <div className="options-content">
-            <ChooseOne />
+            <ChooseOne
+              options={options}
+            />
           </div>
           <div className="container-navigation">
             <button className="btn-back" type="submit" >Назад </button>
