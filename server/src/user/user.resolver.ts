@@ -16,8 +16,8 @@ export class UserResolver {
     }
 
     @Query(() => [User])
-    async users(@Args('first') first: number) {
-        return this.userService.getUsersByLimit(first)
+    async users(@Args('limit') limit: number) {
+        return this.userService.getUsersByLimit(limit)
     }
 
     @Mutation(() => UserRegistrationOutput)
