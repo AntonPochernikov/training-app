@@ -3,11 +3,12 @@ import { EntityRepository, Repository } from 'typeorm'
 import uuidJs from 'uuid-js'
 import { UserLoginInput, UserRegistrationInput } from './types/inputs'
 import { User } from './user.schema'
+import { UserRole } from 'src/enums'
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
-    async getUsersByLimit(firts: number): Promise<User[]> {
+    async getUsersByLimit(limit: number): Promise<User[]> {
         try {
-            return await User.find({ take: firts })
+            return await User.find({ take: limit })
         } catch (err) {
             throw new Error(err)
         }
@@ -15,8 +16,9 @@ export class UserRepository extends Repository<User> {
 
     async userRegistration(data: UserRegistrationInput): Promise<User> {
         try {
-            const { password, ...other } = data
+            const { password, role, ...other } = data
             // encrypt password
+
             const salt = bcryptjs.genSaltSync(10)
             const passwordBeCrypt = bcryptjs.hashSync(password, salt)
 
@@ -25,6 +27,7 @@ export class UserRepository extends Repository<User> {
                     email: data.email,
                 },
             })
+
             if (emailTaken) {
                 throw new Error('Email is taken')
             }
@@ -44,6 +47,7 @@ export class UserRepository extends Repository<User> {
             const user = await this.create({
                 ...other,
                 refreshToken,
+                role: Number(UserRole[role]),
                 password: passwordBeCrypt,
             }).save()
 

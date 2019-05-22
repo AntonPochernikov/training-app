@@ -1,5 +1,15 @@
 import { Field, ID, ObjectType } from 'type-graphql'
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import {
+    BaseEntity,
+    Column,
+    Entity,
+    PrimaryGeneratedColumn,
+    CreateDateColumn,
+    UpdateDateColumn,
+    ManyToOne,
+} from 'typeorm'
+import { Role } from 'src/role/role.schema'
+import { UserRoleToNumber } from 'src/enums/userRole';
 
 @ObjectType()
 @Entity()
@@ -29,7 +39,16 @@ export class User extends BaseEntity {
     refreshToken: string
 
     // only db
+    @ManyToOne(() => Role, role => role.id)
+    @Column()
+    role: UserRoleToNumber
 
     @Column()
     password: string
+
+    @CreateDateColumn()
+    readonly createdAt: string
+
+    @UpdateDateColumn({ type: 'timestamp' })
+    readonly updatedAt: number
 }

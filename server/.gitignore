@@ -2,3 +2,4 @@ node_modules
 schema.gql
 dist
 app.module.ts
+./src/app.module.ts
