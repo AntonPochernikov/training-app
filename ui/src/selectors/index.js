@@ -5,7 +5,7 @@ export const getExercises = state => state.training.exercises;
 export const getCurrentTaskId = state => state.training.currentTaskId;
 export const getTests = state => state.tests.tests;
 export const getCurrentTestId = state => state.tests.currentTestId;
-export const getQuestions = state => state.tests.tests[0].questions;
+export const getCurrentQuestionId = state => state.tests.currentQuestionId;
 
 export const getTaskByComplexity = createSelector(
   getExercises,
@@ -57,6 +57,18 @@ export const getCurrentTest = createSelector(
   getCurrentTestId,
   (items, currentTestId) => (_.find((items), (item => item.id === currentTestId))),
 );
+
+
+export const getQuestions = createSelector(
+  getCurrentTest,
+  items => (_.get(items, 'questions')),
+);
+// export const getCurrentQuestion = createSelector(
+//   getQuestions,
+//   getCurrentQuestionId,
+//   items => (_.find((items), item => console.log(item))),
+// );
+
 export const getFirstQuestion = createSelector(
   getQuestions,
   items => (_.first(items)),

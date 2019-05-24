@@ -6,7 +6,8 @@
 	top: 0; left: 0; bottom: 0; right: 0;
 	border: 1px solid rgb(163, 163, 163);
 	background: white;
-	padding: 10px;
+	padding: 30px;
+	border-radius: 10px;
 }
 
 .btn-back {
@@ -15,4 +16,13 @@
 
 .btn-next {
 	margin-right: 30px;
+}
+
+.options-content{
+	padding-bottom: 20px;
+}
+
+.question-id{
+	text-align: center;
+	font-weight: bold;
 }

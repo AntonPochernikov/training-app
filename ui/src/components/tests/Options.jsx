@@ -7,11 +7,11 @@ const ChooseOne = (props) => {
     isChecked,
   } = props;
   return options.map(({ id, description }) => (
-    <div className="chooseOne" key={id}>
+    <div className="options" key={id}>
       <label>
         <Field
           checked={isChecked}
-          name="options"
+          name="options__input"
           component="input"
           type="radio"
           value={id} />

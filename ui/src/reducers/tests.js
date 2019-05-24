@@ -38,6 +38,8 @@ const fetchDataTests = handleActions({
 
 const currentQuestionId = handleActions({
   [action.getCurrentQuestionId]: (state, { payload: { questionId } }) => questionId,
+  [action.getNextQuestion]: questionId => questionId + 1,
+  [action.getPrevQuestion]: questionId => questionId - 1,
 },
 null);
 
