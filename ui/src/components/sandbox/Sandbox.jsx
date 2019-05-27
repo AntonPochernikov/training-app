@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Spinner } from 'react-bootstrap';
+import { Spinner, Tooltip, OverlayTrigger } from 'react-bootstrap';
 import './Sandbox.css';
 import 'mocha/mocha.css';
 
@@ -11,6 +11,9 @@ const SandboxPreloader = () => (
   <div className="sandbox-spinner">
     <Spinner animation="border" variant="secondary" />
   </div>
+);
+const renderTooltip = (
+  <Tooltip>Проверить правильность решения с помощью тестов </Tooltip>
 );
 
 export default class Sandbox extends React.Component {
@@ -87,7 +90,9 @@ export default class Sandbox extends React.Component {
           <div className="test-output">
             <div id="mocha"/>
           </div>
-          <button className="btn-sandbox" onClick={this.handleTestButton}>Проверить</button>
+          <OverlayTrigger placement="right" overlay={renderTooltip}>
+            <button className="btn-sandbox" onClick={this.handleTestButton}>Проверить</button>
+          </OverlayTrigger>
         </div>
         <div className="container-navigation">
           <button
