@@ -9,10 +9,10 @@ export default class Tests extends React.Component {
   };
 
   renderCards() {
-    const { testTasks, getCurrentTestId } = this.props;
-    // убрать style из Card
+    const { testTasks, getCurrentTestId, getCurrentQuestionId } = this.props;
+
     return testTasks.map(({ type, tests }) => (
-      <Card key={type} style={{ width: '18rem' }}>
+      <Card className = "card-test" key={type}>
         <Card.Body>
           <Card.Title>Тема: {type}</Card.Title>
           <Card.Text>
@@ -20,6 +20,7 @@ export default class Tests extends React.Component {
           </Card.Text>
           <StartTestLink
             getCurrentTestId={getCurrentTestId}
+            getCurrentQuestionId={getCurrentQuestionId}
             tests={tests}
             type={type}
           />

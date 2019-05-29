@@ -7,8 +7,9 @@ export default class StartTestLink extends Component {
   }
 
   render() {
-    const { tests, type } = this.props;
-    return tests.map(({ id }) => (
+    const { tests } = this.props;
+
+    return tests.map(({ id, type }) => (
       <div className="test" key={id}>
         <Link to={`/tests-${type}`}
           onClick={this.handleClick(id)}

@@ -12,6 +12,11 @@ class Questions extends React.Component {
     this.props.getPrevQuestions();
   }
 
+  submit = (values) => {
+    // print the form values to the console
+    console.log(values);
+  }
+
   render() {
     const {
       currentTest: {
@@ -25,6 +30,7 @@ class Questions extends React.Component {
         options,
       },
     } = this.props;
+
     return (
       <div className="questions">
         <div className="heading">
@@ -36,21 +42,14 @@ class Questions extends React.Component {
             <div className="questions-heading">
               <p className="question-id"> Вопрос {questionId}</p>
               <p className="question-name">{questionName}</p>
-              <pre>
-                <code >
-                  {questionDescription}
-                </code>
-              </pre>
+              <p className="question-description"> {questionDescription}</p>
             </div>
             <div className="options-content">
               <ChooseOne
                 options={options}
               />
             </div>
-            <div className="container-navigation">
-              <button className="btn-back" type="submit" onClick={this.handlePrevButton}>Назад </button>
-              <button className="btn-next" onClick={this.handleNextButton}>Далее</button>
-            </div>
+            <button className="btn-next-test" onClick={this.handleNextButton}>Далее</button>
           </form>
         </div>
       </div>
