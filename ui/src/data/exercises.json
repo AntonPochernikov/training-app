@@ -46,13 +46,13 @@
     "description": "Напишите функцию ucFirst(str), которая возвращает строку str с заглавным первым символом.",
     "code": "",
     "test": "const evalCode = `${code}; return ucFirst(str)`;\nconst ucFirst = new Function('str', evalCode).bind({});\ndescribe(\"ucFirst\",()=>{function ucFirstTest(str) {let result; (!str) ? result=str : result= str[0].toUpperCase() + str.slice(1);it('при str = '+str+' ,возвращает ' + result,()=> {assert.equal(ucFirst(str), result);});} ucFirstTest('петя'); ucFirstTest('вася'); ucFirstTest('саша'); ucFirstTest('миша');});"
-},
-{
+  },
+  {
     "id": 7,
     "name": "Фильтрация массива 'на месте'",
     "complexity": "hard",
     "description": "Создайте функцию filterRangeInPlace(arr, a, b), которая получает массив с числами arr и удаляет из него все числа вне диапазона a..b. То есть, проверка имеет вид a ≤ arr[i] ≤ b. Функция должна менять сам массив и ничего не возвращать.",
     "code": "",
     "test": "const evalCode = `${code}; return filterRangeInPlace(arr, a, b)`;\nconst filterRangeInPlace = new Function('arr', 'a','b', evalCode).bind({});\ndescribe(\"filterRangeInPlace\", ()=>{function filterRangeInPlaceTest(arr, a, b) { for (let i = 0; i < arr.length; i++) {let val = arr[i];if (val < a || val > b) {arr.splice(i--, 1);}};it('удаляет  все числа вне диапазона',()=>{assert.equal (filterRangeInPlace(arr, a, b));});} { const arr = [5, 3, 8, 1];filterRangeInPlace(arr, 1, 4);}});"
-}
+  }
 ]
