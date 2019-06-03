@@ -60,3 +60,4 @@ export const testSolution = () => async (dispatch, getState) => {
     console.log(e);
   }
 };
+export const getCurrentOutputTab = createAction('CURRENT/OUTPUT/TAB/');

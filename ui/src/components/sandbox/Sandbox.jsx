@@ -1,5 +1,12 @@
 import React, { Suspense, lazy } from 'react';
-import { Spinner, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import {
+  Spinner,
+  Tooltip,
+  OverlayTrigger,
+}
+  from 'react-bootstrap';
+import Navigation from './Navigation.jsx';
+import Output from './Output.jsx';
 import './Sandbox.css';
 import 'mocha/mocha.css';
 
@@ -12,8 +19,8 @@ const SandboxPreloader = () => (
     <Spinner animation="border" variant="secondary" />
   </div>
 );
-const renderTooltip = (
-  <Tooltip>Проверить правильность решения с помощью тестов </Tooltip>
+const renderTooltipResult = (
+  <Tooltip>Показать результат выполнения функции</Tooltip>
 );
 
 export default class Sandbox extends React.Component {
@@ -39,33 +46,23 @@ export default class Sandbox extends React.Component {
     mocha.suite.suites = [];
   };
 
-  handleTestButton = () => {
-    this.clearTestOutput();
-    this.props.testSolution();
+  handleRunButton = () => {
+    this.props.getCurrentOutputTab({ outputTab: 'result' });
   }
 
   handleCodeChange = (newValue) => {
     this.props.changeCode({ value: newValue });
   }
 
-  handleNextButton = () => {
-    this.clearTestOutput();
-    this.props.getNextTask();
-  }
-
-  handlePrevButton = () => {
-    this.clearTestOutput();
-    this.props.getPrevTask();
-  }
-
   render() {
     const {
       code,
-      currentTask: {
-        name,
-        complexity,
-        description,
-      },
+      currentTask,
+      getCurrentOutputTab,
+      testSolution,
+      currentOutputTab,
+      getPrevTask,
+      getNextTask,
       isFirst,
       isLast,
     } = this.props;
@@ -81,35 +78,25 @@ export default class Sandbox extends React.Component {
               value={code}
             />
           </Suspense>
-        </div>
-        {/* <Button variant="primary" className="btn-sandbox" size="sm">Отправить решение</Button> */}
-        <div className="interface-box">
-          <p className="exercise-name">{name}</p>
-          <p className="exercise-complexity">Уровень: {complexity}</p>
-          <div className="exercise-description">{description}</div>
-          <div className="test-output">
-            <div id="mocha"/>
-          </div>
-          <OverlayTrigger placement="right" overlay={renderTooltip}>
-            <button className="btn-sandbox" onClick={this.handleTestButton}>Проверить</button>
+          <OverlayTrigger placement="right" overlay={renderTooltipResult}>
+            <button className= "btn-sandbox-run" onClick={this.handleRunButton} >Выполнить</button>
           </OverlayTrigger>
         </div>
-        <div className="container-navigation">
-          <button
-            className="btn-back"
-            disabled={isFirst}
-            onClick={this.handlePrevButton}
-          >
-            Назад
-          </button>
-          <button
-            className="btn-next"
-            disabled={isLast}
-            onClick={this.handleNextButton}
-          >
-            Далее
-          </button>
-        </div>
+        <Output
+          // mocha={mocha}
+          clearTestOutput={this.clearTestOutput}
+          currentTask= {currentTask}
+          getCurrentOutputTab={getCurrentOutputTab}
+          testSolution={testSolution}
+          currentOutputTab={currentOutputTab}
+        />
+        <Navigation
+          clearTestOutput={this.clearTestOutput}
+          getPrevTask={getPrevTask}
+          getNextTask={getNextTask}
+          isFirst = {isFirst}
+          isLast = {isLast}
+        />
       </div>
     );
   }
