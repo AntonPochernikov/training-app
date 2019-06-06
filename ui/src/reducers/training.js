@@ -58,10 +58,15 @@ const testSolution = handleActions({
   }),
 }, testInit);
 
+const currentOutputTab = handleActions({
+  [action.getCurrentOutputTab]: (state, { payload: { outputTab } }) => outputTab,
+}, 'test');
+
 export default combineReducers({
   code,
   exercises,
   currentTaskId,
   dataFetch,
   testSolution,
+  currentOutputTab,
 });
