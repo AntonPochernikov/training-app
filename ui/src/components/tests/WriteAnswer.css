@@ -1,0 +1,44 @@
+.options{
+	height: 35px;
+}
+.options-label {
+	font-weight: normal;
+	color: #000;
+	display: inline-block;
+	font: 20px/30px FontAwesome;
+	margin-right: 15px;
+	position: relative;
+	text-align: center;
+	text-indent: 0px;
+	width: 30px;
+	height: 30px;
+	background: #FFF;
+	border: 1px solid #e3e3e3;
+	border-image: initial;
+	vertical-align: middle;
+}
+
+.options-label::before {
+	content: "";
+	position: absolute;
+	display: inline-block;
+	left: 50%;
+	top: 5px;
+	width: 7px;
+	height: 15px;
+	margin-left: -3.5px;
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-right: 1px solid rgb(0, 0, 0);
+	transform: rotate(45deg);
+	opacity: 0;
+   }
+
+.answer-input {
+	cursor: text;
+	position: absolute;
+	padding-right: 10px;
+	width: calc(214%/5);
+	height: 29px;
+	z-index: 1;
+}
+

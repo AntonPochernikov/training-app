@@ -1,20 +1,28 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
-import ChooseOne from './Options.jsx';
+import ChooseOne from './ChooseOne.jsx';
+import WriteAnswer from './WriteAnswer.jsx';
 import './Questions.css';
 
 class Questions extends React.Component {
   handleNextButton = () => {
-    this.props.getNextQuestions();
+    this.props.getNextQuestion();
   }
 
-  handlePrevButton = () => {
-    this.props.getPrevQuestions();
-  }
+  renderQuestionsByType = (questionType) => {
+    const { currentQuestion: { options } } = this.props;
 
-  submit = (values) => {
-    // print the form values to the console
-    console.log(values);
+    switch (questionType) {
+    case 'chooseOne':
+      return <ChooseOne options={options}/>;
+    case 'writeAnswer':
+      return <WriteAnswer />;
+    case 'chooseMultiply':
+      return questionType;
+    default:
+      break;
+    }
+    return 0;
   }
 
   render() {
@@ -23,11 +31,11 @@ class Questions extends React.Component {
         name,
         description,
       },
-      firstQuestion: {
+      currentQuestion: {
         id: questionId,
         name: questionName,
+        type: questionType,
         description: questionDescription,
-        options,
       },
     } = this.props;
 
@@ -45,11 +53,9 @@ class Questions extends React.Component {
               <p className="question-description"> {questionDescription}</p>
             </div>
             <div className="options-content">
-              <ChooseOne
-                options={options}
-              />
+              {this.renderQuestionsByType(questionType)}
             </div>
-            <button className="btn-next-test" onClick={this.handleNextButton}>Далее</button>
+            <button type="button" className="btn-next-test" onClick={this.handleNextButton}>Далее</button>
           </form>
         </div>
       </div>

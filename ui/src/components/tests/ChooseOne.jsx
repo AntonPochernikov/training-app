@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import './Options.css';
+import './ChooseOne.css';
 
 
 const ChooseOne = (props) => {
@@ -12,11 +12,10 @@ const ChooseOne = (props) => {
     <div className="options" key={id}>
       <Field
         className="options-input"
-        checked="form.questions.fields.values.options_input" /* временно */
         name="options__input"
         component="input"
         type="radio"
-        value={id}
+        value={description}
       />
       <label className="options-label" forhtml="options__input"></label>
       <span className="options-description">{description}</span>
