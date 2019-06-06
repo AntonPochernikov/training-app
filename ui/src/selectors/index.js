@@ -1,11 +1,11 @@
 import { createSelector } from 'reselect';
 import _ from 'lodash';
 
-export const getExercises = state => state.training.exercises;
-export const getCurrentTaskId = state => state.training.currentTaskId;
-export const getTests = state => state.tests.tests;
-export const getCurrentTestId = state => state.tests.currentTestId;
-export const getCurrentQuestionId = state => state.tests.currentQuestionId;
+export const getExercises = state => state.app.training.exercises;
+export const getCurrentTaskId = state => state.app.training.currentTaskId;
+export const getTests = state => state.app.tests.tests;
+export const getCurrentTestId = state => state.app.tests.currentTestId;
+export const getCurrentQuestionId = state => state.app.tests.currentQuestionId;
 
 export const getTaskByComplexity = createSelector(
   getExercises,
@@ -63,13 +63,9 @@ export const getQuestions = createSelector(
   getCurrentTest,
   items => (_.get(items, 'questions')),
 );
-// export const getCurrentQuestion = createSelector(
-//   getQuestions,
-//   getCurrentQuestionId,
-//   items => (_.find((items), item => console.log(item))),
-// );
 
-export const getFirstQuestion = createSelector(
+export const getCurrentQuestion = createSelector(
   getQuestions,
-  items => (_.first(items)),
+  getCurrentQuestionId,
+  (items, currentQuestionId) => (_.find((items), (item => item.id === currentQuestionId))),
 );

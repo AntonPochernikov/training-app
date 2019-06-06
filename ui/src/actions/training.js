@@ -39,7 +39,7 @@ export const performTestFailure = createAction('TEST/PERFORM/FAILURE');
 export const testSolution = () => async (dispatch, getState) => {
   dispatch(performTestRequest());
   // eslint-disable-next-line
-  const { code } = getState().training;
+  const { code } = getState().app.training;
   const { test } = selector.getCurrentTask(getState());
 
   try {

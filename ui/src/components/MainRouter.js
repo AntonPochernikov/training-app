@@ -4,9 +4,9 @@ import * as actionCreators from '../actions';
 import MainRouter from './MainRouter.jsx';
 
 const mapStateToProps = state => ({
-  currentTaskId: state.training.currentTaskId,
-  currentTestId: state.tests.currentTestId,
-  modal: state.common.modal,
+  currentTaskId: state.app.training.currentTaskId,
+  currentTestId: state.app.tests.currentTestId,
+  modal: state.app.common.modal,
 });
 
 export default connect(mapStateToProps, actionCreators)(MainRouter);

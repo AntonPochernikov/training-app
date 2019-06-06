@@ -3,8 +3,8 @@ import * as actionCreators from '../../actions';
 import Login from './Login.jsx';
 
 const mapStateToProps = state => ({
-  email: state.user.formFields.email,
-  password: state.user.formFields.password,
+  email: state.app.user.formFields.email,
+  password: state.app.user.formFields.password,
 });
 
 

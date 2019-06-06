@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 import { handleActions } from 'redux-actions';
-import { reducer as reduxFormReducer } from 'redux-form';
 import * as action from '../actions';
 
 const tests = handleActions({
@@ -39,14 +38,12 @@ const fetchDataTests = handleActions({
 const currentQuestionId = handleActions({
   [action.getCurrentQuestionId]: (state, { payload: { questionId } }) => questionId,
   [action.getNextQuestion]: questionId => questionId + 1,
-  [action.getPrevQuestion]: questionId => questionId - 1,
 },
-null);
+1);
 
 export default combineReducers({
   fetchDataTests,
   tests,
-  form: reduxFormReducer,
   currentTestId,
   currentQuestionId,
 });
