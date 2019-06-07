@@ -66,6 +66,7 @@ export default class Sandbox extends React.Component {
       isFirst,
       isLast,
     } = this.props;
+
     return (
       <div className="workspace">
         <div className="sandbox">
@@ -79,7 +80,7 @@ export default class Sandbox extends React.Component {
             />
           </Suspense>
           <OverlayTrigger placement="right" overlay={renderTooltipResult}>
-            <button className= "btn-sandbox-run" onClick={this.handleRunButton} >Выполнить</button>
+            <button className= "btn-sandbox-run" onClick={this.handleRunButton}>Выполнить</button>
           </OverlayTrigger>
         </div>
         <Output
