@@ -15,13 +15,13 @@ const renderTooltipTest = (
 
 export default class Output extends React.Component {
   handleSelectTab = (key) => {
-    this.props.getCurrentOutputTab({ outputTab: key });
+    this.props.changeCurrentOutputTab({ outputTab: key });
   };
 
   handleTestButton = () => {
     this.props.clearTestOutput();
     this.props.testSolution();
-    this.props.getCurrentOutputTab({ outputTab: 'test' });
+    this.props.changeCurrentOutputTab({ outputTab: 'test' });
   }
 
   render() {
@@ -33,6 +33,7 @@ export default class Output extends React.Component {
       },
       currentOutputTab,
     } = this.props;
+
     return (
       <div className="interface-box">
         <p className="exercise-name">{name}</p>

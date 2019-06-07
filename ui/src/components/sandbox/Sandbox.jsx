@@ -47,7 +47,7 @@ export default class Sandbox extends React.Component {
   };
 
   handleRunButton = () => {
-    this.props.getCurrentOutputTab({ outputTab: 'result' });
+    this.props.changeCurrentOutputTab({ outputTab: 'result' });
   }
 
   handleCodeChange = (newValue) => {
@@ -58,7 +58,7 @@ export default class Sandbox extends React.Component {
     const {
       code,
       currentTask,
-      getCurrentOutputTab,
+      changeCurrentOutputTab,
       testSolution,
       currentOutputTab,
       getPrevTask,
@@ -86,7 +86,7 @@ export default class Sandbox extends React.Component {
           // mocha={mocha}
           clearTestOutput={this.clearTestOutput}
           currentTask= {currentTask}
-          getCurrentOutputTab={getCurrentOutputTab}
+          changeCurrentOutputTab={changeCurrentOutputTab}
           testSolution={testSolution}
           currentOutputTab={currentOutputTab}
         />

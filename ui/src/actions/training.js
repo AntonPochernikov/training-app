@@ -9,6 +9,8 @@ const { mocha } = window;
 window.assert = assert;
 mocha.setup('bdd');
 
+export const changeCurrentOutputTab = createAction('CURRENT/OUTPUT/TAB/CHANGE');
+
 export const changeCode = createAction('CODE/CHANGE');
 export const clearCode = createAction('CODE/CLEAR');
 
@@ -60,4 +62,3 @@ export const testSolution = () => async (dispatch, getState) => {
     console.log(e);
   }
 };
-export const getCurrentOutputTab = createAction('CURRENT/OUTPUT/TAB/');
