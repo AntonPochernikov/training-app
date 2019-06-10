@@ -1,9 +1,9 @@
-// здесь будут action по lessons
 import { createAction } from 'redux-actions';
 
 export const fetchLessonsRequest = createAction('LESSONS/FETCH/REQUEST');
 export const fetchLessonsSuccess = createAction('LESSONS/FETCH/SUCCESS');
 export const fetchLessonsFailure = createAction('LESSONS/FETCH/FAILURE');
+
 export const fetchLessonsData = () => async (dispatch) => {
   const source = null;
   dispatch(fetchLessonsRequest({ source }));
@@ -16,3 +16,5 @@ export const fetchLessonsData = () => async (dispatch) => {
   }
 };
 export const showHideParagraphs = createAction('PARAGRAPHS/SHOW/HIDE');
+/* разделить на два экшена, открытия и закрытия. плюс посмотреть,
+ почему так медленно закрывается, когда открываешь новый параграф */
