@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Exercises from './exercises/Exercises.js';
 import Sandbox from './sandbox/Sandbox.js';
 import Tests from './tests/Tests.js';
-import Lessons from './lessons/Lessons.jsx';
+import Lessons from './lessons/Lessons.js';
 import MainHeader from './MainHeader.js';
 import HomePage from './homepage/HomePage.jsx';
 import Login from './login/Login.js';
@@ -14,6 +14,7 @@ export default class MainRouter extends React.Component {
   componentDidMount() {
     this.props.fetchData();
     this.props.fetchTestsData();
+    this.props.fetchLessonsData();
   }
 
   renderRoot = () => <Redirect to="/home"/>
