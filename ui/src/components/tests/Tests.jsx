@@ -14,7 +14,7 @@ export default class Tests extends React.Component {
     return testTasks.map(({ type, tests }) => (
       <Card className = "card-test" key={type}>
         <Card.Body>
-          <Card.Title>Тема: {type}</Card.Title>
+          <Card.Title>Тема: {tests[0].name}</Card.Title>
           <Card.Text>
             Описание
           </Card.Text>

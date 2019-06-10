@@ -28,7 +28,6 @@ class Questions extends React.Component {
   render() {
     const {
       currentTest: {
-        name,
         description,
       },
       currentQuestion: {
@@ -37,13 +36,15 @@ class Questions extends React.Component {
         type: questionType,
         description: questionDescription,
       },
+      submitting,
+      pristine,
+      invalid,
     } = this.props;
 
     return (
       <div className="questions">
         <div className="heading">
-          <h2 className="heading-main">{name}</h2>
-          <b>{description}</b>
+          <h3 className="heading-main">{description}</h3>
         </div>
         <div className="questions-content">
           <form>
@@ -55,7 +56,14 @@ class Questions extends React.Component {
             <div className="options-content">
               {this.renderQuestionsByType(questionType)}
             </div>
-            <button type="button" className="btn-next-test" onClick={this.handleNextButton}>Далее</button>
+            <button
+              type="button"
+              className="btn-next-test"
+              disabled={submitting || pristine || invalid}
+              onClick={this.handleNextButton}
+            >
+              Далее
+            </button>
           </form>
         </div>
       </div>
