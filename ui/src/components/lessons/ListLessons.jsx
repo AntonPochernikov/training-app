@@ -25,11 +25,11 @@ export default class ListLessons extends Component {
     return <div onClick={ this.toggleTopic}>
       <ListGroup.Item>
         <p>{chapter} {name}</p>
-        {paragraphs.map(({ id, name: pname }) => (
+        {paragraphs.map(({ id, name: pname, linkName }) => (
           <div className="paragraphs" key={id}>
             <Collapse in={this.isOpen()}>
               <Link
-                className="paragraph__link" to="#"
+                className="paragraph__link" to={`/lessons-${linkName}`}
               >
                 {id} {pname}
               </Link>

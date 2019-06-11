@@ -6,22 +6,27 @@
     "paragraphs": [
       {
         "id":"1.1",
+        "linkName":"variables",
         "name":"Переменные"
       },
       {
         "id":"1.2",
+        "linkName":"types",
         "name":"Типы данных"
       },
       {
         "id":"1.3",
+        "linkName":"operators",
         "name":"Операторы"
       },
       {
         "id":"1.4",
+        "linkName":"cycles",
         "name":"Циклы"
       },
       {
         "id":"1.5",
+        "linkName":"functions",
         "name":"Функции"
       }
     ]
@@ -34,18 +39,22 @@
     "paragraphs": [
       {
         "id":"1.1",
+        "linkName":"numbers",
         "name":"Числа"
       },
       {
         "id":"1.2",
+        "linkName":"strings",
         "name":"Строки"
       },
       {
         "id":"1.3",
+        "linkName":"objects",
         "name":"Объекты"
       },
       {
         "id":"1.4",
+        "linkName":"arrays",
         "name":"Массивы"
       }
     ]
@@ -57,14 +66,17 @@
     "paragraphs": [
       {
         "id":"1.1",
+        "linkName":"global-object",
         "name":"Глобальный объект"
       },
       {
         "id":"1.2",
+        "linkName":"closures",
         "name":"Замыкания"
       },
       {
         "id":"1.3",
+        "linkName":"local-variables",
         "name":"Локальные переменные для обьекта"
       }
     ]
@@ -76,18 +88,22 @@
     "paragraphs": [
       {
         "id":"1.1",
+        "linkName":"object-methods",
         "name":"Методы объекта"
       },
       {
         "id":"1.2",
+        "linkName":"this",
         "name":"Ключевое слово: this"
       },
       {
         "id":"1.3",
+        "linkName":"call-apply",
         "name":"Явное указание this: \"call\", \"apply\""
       },
       {
         "id":"1.4",
+        "linkName":"bind",
         "name":"Привязка контекста:\"bind\""
       }
     ]
@@ -99,22 +115,27 @@
     "paragraphs": [
       {
         "id":"1.1",
+        "linkName":"ajax-intro",
         "name":"AJAX Введение"
       },
       {
         "id":"1.2",
+        "linkName":"ajax-xhr",
         "name":"AJAX XMLHttpRequest"
       },
       {
         "id":"1.3",
+        "linkName":"ajax-request",
         "name":"AJAX Запрос"
       },
       {
         "id":"1.4",
+        "linkName":"ajax-get",
         "name":"AJAX Получение"
       },
       {
         "id":"1.5",
+        "linkName":"json",
         "name":"JSON"
       }
     ]
@@ -126,26 +147,32 @@
     "paragraphs": [
       {
         "id":"1.1",
+        "linkName":"dom",
         "name":"Дерево DOM"
       },
       {
         "id":"1.2",
+        "linkName":"modyfying",
         "name":"Поиск, удаление и добавление узлов"
       },
       {
         "id":"1.3",
+        "linkName":"properties",
         "name":"Свойства узлов"
       },
       {
         "id":"1.4",
+        "linkName":"events",
         "name":"События"
       },
       {
         "id":"1.5",
+        "linkName":"forms",
         "name":"Формы, элементы управления"
       },
       {
         "id":"1.6",
+        "linkName":"widgets",
         "name":"Создание графических компонентов"
       }
     ]
@@ -157,30 +184,33 @@
     "paragraphs": [
       {
         "id":"1.1",
+        "linkName":"getters-setters",
         "name":"Геттеры и сеттеры"
       },
       {
         "id":"1.2",
+        "linkName":"functional-inheritance",
         "name":"Функциональное наследование"
       },
       {
         "id":"1.3",
+        "linkName":"prototype",
         "name":"Прототип объекта  и создание объектов через New "
       },
+
       {
         "id":"1.4",
-        "name":"Привязка контекста:\"bind\""
-      },
-      {
-        "id":"1.5",
+        "linkName":"native-classes",
         "name":"Встроенные «классы» в JavaScript"
       },
       {
-        "id":"1.6",
+        "id":"1.5",
+        "linkName":"classes",
         "name":"Свои классы на прототипах"
       },
       {
-        "id":"1.7",
+        "id":"1.6",
+        "linkName":"class-inheritance",
         "name":"Наследование классов в JavaScript"
       }
     ]
@@ -192,26 +222,32 @@
     "paragraphs": [
       {
         "id":"1.1",
+        "linkName":"let-const",
         "name":"Переменные: let и const"
       },
       {
         "id":"1.2",
+        "linkName":"destructuring",
         "name":"Деструктуризация"
       },
       {
         "id":"1.3",
+        "linkName":"es6-functions",
         "name":"Функции"
       },
       {
         "id":"1.4",
+        "linkName":"es6-strings",
         "name":"Строки"
       },
       {
         "id":"1.5",
+        "linkName":"es6-objects",
         "name":"Объекты"
       },
       {
         "id":"1.6",
+        "linkName":"es6-classes",
         "name":"Классы"
       }
     ]

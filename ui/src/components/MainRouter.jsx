@@ -9,6 +9,7 @@ import HomePage from './homepage/HomePage.jsx';
 import Login from './login/Login.js';
 import User from './user/User.jsx';
 import Questions from './tests/Questions.js';
+import Paragraphs from './lessons/Paragraphs.jsx';
 
 export default class MainRouter extends React.Component {
   componentDidMount() {
@@ -51,6 +52,7 @@ export default class MainRouter extends React.Component {
             <Route path="/lessons" component={Lessons} />
             <Route path="/user" component={User} />
             <Route path="/tests-:type" render={this.renderQuestions} />
+            <Route path="/lessons-:linkName" component={Paragraphs} />
           </main>
         </div>
       </Router>
