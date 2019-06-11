@@ -29,12 +29,14 @@ const fetchLessonsData = handleActions({
     errMessage: e.message,
   }),
 }, fetchInit);
-const collapse = handleActions({
-  [action.showHideParagraphs]: (state, { payload: { lesson } }) => lesson,
+
+const topic = handleActions({
+  [action.selectTopic]: (state, { payload: { id } }) => id,
 }, {});
 
 export default combineReducers({
   fetchLessonsData,
   lessons,
-  collapse,
+  topic,
+
 });

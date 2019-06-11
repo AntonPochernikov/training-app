@@ -3,30 +3,41 @@ import { ListGroup, Collapse } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default class ListLessons extends Component {
-  toggle = () => {
-    this.props.toggle(this.props.chapter);
+  toggleTopic = () => {
+    const { lesson: { id: lessonId }, topic } = this.props;
+    this.props.selectTopic({ id: (topic !== lessonId ? lessonId : null) });
+  }
+
+  isOpen() {
+    const { lesson: { id: lessonId }, topic } = this.props;
+    return (topic === lessonId);
   }
 
   render() {
     const {
-      paragraphs,
-      chapter,
-      name,
-    } = this.props; // сюда должен приходить наш объект с полями, здесь его можно будет деструктуризировать
-
-    return <div onClick={this.toggle}>
+      lesson:
+      {
+        paragraphs,
+        chapter,
+        name,
+      },
+    } = this.props;
+    return <div onClick={ this.toggleTopic}>
       <ListGroup.Item>
-        <p>Глава {chapter}. {name}</p> {/* что-то сделать с точкой. А то так не принято её ставить */}
+        <p>{chapter} {name}</p>
         {paragraphs.map(({ id, name: pname }) => (
           <div className="paragraphs" key={id}>
-            <Collapse in={this.props.isOpen}><Link className="paragraph__link" to="#" >
-              {/* this.props лучше сделать выше, где name и дуругие. Плюс перенесни компонент линк на новую строку,
-              а то я не сразу его заметил */}
-              {id} {pname}
-            </Link></Collapse>
+            <Collapse in={this.isOpen()}>
+              <Link
+                className="paragraph__link" to="#"
+              >
+                {id} {pname}
+              </Link>
+            </Collapse>
           </div>
         ))
         }
-      </ListGroup.Item> </div>;
+      </ListGroup.Item>
+    </div>;
   }
 }

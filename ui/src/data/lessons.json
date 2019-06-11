@@ -1,6 +1,7 @@
 [
   {
-    "chapter":1,
+    "id":1,
+    "chapter":"Глава 1.",
     "name": "Ocновы Javascript",
     "paragraphs": [
       {
@@ -27,7 +28,8 @@
   },
 
   {
-    "chapter":2,
+    "id":2,
+    "chapter":"Глава 2.",
     "name": "Cтруктуры данных",
     "paragraphs": [
       {
@@ -49,7 +51,8 @@
     ]
   },
   {
-    "chapter":3,
+    "id":3,
+    "chapter":"Глава 3.",
     "name": "Замыкания и области видимости",
     "paragraphs": [
       {
@@ -67,7 +70,8 @@
     ]
   },
   {
-    "chapter":4,
+    "id":4,
+    "chapter":"Глава 4.",
     "name": "Методы объекта, контекст",
     "paragraphs": [
       {
@@ -89,7 +93,8 @@
     ]
   },
   {
-    "chapter":5,
+    "id":5,
+    "chapter":"Глава 5.",
     "name": "AJAX",
     "paragraphs": [
       {
@@ -115,7 +120,8 @@
     ]
   },
   {
-    "chapter":6,
+    "id":6,
+    "chapter":"Глава 6.",
     "name": "DOM",
     "paragraphs": [
       {
@@ -145,7 +151,8 @@
     ]
   },
   {
-    "chapter":7,
+    "id":7,
+    "chapter":"Глава 7.",
     "name": "ООП в Javascript",
     "paragraphs": [
       {
@@ -179,7 +186,8 @@
     ]
   },
   {
-    "chapter":8,
+    "id":8,
+    "chapter":"Глава 8.",
     "name": "ES6, ES7, ES8. Современные возможности",
     "paragraphs": [
       {

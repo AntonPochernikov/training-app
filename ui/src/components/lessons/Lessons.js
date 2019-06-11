@@ -4,7 +4,7 @@ import Lessons from './Lessons.jsx';
 
 const mapStateToProps = state => ({
   lessons: state.app.lessons.lessons,
-  collapse: state.app.lessons.collapse,
+  topic: state.app.lessons.topic,
 });
 
 export default connect(mapStateToProps, actionCreators)(Lessons);

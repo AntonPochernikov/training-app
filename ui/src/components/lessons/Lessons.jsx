@@ -3,23 +3,15 @@ import ListLessons from './ListLessons.jsx';
 import './Lessons.css';
 
 export default class Lessons extends React.Component {
-  toggle = (item) => { // название функции такое себе, лучше поменять
-    const { collapse } = this.props;
-    this.props.showHideParagraphs({ lesson: (collapse !== item ? item : null) });
-  }
-
   renderLessons() {
-    const { lessons, collapse } = this.props;
-
-    return lessons.map(({ name, chapter, paragraphs }) => <ListLessons
-    // лучше передать в компонент сразу весь объект, а не его поля(name, chapter, paragraphs)
-      key={name}
-      isOpen={collapse === chapter} // желательно как-то вынести логику сравнения
-      toggle={this.toggle}
-      paragraphs={paragraphs}
-      name ={name}
-      chapter={chapter}
-    />);
+    const { lessons, topic } = this.props;
+    return lessons.map(((item, index) => <ListLessons
+      key={index}
+      lesson={item}
+      topic={topic}
+      selectTopic={this.props.selectTopic}
+    />
+    ));
   }
 
   render() {

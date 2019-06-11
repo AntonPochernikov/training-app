@@ -15,6 +15,4 @@ export const fetchLessonsData = () => async (dispatch) => {
     dispatch(fetchLessonsFailure({ error: e }));
   }
 };
-export const showHideParagraphs = createAction('PARAGRAPHS/SHOW/HIDE');
-/* разделить на два экшена, открытия и закрытия. плюс посмотреть,
- почему так медленно закрывается, когда открываешь новый параграф */
+export const selectTopic = createAction('TOPIC/SELECT');

@@ -4,4 +4,9 @@
 	font-family: "Roboto", sans-serif;
 	width: 60%;
 	margin: auto;
+
+}
+
+.chapter{
+	cursor: pointer;
 }

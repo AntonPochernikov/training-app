@@ -6,6 +6,8 @@ export const getCurrentTaskId = state => state.app.training.currentTaskId;
 export const getTests = state => state.app.tests.tests;
 export const getCurrentTestId = state => state.app.tests.currentTestId;
 export const getCurrentQuestionId = state => state.app.tests.currentQuestionId;
+// export const getTopic = state => state.app.lessons.topic;
+// export const getLessons = state => state.app.lessons.lessons;
 
 export const getTaskByComplexity = createSelector(
   getExercises,
@@ -69,3 +71,11 @@ export const getCurrentQuestion = createSelector(
   getCurrentQuestionId,
   (items, currentQuestionId) => (_.find((items), (item => item.id === currentQuestionId))),
 );
+// export const toggleTopic = createSelector(
+//   getTopic,
+//   getLessons,
+//   (lessonId, items) => {
+//     if (lessonId !== items.id) return items.id;
+//     return null;
+//   },
+// );
