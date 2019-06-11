@@ -1,6 +1,7 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
 import ChooseOne from './ChooseOne.jsx';
+import СhooseMultiple from './СhooseMultiple.jsx';
 import WriteAnswer from './WriteAnswer.jsx';
 import './Questions.css';
 
@@ -18,7 +19,7 @@ class Questions extends React.Component {
     case 'writeAnswer':
       return <WriteAnswer />;
     case 'chooseMultiply':
-      return questionType;
+      return <СhooseMultiple options={options}/>;
     default:
       break;
     }
