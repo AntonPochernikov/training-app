@@ -33,10 +33,21 @@ const fetchLessonsData = handleActions({
 const topic = handleActions({
   [action.selectTopic]: (state, { payload: { id } }) => id,
 }, {});
+const currentLessonId = handleActions({
+  [action.getCurrentLessonId]: (state, { payload: { lessonId } }) => lessonId,
+},
+null);
+
+const currentParagraphId = handleActions({
+  [action.getCurrentParagraphId]: (state, { payload: { paragraphId } }) => paragraphId,
+},
+null);
 
 export default combineReducers({
   fetchLessonsData,
   lessons,
   topic,
+  currentParagraphId,
+  currentLessonId,
 
 });

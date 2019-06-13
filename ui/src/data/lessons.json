@@ -7,27 +7,32 @@
       {
         "id":"1.1",
         "linkName":"variables",
-        "name":"Переменные"
+        "name":"Переменные",
+        "text":""
       },
       {
         "id":"1.2",
         "linkName":"types",
-        "name":"Типы данных"
+        "name":"Типы данных",
+        "text":""
       },
       {
         "id":"1.3",
         "linkName":"operators",
-        "name":"Операторы"
+        "name":"Операторы",
+        "text":""
       },
       {
         "id":"1.4",
         "linkName":"cycles",
-        "name":"Циклы"
+        "name":"Циклы",
+        "text":""
       },
       {
         "id":"1.5",
         "linkName":"functions",
-        "name":"Функции"
+        "name":"Функции",
+        "text":""
       }
     ]
   },
@@ -38,24 +43,28 @@
     "name": "Cтруктуры данных",
     "paragraphs": [
       {
-        "id":"1.1",
+        "id":"2.1",
         "linkName":"numbers",
-        "name":"Числа"
+        "name":"Числа",
+        "text":""
       },
       {
-        "id":"1.2",
+        "id":"2.2",
         "linkName":"strings",
-        "name":"Строки"
+        "name":"Строки",
+        "text":""
       },
       {
-        "id":"1.3",
+        "id":"2.3",
         "linkName":"objects",
-        "name":"Объекты"
+        "name":"Объекты",
+        "text":""
       },
       {
-        "id":"1.4",
+        "id":"2.4",
         "linkName":"arrays",
-        "name":"Массивы"
+        "name":"Массивы",
+        "text":""
       }
     ]
   },
@@ -65,19 +74,22 @@
     "name": "Замыкания и области видимости",
     "paragraphs": [
       {
-        "id":"1.1",
+        "id":"3.1",
         "linkName":"global-object",
-        "name":"Глобальный объект"
+        "name":"Глобальный объект",
+        "text":""
       },
       {
-        "id":"1.2",
+        "id":"3.2",
         "linkName":"closures",
-        "name":"Замыкания"
+        "name":"Замыкания",
+        "text":""
       },
       {
-        "id":"1.3",
+        "id":"3.3",
         "linkName":"local-variables",
-        "name":"Локальные переменные для обьекта"
+        "name":"Локальные переменные для обьекта",
+        "text":""
       }
     ]
   },
@@ -87,24 +99,28 @@
     "name": "Методы объекта, контекст",
     "paragraphs": [
       {
-        "id":"1.1",
+        "id":"4.1",
         "linkName":"object-methods",
-        "name":"Методы объекта"
+        "name":"Методы объекта",
+        "text":""
       },
       {
-        "id":"1.2",
+        "id":"4.2",
         "linkName":"this",
-        "name":"Ключевое слово: this"
+        "name":"Ключевое слово: this",
+        "text":""
       },
       {
-        "id":"1.3",
+        "id":"4.3",
         "linkName":"call-apply",
-        "name":"Явное указание this: \"call\", \"apply\""
+        "name":"Явное указание this: \"call\", \"apply\"",
+        "text":""
       },
       {
-        "id":"1.4",
+        "id":"4.4",
         "linkName":"bind",
-        "name":"Привязка контекста:\"bind\""
+        "name":"Привязка контекста:\"bind\"",
+        "text":""
       }
     ]
   },
@@ -114,29 +130,34 @@
     "name": "AJAX",
     "paragraphs": [
       {
-        "id":"1.1",
+        "id":"5.1",
         "linkName":"ajax-intro",
-        "name":"AJAX Введение"
+        "name":"AJAX Введение",
+        "text":""
       },
       {
-        "id":"1.2",
+        "id":"5.2",
         "linkName":"ajax-xhr",
-        "name":"AJAX XMLHttpRequest"
+        "name":"AJAX XMLHttpRequest",
+        "text":""
       },
       {
-        "id":"1.3",
+        "id":"5.3",
         "linkName":"ajax-request",
-        "name":"AJAX Запрос"
+        "name":"AJAX Запрос",
+        "text":""
       },
       {
-        "id":"1.4",
+        "id":"5.4",
         "linkName":"ajax-get",
-        "name":"AJAX Получение"
+        "name":"AJAX Получение",
+        "text":""
       },
       {
-        "id":"1.5",
+        "id":"5.5",
         "linkName":"json",
-        "name":"JSON"
+        "name":"JSON",
+        "text":""
       }
     ]
   },
@@ -146,34 +167,41 @@
     "name": "DOM",
     "paragraphs": [
       {
-        "id":"1.1",
+        "id":"6.1",
         "linkName":"dom",
-        "name":"Дерево DOM"
+        "name":"Дерево DOM",
+        "text":""
+
       },
       {
-        "id":"1.2",
+        "id":"6.2",
         "linkName":"modyfying",
-        "name":"Поиск, удаление и добавление узлов"
+        "name":"Поиск, удаление и добавление узлов",
+        "text":""
       },
       {
-        "id":"1.3",
+        "id":"6.3",
         "linkName":"properties",
-        "name":"Свойства узлов"
+        "name":"Свойства узлов",
+        "text":""
       },
       {
-        "id":"1.4",
+        "id":"6.4",
         "linkName":"events",
-        "name":"События"
+        "name":"События",
+        "text":""
       },
       {
-        "id":"1.5",
+        "id":"6.5",
         "linkName":"forms",
-        "name":"Формы, элементы управления"
+        "name":"Формы, элементы управления",
+        "text":""
       },
       {
-        "id":"1.6",
+        "id":"6.6",
         "linkName":"widgets",
-        "name":"Создание графических компонентов"
+        "name":"Создание графических компонентов",
+        "text":""
       }
     ]
   },
@@ -183,35 +211,41 @@
     "name": "ООП в Javascript",
     "paragraphs": [
       {
-        "id":"1.1",
+        "id":"7.1",
         "linkName":"getters-setters",
-        "name":"Геттеры и сеттеры"
+        "name":"Геттеры и сеттеры",
+        "text":""
       },
       {
-        "id":"1.2",
+        "id":"7.2",
         "linkName":"functional-inheritance",
-        "name":"Функциональное наследование"
+        "name":"Функциональное наследование",
+        "text":""
       },
       {
-        "id":"1.3",
+        "id":"7.3",
         "linkName":"prototype",
-        "name":"Прототип объекта  и создание объектов через New "
+        "name":"Прототип объекта  и создание объектов через New ",
+        "text":""
       },
 
       {
-        "id":"1.4",
+        "id":"7.4",
         "linkName":"native-classes",
-        "name":"Встроенные «классы» в JavaScript"
+        "name":"Встроенные «классы» в JavaScript",
+        "text":""
       },
       {
-        "id":"1.5",
+        "id":"7.5",
         "linkName":"classes",
-        "name":"Свои классы на прототипах"
+        "name":"Свои классы на прототипах",
+        "text":""
       },
       {
-        "id":"1.6",
+        "id":"7.6",
         "linkName":"class-inheritance",
-        "name":"Наследование классов в JavaScript"
+        "name":"Наследование классов в JavaScript",
+        "text":""
       }
     ]
   },
@@ -221,34 +255,40 @@
     "name": "ES6, ES7, ES8. Современные возможности",
     "paragraphs": [
       {
-        "id":"1.1",
+        "id":"8.1",
         "linkName":"let-const",
-        "name":"Переменные: let и const"
+        "name":"Переменные: let и const",
+        "text":""
       },
       {
-        "id":"1.2",
+        "id":"8.2",
         "linkName":"destructuring",
-        "name":"Деструктуризация"
+        "name":"Деструктуризация",
+        "text":""
       },
       {
-        "id":"1.3",
+        "id":"8.3",
         "linkName":"es6-functions",
-        "name":"Функции"
+        "name":"Функции",
+        "text":""
       },
       {
-        "id":"1.4",
+        "id":"8.4",
         "linkName":"es6-strings",
-        "name":"Строки"
+        "name":"Строки",
+        "text":""
       },
       {
-        "id":"1.5",
+        "id":"8.5",
         "linkName":"es6-objects",
-        "name":"Объекты"
+        "name":"Объекты",
+        "text":""
       },
       {
-        "id":"1.6",
+        "id":"8.6",
         "linkName":"es6-classes",
-        "name":"Классы"
+        "name":"Классы",
+        "text":""
       }
     ]
   }

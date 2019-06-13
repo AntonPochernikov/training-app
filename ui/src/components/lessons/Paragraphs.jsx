@@ -1,11 +1,16 @@
 import React from 'react';
+import './Lessons.css';
 
-const Paragraphs = () => (
-  <div className="paragraphs-content">
-    <div className="heading">
-      <h2 className ="heading-main">Содержимое урока</h2>
-    </div>
-  </div>
-);
-
-export default Paragraphs;
+export default class Paragraphs extends React.Component {
+  // eslint-disable-next-line class-methods-use-this
+  render() {
+    const { paragraph: { id, name } } = this.props;
+    return (
+      <div className="paragraphs-content">
+        <div className="heading">
+          <h2 className ="heading-main">{ id } {name}</h2>
+        </div>
+      </div>
+    );
+  }
+}

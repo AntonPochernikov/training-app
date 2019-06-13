@@ -9,7 +9,7 @@ import HomePage from './homepage/HomePage.jsx';
 import Login from './login/Login.js';
 import User from './user/User.jsx';
 import Questions from './tests/Questions.js';
-import Paragraphs from './lessons/Paragraphs.jsx';
+import Paragraphs from './lessons/Paragraphs.js';
 
 export default class MainRouter extends React.Component {
   componentDidMount() {

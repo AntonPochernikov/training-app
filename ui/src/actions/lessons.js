@@ -16,3 +16,5 @@ export const fetchLessonsData = () => async (dispatch) => {
   }
 };
 export const selectTopic = createAction('TOPIC/SELECT');
+export const getCurrentParagraphId = createAction('PARAGRAPH/CURRENT/ID/GET');
+export const getCurrentLessonId = createAction('LESSON/CURRENT/ID/GET');
