@@ -55,12 +55,12 @@ export const getTestsByType = createSelector(
     }));
   },
 );
+
 export const getCurrentTest = createSelector(
   getTests,
   getCurrentTestId,
   (items, currentTestId) => (_.find((items), (item => item.id === currentTestId))),
 );
-
 
 export const getQuestions = createSelector(
   getCurrentTest,
@@ -72,15 +72,18 @@ export const getCurrentQuestion = createSelector(
   getCurrentQuestionId,
   (items, currentQuestionId) => (_.find((items), (item => item.id === currentQuestionId))),
 );
+
 export const getCurrentLesson = createSelector(
   getLessons,
   getCurrentLessonId,
   (items, currentLessonId) => (_.find((items), (item => item.id === currentLessonId))),
 );
+
 export const getParagraphs = createSelector(
   getCurrentLesson,
   items => (_.get(items, 'paragraphs')),
 );
+
 export const getCurrentParagraph = createSelector(
   getParagraphs,
   getCurrentParagraphId,
