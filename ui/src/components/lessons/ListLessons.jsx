@@ -37,7 +37,6 @@ export default class ListLessons extends Component {
           name: pname,
           linkName,
         }) => (
-        {paragraphs.map(({ id, name: pname, linkName }) => (
           <div className="paragraphs" key={id}>
             <Collapse in={this.isOpen()}>
               <Link

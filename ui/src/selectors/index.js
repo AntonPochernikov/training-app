@@ -107,6 +107,7 @@ export const isLastParagraph = createSelector(
     return false;
   },
 );
+
 export const isFirstLesson = createSelector(
   getCurrentParagraphId,
   getLessons,
