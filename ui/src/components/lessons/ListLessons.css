@@ -1,0 +1,14 @@
+.paragraphs {
+	font-family: "Roboto", sans-serif;
+	width: 60%;
+	margin: auto;
+}
+
+.chapter {
+	cursor: pointer
+}
+
+.paragraph__link {
+	display: block;
+	cursor: pointer;
+}

@@ -1,23 +1,16 @@
 import React from 'react';
-import ListLessons from './ListLessons.jsx';
+import ListLessons from './ListLessons.js';
 import './Lessons.css';
 
 export default class Lessons extends React.Component {
   renderLessons() {
     const {
       lessons,
-      topic,
-      getCurrentParagraphId,
-      getCurrentLessonId,
     } = this.props;
 
     return lessons.map(((item, index) => <ListLessons
       key={index}
       lesson={item}
-      topic={topic}
-      selectTopic={this.props.selectTopic}
-      getCurrentParagraphId={getCurrentParagraphId}
-      getCurrentLessonId={getCurrentLessonId}
     />
     ));
   }
