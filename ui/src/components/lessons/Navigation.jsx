@@ -15,8 +15,6 @@ export default class Navigation extends React.Component {
 
   render() {
     const {
-      isFirstParagraph,
-      isLastParagraph,
       isFirstLesson,
       isLastLesson,
     } = this.props;
@@ -25,14 +23,14 @@ export default class Navigation extends React.Component {
         <button
           className="btn-back"
           onClick={this.handlePrevButton}
-          disabled={isFirstParagraph && isFirstLesson}
+          disabled={isFirstLesson}
         >
           Назад
         </button>
         <button
           className="btn-next"
           onClick={this.handleNextButton}
-          disabled={isLastParagraph && isLastLesson}
+          disabled={isLastLesson}
         >
           Далее
         </button>
