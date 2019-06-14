@@ -5,6 +5,7 @@ export default class Paragraphs extends React.Component {
   // eslint-disable-next-line class-methods-use-this
   render() {
     const { paragraph: { id, name } } = this.props;
+
     return (
       <div className="paragraphs-content">
         <div className="heading">

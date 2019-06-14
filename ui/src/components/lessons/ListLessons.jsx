@@ -27,6 +27,7 @@ export default class ListLessons extends Component {
         name,
       },
     } = this.props;
+
     return <div onClick={ this.toggleTopic}>
       <ListGroup.Item>
         <p>{chapter} {name}</p>

@@ -6,4 +6,5 @@ import * as select from '../../selectors';
 const mapStateToProps = state => ({
   paragraph: select.getCurrentParagraph(state),
 });
+
 export default connect(mapStateToProps, actionCreators)(Paragraphs);
