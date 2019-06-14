@@ -35,14 +35,17 @@ export default class ListLessons extends Component {
           <p className="chapter">{chapter} {name}</p>
           <Collapse className="paragraphs" in={this.isOpen()}>
             <div>
-              {paragraphs.map(({ id, name: pname, linkName }) => (
+             {paragraphs.map(({
+               id,
+               number,
+               name: pname,
+               linkName,
+             }) => (
                 <Link key={id}
                   onClick={this.handleClickParagraph(id)}
-                  className="paragraph__link" to={`/lessons-${linkName}`}
                 >
-                  {id} {pname}
+                  {number} {pname}
                 </Link>
-
               ))
               }
             </div>

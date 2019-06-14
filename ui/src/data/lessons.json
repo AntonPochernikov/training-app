@@ -1,296 +1,331 @@
 [
   {
-    "id":1,
-    "chapter":"Глава 1.",
+    "id": 1,
+    "chapter": "Глава 1.",
     "name": "Ocновы Javascript",
     "paragraphs": [
       {
-        "id":"1.1",
-        "linkName":"variables",
-        "name":"Переменные",
-        "text":""
+        "id": 1,
+        "number": "1.1",
+        "linkName": "variables",
+        "name": "Переменные",
+        "text": ""
       },
       {
-        "id":"1.2",
-        "linkName":"types",
-        "name":"Типы данных",
-        "text":""
+        "id": 2,
+        "number": "1.2",
+        "linkName": "types",
+        "name": "Типы данных",
+        "text": ""
       },
       {
-        "id":"1.3",
-        "linkName":"operators",
-        "name":"Операторы",
-        "text":""
+        "id": 3,
+        "number": "1.3",
+        "linkName": "operators",
+        "name": "Операторы",
+        "text": ""
       },
       {
-        "id":"1.4",
-        "linkName":"cycles",
-        "name":"Циклы",
-        "text":""
+        "id": 4,
+        "number": "1.4",
+        "linkName": "cycles",
+        "name": "Циклы",
+        "text": ""
       },
       {
-        "id":"1.5",
-        "linkName":"functions",
-        "name":"Функции",
-        "text":""
+        "id": 5,
+        "number": "1.5",
+        "linkName": "functions",
+        "name": "Функции",
+        "text": ""
       }
     ]
   },
-
   {
-    "id":2,
-    "chapter":"Глава 2.",
+    "id": 2,
+    "chapter": "Глава 2.",
     "name": "Cтруктуры данных",
     "paragraphs": [
       {
-        "id":"2.1",
-        "linkName":"numbers",
-        "name":"Числа",
-        "text":""
+        "id": 6,
+        "number": "2.1",
+        "linkName": "numbers",
+        "name": "Числа",
+        "text": ""
       },
       {
-        "id":"2.2",
-        "linkName":"strings",
-        "name":"Строки",
-        "text":""
+        "id": 7,
+        "number": "2.2",
+        "linkName": "strings",
+        "name": "Строки",
+        "text": ""
       },
       {
-        "id":"2.3",
-        "linkName":"objects",
-        "name":"Объекты",
-        "text":""
+        "id": 8,
+        "number": "2.3",
+        "linkName": "objects",
+        "name": "Объекты",
+        "text": ""
       },
       {
-        "id":"2.4",
-        "linkName":"arrays",
-        "name":"Массивы",
-        "text":""
+        "id": 9,
+        "number": "2.4",
+        "linkName": "arrays",
+        "name": "Массивы",
+        "text": ""
       }
     ]
   },
   {
-    "id":3,
-    "chapter":"Глава 3.",
+    "id": 3,
+    "chapter": "Глава 3.",
     "name": "Замыкания и области видимости",
     "paragraphs": [
       {
-        "id":"3.1",
-        "linkName":"global-object",
-        "name":"Глобальный объект",
-        "text":""
+        "id": 10,
+        "number": "3.1",
+        "linkName": "global-object",
+        "name": "Глобальный объект",
+        "text": ""
       },
       {
-        "id":"3.2",
-        "linkName":"closures",
-        "name":"Замыкания",
-        "text":""
+        "id": 11,
+        "number": "3.2",
+        "linkName": "closures",
+        "name": "Замыкания",
+        "text": ""
       },
       {
-        "id":"3.3",
-        "linkName":"local-variables",
-        "name":"Локальные переменные для обьекта",
-        "text":""
+        "id": 12,
+        "number": "3.3",
+        "linkName": "local-variables",
+        "name": "Локальные переменные для обьекта",
+        "text": ""
       }
     ]
   },
   {
-    "id":4,
-    "chapter":"Глава 4.",
+    "id": 4,
+    "chapter": "Глава 4.",
     "name": "Методы объекта, контекст",
     "paragraphs": [
       {
-        "id":"4.1",
-        "linkName":"object-methods",
-        "name":"Методы объекта",
-        "text":""
+        "id": 13,
+        "number": "4.1",
+        "linkName": "object-methods",
+        "name": "Методы объекта",
+        "text": ""
       },
       {
-        "id":"4.2",
-        "linkName":"this",
-        "name":"Ключевое слово: this",
-        "text":""
+        "id": 14,
+        "number": "4.2",
+        "linkName": "this",
+        "name": "Ключевое слово: this",
+        "text": ""
       },
       {
-        "id":"4.3",
-        "linkName":"call-apply",
-        "name":"Явное указание this: \"call\", \"apply\"",
-        "text":""
+        "id": 15,
+        "number": "4.3",
+        "linkName": "call-apply",
+        "name": "Явное указание this: \"call\", \"apply\"",
+        "text": ""
       },
       {
-        "id":"4.4",
-        "linkName":"bind",
-        "name":"Привязка контекста:\"bind\"",
-        "text":""
+        "id": 16,
+        "number": "4.4",
+        "linkName": "bind",
+        "name": "Привязка контекста:\"bind\"",
+        "text": ""
       }
     ]
   },
   {
-    "id":5,
-    "chapter":"Глава 5.",
+    "id": 5,
+    "chapter": "Глава 5.",
     "name": "AJAX",
     "paragraphs": [
       {
-        "id":"5.1",
-        "linkName":"ajax-intro",
-        "name":"AJAX Введение",
-        "text":""
+        "id": 17,
+        "number": "5.1",
+        "linkName": "ajax-intro",
+        "name": "AJAX Введение",
+        "text": ""
       },
       {
-        "id":"5.2",
-        "linkName":"ajax-xhr",
-        "name":"AJAX XMLHttpRequest",
-        "text":""
+        "id": 18,
+        "number": "5.2",
+        "linkName": "ajax-xhr",
+        "name": "AJAX XMLHttpRequest",
+        "text": ""
       },
       {
-        "id":"5.3",
-        "linkName":"ajax-request",
-        "name":"AJAX Запрос",
-        "text":""
+        "id": 19,
+        "number": "5.3",
+        "linkName": "ajax-request",
+        "name": "AJAX Запрос",
+        "text": ""
       },
       {
-        "id":"5.4",
-        "linkName":"ajax-get",
-        "name":"AJAX Получение",
-        "text":""
+        "id": 20,
+        "number": "5.4",
+        "linkName": "ajax-get",
+        "name": "AJAX Получение",
+        "text": ""
       },
       {
-        "id":"5.5",
-        "linkName":"json",
-        "name":"JSON",
-        "text":""
+        "id": 21,
+        "number": "5.5",
+        "linkName": "json",
+        "name": "JSON",
+        "text": ""
       }
     ]
   },
   {
-    "id":6,
-    "chapter":"Глава 6.",
+    "id": 6,
+    "chapter": "Глава 6.",
     "name": "DOM",
     "paragraphs": [
       {
-        "id":"6.1",
-        "linkName":"dom",
-        "name":"Дерево DOM",
-        "text":""
-
+        "id": 22,
+        "number": "6.1",
+        "linkName": "dom",
+        "name": "Дерево DOM",
+        "text": ""
       },
       {
-        "id":"6.2",
-        "linkName":"modyfying",
-        "name":"Поиск, удаление и добавление узлов",
-        "text":""
+        "id": 23,
+        "number": "6.2",
+        "linkName": "modyfying",
+        "name": "Поиск, удаление и добавление узлов",
+        "text": ""
       },
       {
-        "id":"6.3",
-        "linkName":"properties",
-        "name":"Свойства узлов",
-        "text":""
+        "id": 24,
+        "number": "6.3",
+        "linkName": "properties",
+        "name": "Свойства узлов",
+        "text": ""
       },
       {
-        "id":"6.4",
-        "linkName":"events",
-        "name":"События",
-        "text":""
+        "id": 25,
+        "number": "6.4",
+        "linkName": "events",
+        "name": "События",
+        "text": ""
       },
       {
-        "id":"6.5",
-        "linkName":"forms",
-        "name":"Формы, элементы управления",
-        "text":""
+        "id": 26,
+        "number": "6.5",
+        "linkName": "forms",
+        "name": "Формы, элементы управления",
+        "text": ""
       },
       {
-        "id":"6.6",
-        "linkName":"widgets",
-        "name":"Создание графических компонентов",
-        "text":""
+        "id": 27,
+        "number": "6.6",
+        "linkName": "widgets",
+        "name": "Создание графических компонентов",
+        "text": ""
       }
     ]
   },
   {
-    "id":7,
-    "chapter":"Глава 7.",
+    "id": 7,
+    "chapter": "Глава 7.",
     "name": "ООП в Javascript",
     "paragraphs": [
       {
-        "id":"7.1",
-        "linkName":"getters-setters",
-        "name":"Геттеры и сеттеры",
-        "text":""
+        "id": 28,
+        "number": "7.1",
+        "linkName": "getters-setters",
+        "name": "Геттеры и сеттеры",
+        "text": ""
       },
       {
-        "id":"7.2",
-        "linkName":"functional-inheritance",
-        "name":"Функциональное наследование",
-        "text":""
+        "id": 29,
+        "number": "7.2",
+        "linkName": "functional-inheritance",
+        "name": "Функциональное наследование",
+        "text": ""
       },
       {
-        "id":"7.3",
-        "linkName":"prototype",
-        "name":"Прототип объекта  и создание объектов через New ",
-        "text":""
-      },
-
-      {
-        "id":"7.4",
-        "linkName":"native-classes",
-        "name":"Встроенные «классы» в JavaScript",
-        "text":""
+        "id": 30,
+        "number": "7.3",
+        "linkName": "prototype",
+        "name": "Прототип объекта  и создание объектов через New ",
+        "text": ""
       },
       {
-        "id":"7.5",
-        "linkName":"classes",
-        "name":"Свои классы на прототипах",
-        "text":""
+        "id": 31,
+        "number": "7.4",
+        "linkName": "native-classes",
+        "name": "Встроенные «классы» в JavaScript",
+        "text": ""
       },
       {
-        "id":"7.6",
-        "linkName":"class-inheritance",
-        "name":"Наследование классов в JavaScript",
-        "text":""
+        "id": 32,
+        "number": "7.5",
+        "linkName": "classes",
+        "name": "Свои классы на прототипах",
+        "text": ""
+      },
+      {
+        "id": 33,
+        "number": "7.6",
+        "linkName": "class-inheritance",
+        "name": "Наследование классов в JavaScript",
+        "text": ""
       }
     ]
   },
   {
-    "id":8,
-    "chapter":"Глава 8.",
+    "id": 8,
+    "chapter": "Глава 8.",
     "name": "ES6, ES7, ES8. Современные возможности",
     "paragraphs": [
       {
-        "id":"8.1",
-        "linkName":"let-const",
-        "name":"Переменные: let и const",
-        "text":""
+        "id": 34,
+        "number": "8.1",
+        "linkName": "let-const",
+        "name": "Переменные: let и const",
+        "text": ""
       },
       {
-        "id":"8.2",
-        "linkName":"destructuring",
-        "name":"Деструктуризация",
-        "text":""
+        "id": 35,
+        "number": "8.2",
+        "linkName": "destructuring",
+        "name": "Деструктуризация",
+        "text": ""
       },
       {
-        "id":"8.3",
-        "linkName":"es6-functions",
-        "name":"Функции",
-        "text":""
+        "id": 36,
+        "number": "8.3",
+        "linkName": "es6-functions",
+        "name": "Функции",
+        "text": ""
       },
       {
-        "id":"8.4",
-        "linkName":"es6-strings",
-        "name":"Строки",
-        "text":""
+        "id": 37,
+        "number": "8.4",
+        "linkName": "es6-strings",
+        "name": "Строки",
+        "text": ""
       },
       {
-        "id":"8.5",
-        "linkName":"es6-objects",
-        "name":"Объекты",
-        "text":""
+        "id": 38,
+        "number": "8.5",
+        "linkName": "es6-objects",
+        "name": "Объекты",
+        "text": ""
       },
       {
-        "id":"8.6",
-        "linkName":"es6-classes",
-        "name":"Классы",
-        "text":""
+        "id": 39,
+        "number": "8.6",
+        "linkName": "es6-classes",
+        "name": "Классы",
+        "text": ""
       }
     ]
   }
-
 ]

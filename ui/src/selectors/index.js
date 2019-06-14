@@ -89,3 +89,39 @@ export const getCurrentParagraph = createSelector(
   getCurrentParagraphId,
   (items, currentParagraphId) => (_.find((items), (item => item.id === currentParagraphId))),
 );
+
+export const isFirstParagraph = createSelector(
+  getCurrentParagraphId,
+  getParagraphs,
+  (currentParagraphId, items) => {
+    if (currentParagraphId === _.first(items).id) return true;
+    return false;
+  },
+);
+
+export const isLastParagraph = createSelector(
+  getCurrentParagraphId,
+  getParagraphs,
+  (currentParagraphId, items) => {
+    if (currentParagraphId === _.last(items).id) return true;
+    return false;
+  },
+);
+
+export const isFirstLesson = createSelector(
+  getCurrentParagraphId,
+  getLessons,
+  (currentLessonId, items) => {
+    if (currentLessonId === _.first(items).id) return true;
+    return false;
+  },
+);
+
+export const isLastLesson = createSelector(
+  getCurrentLessonId,
+  getLessons,
+  (currentLessonId, items) => {
+    if (currentLessonId === _.last(items).id) return true;
+    return false;
+  },
+);

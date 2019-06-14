@@ -36,11 +36,15 @@ const topic = handleActions({
 
 const currentLessonId = handleActions({
   [action.getCurrentLessonId]: (state, { payload: { lessonId } }) => lessonId,
+  [action.getNextLesson]: lessonId => lessonId + 1,
+  [action.getPrevLesson]: lessonId => lessonId - 1,
 },
 null);
 
 const currentParagraphId = handleActions({
   [action.getCurrentParagraphId]: (state, { payload: { paragraphId } }) => paragraphId,
+  [action.getNextParagraph]: paragraphId => paragraphId + 1,
+  [action.getPrevParagraph]: paragraphId => paragraphId - 1,
 },
 null);
 
