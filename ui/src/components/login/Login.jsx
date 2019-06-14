@@ -28,6 +28,7 @@ export default class Login extends React.Component {
 
    render() {
      const { email, password } = this.props;
+
      return (
        <Fragment>
          <Modal.Dialog className="login-modal-wrapper">

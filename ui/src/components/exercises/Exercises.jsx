@@ -6,6 +6,7 @@ import './Exercises.css';
 export default class HomePage extends React.Component {
   renderCards() {
     const { exercises, getCurrentTaskId } = this.props;
+
     return exercises.map(({ complexity, tasks }) => (
       <Card key={complexity} style={{ width: '18rem' }}>
         <Card.Body>

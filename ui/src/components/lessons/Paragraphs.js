@@ -11,4 +11,5 @@ const mapStateToProps = state => ({
   isFirstLesson: select.isFirstLesson(state),
   isLastLesson: select.isLastLesson(state),
 });
+
 export default connect(mapStateToProps, actionCreators)(Paragraphs);

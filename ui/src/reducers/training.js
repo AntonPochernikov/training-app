@@ -20,7 +20,6 @@ const currentTaskId = handleActions({
 },
 null);
 
-
 const fetchInit = {
   state: 'initial',
   source: null,

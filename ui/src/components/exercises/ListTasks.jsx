@@ -10,6 +10,7 @@ export default class ListTasks extends Component {
 
   render() {
     const { tasks } = this.props;
+
     return tasks.map(({ id, name }) => (
       <div className="task" key={id}>
         <ListGroup.Item onClick={this.handleClick(id)}>

@@ -10,6 +10,7 @@ export default class Lessons extends React.Component {
       getCurrentParagraphId,
       getCurrentLessonId,
     } = this.props;
+
     return lessons.map(((item, index) => <ListLessons
       key={index}
       lesson={item}
