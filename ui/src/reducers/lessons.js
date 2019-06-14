@@ -32,7 +32,7 @@ const fetchLessonsData = handleActions({
 
 const topic = handleActions({
   [action.selectTopic]: (state, { payload: { id } }) => id,
-}, {});
+}, null);
 
 const currentLessonId = handleActions({
   [action.getCurrentLessonId]: (state, { payload: { lessonId } }) => lessonId,
