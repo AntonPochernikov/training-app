@@ -17,6 +17,7 @@ export default class Navigation extends React.Component {
       isFirst,
       isLast,
     } = this.props;
+
     return (
       <div className="container-navigation">
         <button

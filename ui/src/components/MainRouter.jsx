@@ -38,6 +38,7 @@ export default class MainRouter extends React.Component {
 
   render() {
     const { modal } = this.props;
+
     return (
       <Router>
         <div className="main-router">

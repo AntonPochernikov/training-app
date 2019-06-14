@@ -33,6 +33,7 @@ const fetchLessonsData = handleActions({
 const topic = handleActions({
   [action.selectTopic]: (state, { payload: { id } }) => id,
 }, {});
+
 const currentLessonId = handleActions({
   [action.getCurrentLessonId]: (state, { payload: { lessonId } }) => lessonId,
 },
@@ -49,5 +50,4 @@ export default combineReducers({
   topic,
   currentParagraphId,
   currentLessonId,
-
 });

@@ -1,4 +1,4 @@
-.textbook-content{
+.textbook-content {
 	text-align: center;
 	color: rgb(41, 41, 41);
 	font-family: "Roboto", sans-serif;
@@ -6,6 +6,6 @@
 	margin: auto;
 }
 
-.chapter{
+.chapter {
 	cursor: pointer;
 }

@@ -68,7 +68,6 @@ class Questions extends React.Component {
           </form>
         </div>
       </div>
-
     );
   }
 }
