@@ -18,3 +18,7 @@ export const fetchLessonsData = () => async (dispatch) => {
 export const selectTopic = createAction('TOPIC/SELECT');
 export const getCurrentParagraphId = createAction('PARAGRAPH/CURRENT/ID/GET');
 export const getCurrentLessonId = createAction('LESSON/CURRENT/ID/GET');
+export const getNextLesson = createAction('LESSON/NEXT/GET');
+export const getPrevLesson = createAction('LESSON/PREV/GET');
+export const getNextParagraph = createAction('PARAGRAPH/NEXT/GET');
+export const getPrevParagraph = createAction('PARAGRAPH/PREV/GET');

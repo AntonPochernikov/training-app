@@ -27,17 +27,22 @@ export default class ListLessons extends Component {
         name,
       },
     } = this.props;
-    return <div onClick={ this.toggleTopic}>
+    return <div onClick={this.toggleTopic}>
       <ListGroup.Item>
         <p>{chapter} {name}</p>
-        {paragraphs.map(({ id, name: pname, linkName }) => (
+        {paragraphs.map(({
+          id,
+          number,
+          name: pname,
+          linkName,
+        }) => (
           <div className="paragraphs" key={id}>
             <Collapse in={this.isOpen()}>
               <Link
                 onClick={this.handleClick(id)}
                 className="paragraph__link" to={`/lessons-${linkName}`}
               >
-                {id} {pname}
+                {number} {pname}
               </Link>
             </Collapse>
           </div>
