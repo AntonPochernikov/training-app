@@ -4,6 +4,10 @@
 	margin: auto;
 }
 
+.section {
+	margin-bottom: 4px;
+}
+
 .chapter {
 	cursor: pointer
 }

@@ -30,7 +30,7 @@ export default class ListLessons extends Component {
     } = this.props;
 
     return (
-      <div onClick={this.toggleTopic}>
+      <div className="section" onClick={this.toggleTopic}>
         <ListGroup.Item>
           <p className="chapter">{chapter} {name}</p>
           <Collapse className="paragraphs" in={this.isOpen()}>
