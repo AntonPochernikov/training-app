@@ -5,9 +5,9 @@ import * as select from '../../selectors';
 
 const mapStateToProps = state => ({
   isFirstParagraph: select.isFirstParagraph(state),
-  isLastParagraph: select.isLastParagraph(state),
   isFirstLesson: select.isFirstLesson(state),
-  isLastLesson: select.isLastLesson(state),
+  isLastParagraph: select.isLastParagraph(state),
+  isLastLessonParagraphs: select.isLastLessonParagraphs(state),
 });
 
 export default connect(mapStateToProps, actionCreators)(Navigation);

@@ -16,8 +16,9 @@ export default class Navigation extends React.Component {
   render() {
     const {
       isFirstLesson,
-      isLastLesson,
+      isLastLessonParagraphs,
     } = this.props;
+
     return (
       <div className="container-navigation">
         <button
@@ -30,7 +31,7 @@ export default class Navigation extends React.Component {
         <button
           className="btn-next"
           onClick={this.handleNextButton}
-          disabled={isLastLesson}
+          disabled={isLastLessonParagraphs}
         >
           Далее
         </button>

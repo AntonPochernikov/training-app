@@ -117,11 +117,13 @@ export const isFirstLesson = createSelector(
   },
 );
 
-export const isLastLesson = createSelector(
-  getCurrentLessonId,
+export const isLastLessonParagraphs = createSelector(
+  getCurrentParagraphId,
   getLessons,
-  (currentLessonId, items) => {
-    if (currentLessonId === _.last(items).id) return true;
+  (сurrentParagraphId, items) => {
+    const lastLesson = _.last(items);
+    const lastParagraphs = _.get(lastLesson, 'paragraphs');
+    if (сurrentParagraphId === _.last(lastParagraphs).id) return true;
     return false;
   },
 );
