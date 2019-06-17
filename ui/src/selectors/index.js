@@ -120,8 +120,8 @@ export const isFirstLesson = createSelector(
 export const isLastLessonParagraphs = createSelector(
   getCurrentParagraphId,
   getLessons,
-  (сurrentParagraphId, items) => {
-    const lastLesson = _.last(items);
+  (сurrentParagraphId, lessons) => {
+    const lastLesson = _.last(lessons);
     const lastParagraphs = _.get(lastLesson, 'paragraphs');
     if (сurrentParagraphId === _.last(lastParagraphs).id) return true;
     return false;
