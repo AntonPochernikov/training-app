@@ -3,6 +3,7 @@ import { reduxForm } from 'redux-form';
 import ChooseOne from './ChooseOne.jsx';
 import СhooseMultiple from './СhooseMultiple.jsx';
 import WriteAnswer from './WriteAnswer.jsx';
+import Progress from './Progress.js';
 import './Questions.css';
 
 class Questions extends React.Component {
@@ -49,6 +50,7 @@ class Questions extends React.Component {
         </div>
         <div className="questions-content">
           <form>
+            <Progress id={questionId}/>
             <div className="questions-heading">
               <p className="question-id"> Вопрос {questionId}</p>
               <p className="question-name">{questionName}</p>
