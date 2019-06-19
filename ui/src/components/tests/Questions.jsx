@@ -38,16 +38,12 @@ class Questions extends React.Component {
         type: questionType,
         description: questionDescription,
       },
-      submitting,
       pristine,
-      invalid,
     } = this.props;
 
     return (
       <div className="questions">
-        <div className="heading">
-          <h3 className="heading-main">{description}</h3>
-        </div>
+        <h3 className="heading">{description}</h3>
         <div className="questions-content">
           <form>
             <Progress id={questionId}/>
@@ -62,7 +58,7 @@ class Questions extends React.Component {
             <button
               type="button"
               className="btn-next-test"
-              disabled={submitting || pristine || invalid}
+              disabled={pristine}
               onClick={this.handleNextButton}
             >
               Далее
