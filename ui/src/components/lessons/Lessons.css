@@ -6,3 +6,11 @@
 	margin: auto;
 	margin-bottom: 70px;
 }
+.paragraph-text{
+	margin: auto;
+	text-align: justify;
+	background-color:white;
+	padding: 40px;
+	width: 70%;
+	border: 1px solid rgb(211, 211, 211);
+}
