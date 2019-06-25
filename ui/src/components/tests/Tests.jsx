@@ -12,6 +12,10 @@ export default class Tests extends React.Component {
     this.props.getCurrentTestId({ testId: id });
   };
 
+  componentDidMount() {
+    this.props.getCurrentQuestionId({ questionId: 1 });
+  }
+
   renderCards() {
     const { testTasks, getCurrentTestId, getCurrentQuestionId } = this.props;
 

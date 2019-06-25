@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 export default class StartTestLink extends Component {
   handleClick = id => () => {
     this.props.getCurrentTestId({ testId: id });
-    this.props.getCurrentQuestionId({ questionId: 1 });
   }
 
   render() {
