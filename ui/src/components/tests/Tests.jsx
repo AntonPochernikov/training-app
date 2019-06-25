@@ -6,15 +6,12 @@ import './Tests.css';
 export default class Tests extends React.Component {
   componentDidMount() {
     this.props.clearResult();
+    this.props.getCurrentQuestionId({ questionId: 1 });
   }
 
   handleClick = id => () => {
     this.props.getCurrentTestId({ testId: id });
   };
-
-  componentDidMount() {
-    this.props.getCurrentQuestionId({ questionId: 1 });
-  }
 
   renderCards() {
     const { testTasks, getCurrentTestId, getCurrentQuestionId } = this.props;
