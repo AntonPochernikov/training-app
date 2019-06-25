@@ -9,6 +9,8 @@ export const getCurrentQuestionId = state => state.app.tests.currentQuestionId;
 export const getLessons = state => state.app.lessons.lessons;
 export const getCurrentLessonId = state => state.app.lessons.currentLessonId;
 export const getCurrentParagraphId = state => state.app.lessons.currentParagraphId;
+export const getFormQuestions = state => state.form.questions;
+export const getResult = state => state.app.tests.result;
 
 export const getTaskByComplexity = createSelector(
   getExercises,
@@ -124,6 +126,52 @@ export const isLastLessonParagraphs = createSelector(
     const lastLesson = _.last(lessons);
     const lastParagraphs = _.get(lastLesson, 'paragraphs');
     if (сurrentParagraphId === _.last(lastParagraphs).id) return true;
+    return false;
+  },
+);
+export const getOptionsInput = createSelector(
+  getFormQuestions,
+  (items) => {
+    const getValues = _.get(items, 'values');
+    return _.get(getValues, 'options__input');
+  },
+);
+
+export const getCorrectAnswer = createSelector(
+  getCurrentQuestion,
+  items => (_.get(items, 'correctAnswer')),
+);
+export const getDescription = createSelector(
+  getCorrectAnswer,
+  items => _.map(items, 'description').toString(),
+);
+
+export const compareAnswer = createSelector(
+  getOptionsInput,
+  getDescription,
+  (optionsInput, description) => {
+    if (optionsInput === description) return true;
+    return false;
+  },
+);
+export const countResult = createSelector(
+  getResult,
+  items => items.filter(item => item !== 'false').length,
+);
+export const isLastQuestion = createSelector(
+  getCurrentQuestionId,
+  getQuestions,
+  (currentQuestion, items) => {
+    if (currentQuestion === _.last(items).id) return true;
+    return false;
+  },
+);
+
+export const isFinish = createSelector(
+  getResult,
+  getQuestions,
+  (res, questions) => {
+    if (res.length === questions.length) return true;
     return false;
   },
 );

@@ -4,6 +4,10 @@ import StartTestLink from './StartTestLink.jsx';
 import './Tests.css';
 
 export default class Tests extends React.Component {
+  componentDidMount() {
+    this.props.clearResult();
+  }
+
   handleClick = id => () => {
     this.props.getCurrentTestId({ testId: id });
   };

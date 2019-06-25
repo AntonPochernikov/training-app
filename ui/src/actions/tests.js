@@ -19,3 +19,5 @@ export const fetchTestsData = () => async (dispatch) => {
 export const getCurrentTestId = createAction('TEST/CURRENT/ID/GET');
 export const getCurrentQuestionId = createAction('QUESTION/CURRENT/ID/GET');
 export const getNextQuestion = createAction('NEXT/QUESTION/GET');
+export const saveResult = createAction('RESULT/SAVE');
+export const clearResult = createAction('RESULT/CLEAR');

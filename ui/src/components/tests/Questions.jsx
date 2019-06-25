@@ -1,5 +1,6 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
+import { Redirect } from 'react-router-dom';
 import ChooseOne from './ChooseOne.jsx';
 import СhooseMultiple from './СhooseMultiple.jsx';
 import WriteAnswer from './WriteAnswer.jsx';
@@ -8,7 +9,15 @@ import './Questions.css';
 
 class Questions extends React.Component {
   handleNextButton = () => {
-    this.props.getNextQuestion();
+    const {
+      getCorrectAnswer,
+      isLastQuestion,
+    } = this.props;
+    this.props.saveResult({ res: getCorrectAnswer.toString() });
+
+    if (isLastQuestion === false) {
+      this.props.getNextQuestion();
+    }
   }
 
   renderQuestionsByType = (questionType) => {
@@ -39,6 +48,7 @@ class Questions extends React.Component {
         description: questionDescription,
       },
       pristine,
+      isFinish,
     } = this.props;
 
     return (
@@ -53,7 +63,7 @@ class Questions extends React.Component {
               <p className="question-description"> {questionDescription}</p>
             </div>
             <div className="options-content">
-              {this.renderQuestionsByType(questionType)}
+              {!(isFinish) ? this.renderQuestionsByType(questionType) : <Redirect to ="/result" />}
             </div>
             <button
               type="button"
