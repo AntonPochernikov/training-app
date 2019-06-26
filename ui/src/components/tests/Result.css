@@ -1,0 +1,42 @@
+.result{
+	margin: auto;
+	text-align: justify;
+	background-color:white;
+	width: 55%;
+	border: 1px solid rgb(211, 211, 211);
+	border-radius: 10px;
+}
+
+.title{
+	display: block;
+    background-color: rgb(95, 95, 95);
+    font-size: 21px;
+    font-family: "Roboto", sans-serif;
+    padding: 5px 5px 5px 45px;
+    position: relative;
+    margin-bottom: 10px;
+	color: rgb(209, 209, 209);
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+
+.heading-result {
+	text-align: center;
+	padding: 40px;
+	font-family: "Open Sans";
+	color: rgb(146, 49, 49);
+	padding-bottom: 35px;
+}
+
+.heading-second {
+	color: rgb(54, 54, 54);
+}
+
+.result-content{
+	padding: 20px;
+}
+
+.gauge{
+	margin: auto;
+	display: inline-block;
+}

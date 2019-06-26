@@ -7,6 +7,7 @@ import * as actionCreators from '../../actions';
 const mapStateToProps = state => ({
   countResult: select.countResult(state),
   getQuestions: select.getQuestions(state),
+  getCurrentTest: select.getCurrentTest(state),
 });
 
 export default connect(mapStateToProps, actionCreators)(Result);
