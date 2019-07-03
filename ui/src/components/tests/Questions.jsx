@@ -13,6 +13,7 @@ class Questions extends React.Component {
       getCorrectAnswer,
       isLastQuestion,
     } = this.props;
+
     this.props.saveResult({ res: getCorrectAnswer.toString() });
 
     if (isLastQuestion === false) {

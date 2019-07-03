@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import './Lessons.css';
 import Navigation from './Navigation.js';
 
@@ -16,7 +17,7 @@ export default class Paragraphs extends React.Component {
       <div className="paragraphs-content">
         <div className="heading">
           <h2 className="heading-main">{number} {name}</h2>
-          <div className= "paragraph-text">{text}</div>
+          <ReactMarkdown className= "paragraph-text" source={text} />
         </div>
         <Navigation
           id={id}

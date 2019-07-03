@@ -44,7 +44,7 @@ export const isLast = createSelector(
 export const getCurrentTask = createSelector(
   getExercises,
   getCurrentTaskId,
-  (items, currentTaskId) => (_.find((items), (item => item.id === currentTaskId))),
+  (items, currentTaskId) => _.find(items, item => item.id === currentTaskId),
 );
 
 export const getTestsByType = createSelector(
@@ -61,35 +61,35 @@ export const getTestsByType = createSelector(
 export const getCurrentTest = createSelector(
   getTests,
   getCurrentTestId,
-  (items, currentTestId) => (_.find((items), (item => item.id === currentTestId))),
+  (items, currentTestId) => _.find(items, item => item.id === currentTestId),
 );
 
 export const getQuestions = createSelector(
   getCurrentTest,
-  items => (_.get(items, 'questions')),
+  items => _.get(items, 'questions'),
 );
 
 export const getCurrentQuestion = createSelector(
   getQuestions,
   getCurrentQuestionId,
-  (items, currentQuestionId) => (_.find((items), (item => item.id === currentQuestionId))),
+  (items, currentQuestionId) => _.find(items, item => item.id === currentQuestionId),
 );
 
 export const getCurrentLesson = createSelector(
   getLessons,
   getCurrentLessonId,
-  (items, currentLessonId) => (_.find((items), (item => item.id === currentLessonId))),
+  (items, currentLessonId) => _.find(items, item => item.id === currentLessonId),
 );
 
 export const getParagraphs = createSelector(
   getCurrentLesson,
-  items => (_.get(items, 'paragraphs')),
+  items => _.get(items, 'paragraphs'),
 );
 
 export const getCurrentParagraph = createSelector(
   getParagraphs,
   getCurrentParagraphId,
-  (items, currentParagraphId) => (_.find((items), (item => item.id === currentParagraphId))),
+  (items, currentParagraphId) => _.find(items, item => item.id === currentParagraphId),
 );
 
 export const isFirstParagraph = createSelector(
@@ -139,7 +139,7 @@ export const getOptionsInput = createSelector(
 
 export const getCorrectAnswer = createSelector(
   getCurrentQuestion,
-  items => (_.get(items, 'correctAnswer')),
+  items => _.get(items, 'correctAnswer'),
 );
 export const getDescription = createSelector(
   getCorrectAnswer,
@@ -154,10 +154,12 @@ export const compareAnswer = createSelector(
     return false;
   },
 );
+
 export const countResult = createSelector(
   getResult,
   items => items.filter(item => item !== 'false').length,
 );
+
 export const isLastQuestion = createSelector(
   getCurrentQuestionId,
   getQuestions,
