@@ -129,11 +129,20 @@ export const isLastLessonParagraphs = createSelector(
     return false;
   },
 );
+
 export const getOptionsInput = createSelector(
   getFormQuestions,
   (items) => {
     const getValues = _.get(items, 'values');
     return _.get(getValues, 'options__input');
+  },
+);
+
+export const getAnswerInput = createSelector(
+  getFormQuestions,
+  (items) => {
+    const getValues = _.get(items, 'values');
+    return _.get(getValues, 'answer__input');
   },
 );
 
@@ -151,6 +160,15 @@ export const compareAnswer = createSelector(
   getDescription,
   (optionsInput, description) => {
     if (optionsInput === description) return true;
+    return false;
+  },
+);
+
+export const compareWriteAnswer = createSelector(
+  getAnswerInput,
+  getCorrectAnswer,
+  (answerInput, correctAnswer) => {
+    if (answerInput === correctAnswer) return true;
     return false;
   },
 );

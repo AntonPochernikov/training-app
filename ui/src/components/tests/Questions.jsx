@@ -10,11 +10,19 @@ import './Questions.css';
 class Questions extends React.Component {
   handleNextButton = () => {
     const {
-      getCorrectAnswer,
+      getCorrectAnswerChooseOne,
+      getCorrectAnswerWriteAnswer,
       isLastQuestion,
+      currentQuestion,
     } = this.props;
 
-    this.props.saveResult({ res: getCorrectAnswer.toString() });
+    if (currentQuestion.type === 'chooseOne') {
+      this.props.saveResult({ res: getCorrectAnswerChooseOne.toString() });
+    }
+
+    if (currentQuestion.type === 'writeAnswer') {
+      this.props.saveResult({ res: getCorrectAnswerWriteAnswer.toString() });
+    }
 
     if (isLastQuestion === false) {
       this.props.getNextQuestion();
