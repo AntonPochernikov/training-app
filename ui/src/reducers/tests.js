@@ -40,11 +40,13 @@ const currentQuestionId = handleActions({
   [action.getNextQuestion]: questionId => questionId + 1,
 },
 1);
+
 const result = handleActions({
   [action.saveResult]: (state, { payload: { res } }) => [...state, res],
   [action.clearResult]: () => [],
 },
 []);
+
 export default combineReducers({
   fetchDataTests,
   tests,

@@ -12,7 +12,7 @@ const WriteAnswer = (props) => {
     <div className="options" key={id}>
       <Field
         className="answer-input"
-        name="answer__input"
+        name="writeAnswerInput"
         component="input"
         type="text"
       />

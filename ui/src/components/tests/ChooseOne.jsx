@@ -12,7 +12,7 @@ const ChooseOne = (props) => {
     <div className="options" key={id}>
       <Field
         className="options-input"
-        name="options__input"
+        name="chooseOneInput"
         component="input"
         type="radio"
         value={description}

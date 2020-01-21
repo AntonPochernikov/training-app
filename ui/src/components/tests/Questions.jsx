@@ -10,23 +10,32 @@ import './Questions.css';
 class Questions extends React.Component {
   handleNextButton = () => {
     const {
-      getCorrectAnswerChooseOne,
-      getCorrectAnswerWriteAnswer,
+      isCorrectChooseOne,
+      isCorrectWriteAnswer,
       isLastQuestion,
       currentQuestion,
+      isCorrectMultiply,
+      saveResult,
+      getNextQuestion,
+      reset,
     } = this.props;
 
     if (currentQuestion.type === 'chooseOne') {
-      this.props.saveResult({ res: getCorrectAnswerChooseOne.toString() });
+      saveResult({ res: isCorrectChooseOne.toString() });
     }
 
     if (currentQuestion.type === 'writeAnswer') {
-      this.props.saveResult({ res: getCorrectAnswerWriteAnswer.toString() });
+      saveResult({ res: isCorrectWriteAnswer.toString() });
+    }
+
+    if (currentQuestion.type === 'chooseMultiply') {
+      saveResult({ res: isCorrectMultiply.toString() });
     }
 
     if (isLastQuestion === false) {
-      this.props.getNextQuestion();
+      getNextQuestion();
     }
+    reset('questions');
   }
 
   renderQuestionsByType = (questionType) => {

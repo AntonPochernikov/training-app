@@ -7,8 +7,9 @@ import * as actionCreators from '../../actions';
 const mapStateToProps = state => ({
   currentTest: select.getCurrentTest(state),
   currentQuestion: select.getCurrentQuestion(state),
-  getCorrectAnswerChooseOne: select.compareAnswer(state),
-  getCorrectAnswerWriteAnswer: select.compareWriteAnswer(state),
+  isCorrectChooseOne: select.compareChooseOneAnswer(state),
+  isCorrectWriteAnswer: select.compareWriteAnswer(state),
+  isCorrectMultiply: select.compareMultiplyAnswer(state),
   isLastQuestion: select.isLastQuestion(state),
   isFinish: select.isFinish(state),
 });
