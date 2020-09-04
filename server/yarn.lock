@@ -357,10 +357,10 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/yup@0.26.12":
-  version "0.26.12"
-  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.12.tgz#60fc1a485923a929699d2107fac46e6769707c4a"
-  integrity sha512-lWCsvLer6G84Gj7yh+oFGRuGHsqZd1Dwu47CVVL0ATw+bOnGDgMNHbTn80p1onT66fvLfN8FnRA3eRANsnnbbQ==
+"@types/yup@0.26.23":
+  version "0.26.23"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.23.tgz#00721a3b675e7609e5bcccb94234e86b754bcd04"
+  integrity sha512-+tipAL6prdInS/avA6QityIFBDvHnqk1Tv9L5JMEws5IZC6agymBGAoDsrPyYp42wGcktyQtYKv9kvGPEKd4Qg==
 
 abab@^2.0.0:
   version "2.0.0"
@@ -2403,13 +2403,13 @@ graphql-query-complexity@^0.2.3:
   dependencies:
     lodash.get "^4.4.2"
 
-graphql-shield@^5.3.3:
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/graphql-shield/-/graphql-shield-5.3.3.tgz#e3fbdb2a5f927fe1bb660ccf60c614defcc3aed4"
-  integrity sha512-9Hdmp71ewi9w7Tj1x8CSl3arWvtQOYKpZrsSBid2Vpr6BISAKe/2edEfgP4xYIKAkmpclG0Gl7ID5+qt1RJu7A==
+graphql-shield@^6.0.6:
+  version "6.0.6"
+  resolved "https://registry.yarnpkg.com/graphql-shield/-/graphql-shield-6.0.6.tgz#ef8c53f1dd972c2d1828ffd45ce9b1f877576534"
+  integrity sha512-rwhno5ZvEBbedQ8mEOi/Lk71J5CrpQCOcyuDIO+qb1hqm7cvWLtLVyZFrhVp7vN/vULV9oX30j0clC/1d05LpQ==
   dependencies:
-    "@types/yup" "0.26.12"
-    lightercollective "^0.2.0"
+    "@types/yup" "0.26.23"
+    lightercollective "^0.3.0"
     object-hash "^1.3.1"
     yup "^0.27.0"
 
@@ -3648,10 +3648,10 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lightercollective@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.2.0.tgz#4f10cd53ec50405d7da03ee81233067993ca8e67"
-  integrity sha512-zgFCDiUQQOjislj+1tX7zDxZbgVB6Qi9BSmos41oZcxHdkTveVDzHW0Y3TisNZCWuBN1h0e0xrjkNoLtPkLsUg==
+lightercollective@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.3.0.tgz#1f07638642ec645d70bdb69ab2777676f35a28f0"
+  integrity sha512-RFOLSUVvwdK3xA0P8o6G7QGXLIyy1L2qv5caEI7zXN5ciaEjbAriRF182kbsoJ1S1TgvpyGcN485fMky6qxOPw==
 
 load-json-file@^1.0.0:
   version "1.1.0"
